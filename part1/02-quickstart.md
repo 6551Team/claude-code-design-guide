@@ -82,7 +82,6 @@ cat error.log | claude "找出错误原因"
 | `/config` | 查看或修改配置 |
 | `/model` | 切换模型 |
 | `/commit` | 生成 git commit 信息并提交 |
-| `/review` | 代码审查 |
 | `/exit` | 退出 |
 
 ---

@@ -91,7 +91,6 @@ Claude Code 有大量内置 Skills（`src/skills/bundled/`）：
 | Skill | 功能 |
 |-------|------|
 | `/commit` | 生成并执行 git commit |
-| `/review` | 代码审查 |
 | `/ship` | 完整的发布流程（测试→构建→发布） |
 | `/plan` | 生成实现计划 |
 | `/document-release` | 更新发布文档 |
@@ -154,8 +153,8 @@ Claude Code 支持动态发现 Skills（`discoveredSkillNames`）：
 private discoveredSkillNames = new Set<string>()
 
 // 当 Claude 在对话中提到某个 Skill 时，自动加载
-// 例如：用户说"用 /review 帮我审查代码"
-// Claude Code 会检查是否有 review Skill，如果有则加载
+// 例如：用户说"用 /plan 帮我制定实现计划"
+// Claude Code 会检查是否有 plan Skill，如果有则加载
 ```
 
 这让 Skills 可以在对话中被动态引用，而不需要提前知道所有可用的 Skills。
@@ -197,7 +196,7 @@ Skills 和斜杠命令（`/help`、`/clear` 等）的区别：
 | 执行方式 | 直接执行代码 | 作为提示发送给 Claude |
 | 可扩展性 | 需要修改源码 | 用户可以自定义 |
 | 能力范围 | 系统级操作 | AI 辅助工作流 |
-| 示例 | `/clear`、`/cost` | `/commit`、`/review` |
+| 示例 | `/clear`、`/cost` | `/commit`、`/plan` |
 
 ---
 

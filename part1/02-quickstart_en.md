@@ -82,7 +82,6 @@ In interactive mode, slash commands are shortcuts to control Claude Code behavio
 | `/config` | View or modify configuration |
 | `/model` | Switch model |
 | `/commit` | Generate git commit message and commit |
-| `/review` | Code review |
 | `/exit` | Exit |
 
 ---

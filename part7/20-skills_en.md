@@ -91,7 +91,6 @@ Claude Code has many built-in Skills (`src/skills/bundled/`):
 | Skill | Function |
 |-------|------|
 | `/commit` | Generate and execute git commit |
-| `/review` | Code review |
 | `/ship` | Complete release process (test→build→release) |
 | `/plan` | Generate implementation plan |
 | `/document-release` | Update release documentation |
@@ -154,8 +153,8 @@ Claude Code supports dynamic Skills discovery (`discoveredSkillNames`):
 private discoveredSkillNames = new Set<string>()
 
 // When Claude mentions a Skill in conversation, automatically load it
-// Example: user says "use /review to help me review code"
-// Claude Code checks if review Skill exists, loads it if found
+// Example: user says "use /plan to help me create implementation plan"
+// Claude Code checks if plan Skill exists, loads it if found
 ```
 
 This allows Skills to be dynamically referenced in conversations without needing to know all available Skills in advance.
@@ -197,7 +196,7 @@ Differences between Skills and slash commands (`/help`, `/clear`, etc.):
 | Execution | Direct code execution | Sent as prompt to Claude |
 | Extensibility | Requires source code modification | User-customizable |
 | Capability scope | System-level operations | AI-assisted workflows |
-| Examples | `/clear`, `/cost` | `/commit`, `/review` |
+| Examples | `/clear`, `/cost` | `/commit`, `/plan` |
 
 ---
 
