@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 550">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <rect x="250" y="20" width="200" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="45" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">Start / User chooses</text>
+  <text x="350" y="60" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">to restore</text>
+
+  <rect x="250" y="100" width="200" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="120" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">Read session list from</text>
+  <text x="350" y="138" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">local storage</text>
+
+  <path d="M 350,150 L 350,180 L 150,180 L 150,220" fill="none" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M 350,150 L 350,180 L 550,180 L 550,220" fill="none" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="50" y="220" width="200" height="50" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="150" y="245" font-family="Arial,sans-serif" font-size="13" fill="#78350f" text-anchor="middle">Only 1 session?</text>
+  <text x="150" y="260" font-family="Arial,sans-serif" font-size="12" fill="#78350f" text-anchor="middle" font-weight="bold">YES</text>
+
+  <rect x="450" y="220" width="200" height="50" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="550" y="245" font-family="Arial,sans-serif" font-size="13" fill="#78350f" text-anchor="middle">Multiple sessions?</text>
+  <text x="550" y="260" font-family="Arial,sans-serif" font-size="12" fill="#78350f" text-anchor="middle" font-weight="bold">YES</text>
+
+  <rect x="450" y="300" width="200" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="550" y="320" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">Show session</text>
+  <text x="550" y="338" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">selection list</text>
+
+  <rect x="450" y="380" width="200" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="550" y="410" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">User selects session</text>
+
+  <path d="M 150,270 L 150,460 L 250,460" fill="none" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M 550,270 L 550,300" fill="none" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M 550,350 L 550,380" fill="none" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M 550,430 L 550,460 L 450,460" fill="none" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="250" y="440" width="200" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="460" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">Load complete</text>
+  <text x="350" y="478" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">message history</text>
+
+  <rect x="250" y="510" width="200" height="30" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="5"/>
+  <text x="350" y="530" font-family="Arial,sans-serif" font-size="13" fill="#14532d" text-anchor="middle">Continue interaction</text>
+
+  <line x1="350" y1="70" x2="350" y2="100" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="350" y1="490" x2="350" y2="510" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

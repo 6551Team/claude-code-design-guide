@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 320" font-family="system-ui, -apple-system, sans-serif">
+
+  <!-- Title -->
+  <text x="250" y="30" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e293b">History Write Flow</text>
+
+  <!-- Box 1: addToHistory(entry) -->
+  <rect x="100" y="50" width="300" height="52" rx="6" fill="#f0f4f8" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="250" y="72" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">addToHistory(entry)</text>
+  <text x="250" y="91" text-anchor="middle" font-size="11" fill="#475569">buffered write — does not block main thread</text>
+
+  <!-- Arrow 1 -->
+  <line x1="250" y1="102" x2="250" y2="138" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Box 2: Memory Buffer -->
+  <rect x="100" y="138" width="300" height="52" rx="6" fill="#f0f4f8" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="250" y="160" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">Memory Buffer</text>
+  <text x="250" y="179" text-anchor="middle" font-size="11" fill="#475569">in-memory buffer</text>
+
+  <!-- Arrow 2 with label -->
+  <line x1="250" y1="190" x2="250" y2="238" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="261" y="200" width="122" height="18" rx="3" fill="#fef9c3"/>
+  <text x="322" y="213" text-anchor="middle" font-size="11" fill="#92400e">async flush, batch</text>
+
+  <!-- Box 3: History File -->
+  <rect x="100" y="238" width="300" height="52" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+  <text x="250" y="260" text-anchor="middle" font-size="13" font-weight="600" fill="#0c4a6e">History File</text>
+  <text x="250" y="279" text-anchor="middle" font-size="11" fill="#075985">disk persistence — appendFile (JSONL)</text>
+
+  <!-- Arrowhead marker -->
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#64748b"/>
+    </marker>
+  </defs>
+</svg>

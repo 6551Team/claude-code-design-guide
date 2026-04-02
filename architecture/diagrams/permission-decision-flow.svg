@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 600">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <rect x="250" y="20" width="200" height="40" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="45" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">canUseTool(tool, input)</text>
+
+  <rect x="50" y="90" width="150" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="125" y="110" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">[1] Rule matching</text>
+  <text x="125" y="128" font-family="Arial,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">(5-level config)</text>
+
+  <rect x="220" y="90" width="150" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="295" y="110" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">[2] Tool-specific</text>
+  <text x="295" y="128" font-family="Arial,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">checks</text>
+
+  <rect x="390" y="90" width="150" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="465" y="110" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">[3] Auto mode</text>
+  <text x="465" y="128" font-family="Arial,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">classifier</text>
+
+  <rect x="560" y="90" width="120" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="620" y="110" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">[4] User</text>
+  <text x="620" y="128" font-family="Arial,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">prompt</text>
+
+  <rect x="50" y="170" width="150" height="80" fill="#f8fafc" stroke="#64748b" stroke-width="1" rx="3"/>
+  <text x="125" y="190" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">• allow rule</text>
+  <text x="125" y="205" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">→ auto pass</text>
+  <text x="125" y="225" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">• deny rule</text>
+  <text x="125" y="240" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">→ auto reject</text>
+
+  <rect x="220" y="170" width="150" height="80" fill="#f8fafc" stroke="#64748b" stroke-width="1" rx="3"/>
+  <text x="295" y="190" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">• Bash wildcards</text>
+  <text x="295" y="205" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">• File path validation</text>
+  <text x="295" y="220" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">• Web host list</text>
+  <text x="295" y="235" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">• MCP permissions</text>
+
+  <rect x="390" y="170" width="150" height="80" fill="#f8fafc" stroke="#64748b" stroke-width="1" rx="3"/>
+  <text x="465" y="190" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">Stage 1: Regex</text>
+  <text x="465" y="205" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">(fast path)</text>
+  <text x="465" y="225" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">Stage 2: AI</text>
+  <text x="465" y="240" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">(slow path)</text>
+
+  <rect x="560" y="170" width="120" height="80" fill="#f8fafc" stroke="#64748b" stroke-width="1" rx="3"/>
+  <text x="620" y="190" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">React dialog:</text>
+  <text x="620" y="205" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">• Allow</text>
+  <text x="620" y="220" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">• Deny</text>
+  <text x="620" y="235" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">• Always Allow</text>
+
+  <rect x="200" y="280" width="300" height="50" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="5"/>
+  <text x="350" y="305" font-family="Arial,sans-serif" font-size="12" fill="#14532d" text-anchor="middle">Return: {behavior, message?,</text>
+  <text x="350" y="320" font-family="Arial,sans-serif" font-size="12" fill="#14532d" text-anchor="middle">suggestions?, decisionReason?}</text>
+
+  <line x1="350" y1="60" x2="125" y2="90" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="350" y1="60" x2="295" y2="90" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="350" y1="60" x2="465" y2="90" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="350" y1="60" x2="620" y2="90" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <line x1="125" y1="250" x2="350" y2="280" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="295" y1="250" x2="350" y2="280" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="465" y1="250" x2="350" y2="280" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="620" y1="250" x2="350" y2="280" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="50" y="360" width="600" height="220" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="60" y="385" font-family="Arial,sans-serif" font-size="12" fill="#78350f" font-weight="bold">Permission Request Types:</text>
+
+  <text x="70" y="410" font-family="Arial,sans-serif" font-size="10" fill="#78350f">• BashPermissionRequest</text>
+  <text x="70" y="430" font-family="Arial,sans-serif" font-size="10" fill="#78350f">• FileEditPermissionRequest</text>
+  <text x="70" y="450" font-family="Arial,sans-serif" font-size="10" fill="#78350f">• FileWritePermissionRequest</text>
+  <text x="70" y="470" font-family="Arial,sans-serif" font-size="10" fill="#78350f">• WebFetchPermissionRequest</text>
+  <text x="70" y="490" font-family="Arial,sans-serif" font-size="10" fill="#78350f">• PowerShellPermissionRequest</text>
+
+  <text x="350" y="410" font-family="Arial,sans-serif" font-size="10" fill="#78350f">• NotebookEditPermissionRequest</text>
+  <text x="350" y="430" font-family="Arial,sans-serif" font-size="10" fill="#78350f">• SkillPermissionRequest</text>
+  <text x="350" y="450" font-family="Arial,sans-serif" font-size="10" fill="#78350f">• AskUserQuestionPermissionRequest</text>
+  <text x="350" y="470" font-family="Arial,sans-serif" font-size="10" fill="#78350f">• EnterPlanModePermissionRequest</text>
+  <text x="350" y="490" font-family="Arial,sans-serif" font-size="10" fill="#78350f">• FallbackPermissionRequest</text>
+
+  <text x="60" y="525" font-family="Arial,sans-serif" font-size="11" fill="#78350f" font-weight="bold">Security Layers:</text>
+  <text x="70" y="545" font-family="Arial,sans-serif" font-size="10" fill="#78350f">• Path validation + symlink checks + UNC safety (File tools)</text>
+  <text x="70" y="565" font-family="Arial,sans-serif" font-size="10" fill="#78350f">• Secret scanner with 30 gitleaks rules (TeamMem tool)</text>
+</svg>

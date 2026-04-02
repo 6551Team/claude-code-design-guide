@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+    <style>
+      .phase { fill: #f0f4f8; stroke: #2563eb; stroke-width: 2; }
+      .phase-text { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: #1e40af; }
+      .desc-text { font-family: Arial, sans-serif; font-size: 11px; fill: #475569; }
+      .arrow { stroke: #666; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .title { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #1e293b; }
+      .loop-arrow { stroke: #dc2626; stroke-width: 3; fill: none; marker-end: url(#arrowhead); stroke-dasharray: 5,5; }
+    </style>
+  </defs>
+
+  <text x="500" y="30" class="title" text-anchor="middle">查询引擎五阶段循环</text>
+
+  <!-- Phase 1 -->
+  <rect x="150" y="80" width="700" height="100" class="phase" rx="5"/>
+  <text x="500" y="110" class="phase-text" text-anchor="middle">Phase 1: 上下文准备</text>
+  <text x="500" y="130" class="desc-text" text-anchor="middle">applyToolResultBudget → snipCompact → microcompact</text>
+  <text x="500" y="145" class="desc-text" text-anchor="middle">contextCollapse → autocompact → 组装 fullSystemPrompt</text>
+  <text x="500" y="160" class="desc-text" text-anchor="middle">创建 StreamingToolExecutor</text>
+
+  <line x1="500" y1="180" x2="500" y2="210" class="arrow"/>
+
+  <!-- Phase 2 -->
+  <rect x="150" y="210" width="700" height="100" class="phase" rx="5"/>
+  <text x="500" y="240" class="phase-text" text-anchor="middle">Phase 2: API 调用</text>
+  <text x="500" y="260" class="desc-text" text-anchor="middle">callModel() → 流式接收事件 → 构建 assistantMessages[]</text>
+  <text x="500" y="275" class="desc-text" text-anchor="middle">检测 tool_use → needsFollowUp = true</text>
+  <text x="500" y="290" class="desc-text" text-anchor="middle">处理 fallback / max_output_tokens / prompt_too_long</text>
+
+  <line x1="500" y1="310" x2="500" y2="340" class="arrow"/>
+
+  <!-- Phase 3 -->
+  <rect x="150" y="340" width="700" height="100" class="phase" rx="5"/>
+  <text x="500" y="370" class="phase-text" text-anchor="middle">Phase 3: 工具执行</text>
+  <text x="500" y="390" class="desc-text" text-anchor="middle">runTools() → partitionToolCalls() → concurrent/serial batches</text>
+  <text x="500" y="405" class="desc-text" text-anchor="middle">或 StreamingToolExecutor → getCompletedResults()</text>
+  <text x="500" y="420" class="desc-text" text-anchor="middle">runToolUse() → 权限检查 → execute → 执行 postSamplingHooks</text>
+
+  <line x1="500" y1="440" x2="500" y2="470" class="arrow"/>
+
+  <!-- Phase 4 -->
+  <rect x="150" y="470" width="700" height="100" class="phase" rx="5"/>
+  <text x="500" y="500" class="phase-text" text-anchor="middle">Phase 4: 停止钩子</text>
+  <text x="500" y="520" class="desc-text" text-anchor="middle">如果 !needsFollowUp → handleStopHooks()</text>
+  <text x="500" y="535" class="desc-text" text-anchor="middle">Token Budget 检查</text>
+  <text x="500" y="550" class="desc-text" text-anchor="middle">决定是否继续或终止</text>
+
+  <line x1="500" y1="570" x2="500" y2="600" class="arrow"/>
+
+  <!-- Phase 5 -->
+  <rect x="150" y="600" width="700" height="100" class="phase" rx="5"/>
+  <text x="500" y="630" class="phase-text" text-anchor="middle">Phase 5: 继续/终止</text>
+  <text x="500" y="650" class="desc-text" text-anchor="middle">工具结果附加到消息列表 → 获取 attachment messages</text>
+  <text x="500" y="665" class="desc-text" text-anchor="middle">检查 maxTurns → 组装下一个 State</text>
+  <text x="500" y="680" class="desc-text" text-anchor="middle">state = next → 回到 Phase 1 或终止</text>
+
+  <!-- Loop arrow -->
+  <path d="M 850 650 Q 950 400 850 150" class="loop-arrow"/>
+  <text x="920" y="400" class="desc-text" text-anchor="middle" fill="#dc2626">循环</text>
+
+</svg>

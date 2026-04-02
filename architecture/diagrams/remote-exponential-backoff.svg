@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 420">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+  </defs>
+
+  <text x="350" y="30" font-family="Arial,sans-serif" font-size="16" fill="#1e40af" text-anchor="middle" font-weight="bold">指数退避重连策略</text>
+
+  <!-- Row 1 -->
+  <rect x="50" y="70" width="200" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="150" y="95" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">首次断开: 等待 1s</text>
+  <path d="M 250 90 L 350 90" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <rect x="350" y="70" width="120" height="40" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="410" y="95" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">重连</text>
+
+  <!-- Row 2 -->
+  <rect x="50" y="130" width="200" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="150" y="155" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">第2次断开: 等待 2s</text>
+  <path d="M 250 150 L 350 150" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <rect x="350" y="130" width="120" height="40" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="410" y="155" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">重连</text>
+
+  <!-- Row 3 -->
+  <rect x="50" y="190" width="200" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="150" y="215" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">第3次断开: 等待 4s</text>
+  <path d="M 250 210 L 350 210" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <rect x="350" y="190" width="120" height="40" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="410" y="215" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">重连</text>
+
+  <!-- Row 4 -->
+  <rect x="50" y="250" width="200" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="150" y="275" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">第4次断开: 等待 8s</text>
+  <path d="M 250 270 L 350 270" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <rect x="350" y="250" width="120" height="40" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="410" y="275" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">重连</text>
+
+  <!-- Dots -->
+  <text x="150" y="310" font-family="Arial,sans-serif" font-size="20" fill="#666" text-anchor="middle">...</text>
+
+  <!-- Row Max -->
+  <rect x="50" y="330" width="200" height="40" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="150" y="355" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">最大间隔: 等待 30s</text>
+  <path d="M 250 350 L 350 350" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <rect x="350" y="330" width="120" height="40" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="410" y="355" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">重连</text>
+
+  <!-- Reset on success -->
+  <rect x="500" y="190" width="180" height="40" fill="#efe" stroke="#0a0" stroke-width="2" rx="5"/>
+  <text x="590" y="215" font-family="Arial,sans-serif" font-size="13" fill="#0a0" text-anchor="middle">连接成功</text>
+  <path d="M 470 90 L 500 90 L 500 210" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="490" y="165" font-family="Arial,sans-serif" font-size="11" fill="#0a0" text-anchor="middle">重置计数器</text>
+</svg>

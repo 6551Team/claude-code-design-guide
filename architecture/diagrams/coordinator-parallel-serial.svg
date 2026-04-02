@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+  </defs>
+
+  <!-- Parallel Mode Title -->
+  <text x="300" y="30" font-family="Arial,sans-serif" fill="#1e40af" font-size="14" font-weight="bold" text-anchor="middle">Parallel Mode (Independent Tasks)</text>
+
+  <!-- Worker 1 -->
+  <text x="50" y="65" font-family="Arial,sans-serif" fill="#1e40af" font-size="12">Worker #1</text>
+  <rect x="150" y="50" width="280" height="20" fill="#4ade80" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="440" y="65" font-family="Arial,sans-serif" fill="#666" font-size="11">done</text>
+
+  <!-- Worker 2 -->
+  <text x="50" y="95" font-family="Arial,sans-serif" fill="#1e40af" font-size="12">Worker #2</text>
+  <rect x="150" y="80" width="240" height="20" fill="#4ade80" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="400" y="95" font-family="Arial,sans-serif" fill="#666" font-size="11">done</text>
+
+  <!-- Worker 3 -->
+  <text x="50" y="125" font-family="Arial,sans-serif" fill="#1e40af" font-size="12">Worker #3</text>
+  <rect x="150" y="110" width="320" height="20" fill="#4ade80" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="480" y="125" font-family="Arial,sans-serif" fill="#666" font-size="11">done</text>
+
+  <!-- Time arrow -->
+  <line x1="150" y1="145" x2="500" y2="145" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="520" y="150" font-family="Arial,sans-serif" fill="#666" font-size="11">time</text>
+
+  <!-- Serial Mode Title -->
+  <text x="300" y="190" font-family="Arial,sans-serif" fill="#1e40af" font-size="14" font-weight="bold" text-anchor="middle">Serial Mode (With Dependencies)</text>
+
+  <!-- Worker 1 Serial -->
+  <text x="50" y="225" font-family="Arial,sans-serif" fill="#1e40af" font-size="12">Worker #1</text>
+  <rect x="150" y="210" width="120" height="20" fill="#4ade80" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="280" y="225" font-family="Arial,sans-serif" fill="#666" font-size="11">done</text>
+  <line x1="270" y1="230" x2="300" y2="245" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Worker 2 Serial -->
+  <text x="50" y="260" font-family="Arial,sans-serif" fill="#1e40af" font-size="12">Worker #2</text>
+  <rect x="300" y="245" width="120" height="20" fill="#4ade80" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="430" y="260" font-family="Arial,sans-serif" fill="#666" font-size="11">done</text>
+
+  <!-- Time arrow serial -->
+  <line x1="150" y1="280" x2="500" y2="280" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="520" y="285" font-family="Arial,sans-serif" fill="#666" font-size="11">time</text>
+</svg>

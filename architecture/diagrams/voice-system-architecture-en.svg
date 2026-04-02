@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 600">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+  </defs>
+
+  <text x="350" y="30" font-family="Arial,sans-serif" font-size="16" fill="#1e40af" text-anchor="middle" font-weight="bold">Voice System Architecture</text>
+
+  <!-- /voice command -->
+  <rect x="150" y="60" width="400" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="85" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">/voice command</text>
+  <text x="350" y="100" font-family="Arial,sans-serif" font-size="11" fill="#666" text-anchor="middle">(Feature-gated: VOICE_MODE)</text>
+
+  <!-- React Context Layer -->
+  <rect x="150" y="130" width="400" height="70" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="155" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">React Context Layer</text>
+  <text x="350" y="175" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">src/context/voice.tsx</text>
+  <text x="350" y="190" font-family="Arial,sans-serif" font-size="11" fill="#666" text-anchor="middle">(ant-only)</text>
+
+  <!-- React Hooks Layer -->
+  <rect x="150" y="220" width="400" height="70" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="245" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">React Hooks Layer</text>
+  <text x="350" y="270" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">useVoice  useVoiceEnabled  useVoiceInteg</text>
+
+  <!-- Gate Layer -->
+  <rect x="150" y="310" width="400" height="90" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="350" y="335" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">Gate Layer</text>
+  <text x="350" y="360" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">isVoiceGrowthBookEnabled()</text>
+  <text x="350" y="380" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">hasVoiceAuth()</text>
+  <text x="350" y="395" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">isVoiceModeEnabled()</text>
+
+  <!-- OAuth + Feature Gate -->
+  <rect x="100" y="420" width="250" height="70" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="225" y="445" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">OAuth Token</text>
+  <text x="225" y="465" font-family="Arial,sans-serif" font-size="12" fill="#666" text-anchor="middle">(claude.ai)</text>
+
+  <rect x="370" y="420" width="250" height="70" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="495" y="445" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">Feature Gate</text>
+  <text x="495" y="465" font-family="Arial,sans-serif" font-size="12" fill="#666" text-anchor="middle">(growth book)</text>
+
+  <!-- Arrows -->
+  <path d="M 350 110 L 350 130" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 350 200 L 350 220" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 350 290 L 350 310" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 225 400 L 225 420" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 495 400 L 495 420" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+</svg>

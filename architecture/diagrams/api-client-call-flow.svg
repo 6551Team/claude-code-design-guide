@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700" font-family="Arial,sans-serif">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0,10 3,0 6" fill="#666"/>
+    </marker>
+  </defs>
+  <rect width="800" height="700" fill="white"/>
+
+  <!-- Title -->
+  <text x="400" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e40af">Complete API Call Flow: queryModelWithStreaming()</text>
+
+  <!-- Entry -->
+  <rect x="225" y="45" width="350" height="36" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="400" y="68" text-anchor="middle" font-size="13" fill="#1e40af">queryModelWithStreaming(messages, systemPrompt, tools, ...)</text>
+
+  <!-- Step 1 -->
+  <line x1="400" y1="81" x2="400" y2="105" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="130" y="105" width="540" height="48" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="400" y="123" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">① Message Normalization  (6-step pipeline)</text>
+  <text x="400" y="141" text-anchor="middle" font-size="11" fill="#6b7280">normalizeMessagesForAPI → stripAdvisorBlocks → ensureToolResultPairing → filterOrphanedThinking → mergeAdjacentUser → stripSignatureBlocks</text>
+
+  <!-- Step 2 -->
+  <line x1="400" y1="153" x2="400" y2="177" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="170" y="177" width="460" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="400" y="195" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">② System Prompt Assembly</text>
+  <text x="400" y="210" text-anchor="middle" font-size="11" fill="#6b7280">getCLISyspromptPrefix + customSystemPrompt + contexts</text>
+
+  <!-- Step 3 -->
+  <line x1="400" y1="217" x2="400" y2="241" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="170" y="241" width="460" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="400" y="259" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">③ Tool Definition Conversion</text>
+  <text x="400" y="274" text-anchor="middle" font-size="11" fill="#6b7280">tools.map(toolToAPISchema) + filterToolsByDenyRules</text>
+
+  <!-- Step 4 -->
+  <line x1="400" y1="281" x2="400" y2="305" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="130" y="305" width="540" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="400" y="323" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">④ Request Parameters Construction</text>
+  <text x="400" y="338" text-anchor="middle" font-size="11" fill="#6b7280">model, messages, system, tools, max_tokens, thinking, betas, speed, output_config</text>
+
+  <!-- Step 5 -->
+  <line x1="400" y1="345" x2="400" y2="369" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="170" y="369" width="460" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="400" y="387" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">⑤ Client Acquisition</text>
+  <text x="400" y="402" text-anchor="middle" font-size="11" fill="#6b7280">getAnthropicClient() → Route to Anthropic / Bedrock / Vertex / Foundry</text>
+
+  <!-- Step 6 -->
+  <line x1="400" y1="409" x2="400" y2="433" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="170" y="433" width="460" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="400" y="451" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">⑥ Send Request (with retry)</text>
+  <text x="400" y="466" text-anchor="middle" font-size="11" fill="#6b7280">client.beta.messages.stream(params) → withRetry wrapper</text>
+
+  <!-- Step 7 -->
+  <line x1="400" y1="473" x2="400" y2="497" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="170" y="497" width="460" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="400" y="515" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">⑦ Stream Processing</text>
+  <text x="400" y="530" text-anchor="middle" font-size="11" fill="#6b7280">for await (event of stream) → yield StreamEvent / AssistantMessage</text>
+
+  <!-- Step 8 -->
+  <line x1="400" y1="537" x2="400" y2="561" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="170" y="561" width="460" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="400" y="579" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">⑧ Usage Logging</text>
+  <text x="400" y="594" text-anchor="middle" font-size="11" fill="#6b7280">logAPISuccessAndDuration, accumulateUsage</text>
+
+  <!-- Step 9 -->
+  <line x1="400" y1="601" x2="400" y2="625" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="170" y="625" width="460" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="400" y="643" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">⑨ Error Handling</text>
+  <text x="400" y="659" text-anchor="middle" font-size="11" fill="#6b7280">classifyAPIError → retry / fallback / return error message</text>
+
+  <!-- Error branches -->
+  <line x1="630" y1="650" x2="730" y2="650" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="630" y="625" width="0" height="0" fill="none"/>
+  <rect x="730" y="618" width="60" height="64" fill="#fee2e2" stroke="#dc2626" stroke-width="1" rx="3"/>
+  <text x="760" y="638" text-anchor="middle" font-size="10" fill="#991b1b">429/529</text>
+  <text x="760" y="651" text-anchor="middle" font-size="10" fill="#991b1b">→ Retry</text>
+  <text x="760" y="664" text-anchor="middle" font-size="10" fill="#991b1b">401 → Auth</text>
+  <text x="760" y="677" text-anchor="middle" font-size="10" fill="#991b1b">refresh</text>
+
+  <!-- Success path -->
+  <line x1="400" y1="675" x2="400" y2="695" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="315" y="695" width="170" height="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1" rx="2"/>
+</svg>

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" width="760" height="520">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+    <marker id="arrowB" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f59e0b"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="380" y="28" font-family="Arial,sans-serif" font-size="15" fill="#1e40af" text-anchor="middle" font-weight="bold">Memory System Overview</text>
+
+  <!-- MEMORY.md top -->
+  <rect x="255" y="45" width="250" height="60" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="380" y="70" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">MEMORY.md</text>
+  <text x="380" y="88" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">Entry index file  |  200 lines / 25KB limit</text>
+
+  <!-- Arrow MEMORY.md → auto-memory -->
+  <line x1="380" y1="105" x2="380" y2="135" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- auto-memory dir -->
+  <rect x="230" y="135" width="300" height="65" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="380" y="158" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">auto-memory/ directory</text>
+  <text x="380" y="176" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">extractMemories — automatic extraction</text>
+  <text x="380" y="192" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">autoDream — periodic consolidation</text>
+
+  <!-- Three branch arrows from auto-memory -->
+  <!-- left branch to findRelevantMemories -->
+  <line x1="280" y1="200" x2="130" y2="268" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- center branch to Session Memory -->
+  <line x1="380" y1="200" x2="380" y2="268" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- right branch to Team Memory -->
+  <line x1="480" y1="200" x2="630" y2="268" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- findRelevantMemories box -->
+  <rect x="20" y="268" width="220" height="80" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="130" y="292" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">findRelevantMemories</text>
+  <text x="130" y="310" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">Semantic retrieval</text>
+  <text x="130" y="326" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">Sonnet model selects top 5</text>
+  <text x="130" y="342" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">Prefetch on user input</text>
+
+  <!-- Session Memory box -->
+  <rect x="270" y="268" width="220" height="80" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="380" y="292" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">Session Memory</text>
+  <text x="380" y="310" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">.session-memory.md</text>
+  <text x="380" y="326" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">Auto-updated per session</text>
+  <text x="380" y="342" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">Token threshold gated</text>
+
+  <!-- Team Memory box -->
+  <rect x="520" y="268" width="220" height="80" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="630" y="292" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">Team Memory</text>
+  <text x="630" y="310" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">Shared directory</text>
+  <text x="630" y="326" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">Secret scanning guard</text>
+  <text x="630" y="342" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">feature(TEAMMEM) gated</text>
+
+  <!-- Arrow findRelevantMemories → Magic Docs -->
+  <line x1="130" y1="348" x2="130" y2="408" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Magic Docs box -->
+  <rect x="20" y="408" width="220" height="80" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="130" y="432" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">Magic Docs</text>
+  <text x="130" y="450" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle"># MAGIC DOC: tag</text>
+  <text x="130" y="466" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">Tracked on FileReadTool</text>
+  <text x="130" y="482" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">Auto-updated via runAgent()</text>
+</svg>

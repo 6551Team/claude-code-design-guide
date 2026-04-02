@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 400" font-family="Arial,sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="340" y="28" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Permission Propagation — Bubble Mode</text>
+
+  <!-- User box -->
+  <rect x="40" y="55" width="130" height="50" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="105" y="77" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">User</text>
+  <text x="105" y="96" text-anchor="middle" font-size="11" fill="#374151">(has UI / terminal)</text>
+
+  <!-- Parent Agent box -->
+  <rect x="255" y="55" width="170" height="50" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="340" y="77" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">Parent Agent</text>
+  <text x="340" y="96" text-anchor="middle" font-size="11" fill="#374151">toolPermissionContext</text>
+
+  <!-- Sub-agent box -->
+  <rect x="510" y="55" width="140" height="50" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="580" y="77" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">Sub-Agent</text>
+  <text x="580" y="96" text-anchor="middle" font-size="11" fill="#374151">(no UI)</text>
+
+  <!-- Sub-agent → Parent: permission request bubbles -->
+  <line x1="510" y1="80" x2="425" y2="80" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="467" y="72" text-anchor="middle" font-size="11" fill="#666">permission</text>
+  <text x="467" y="85" text-anchor="middle" font-size="11" fill="#666">request bubbles</text>
+
+  <!-- Parent → User: bubble -->
+  <line x1="255" y1="80" x2="170" y2="80" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="212" y="72" text-anchor="middle" font-size="11" fill="#666">bubble</text>
+
+  <!-- Downward arrow under parent -->
+  <line x1="340" y1="105" x2="340" y2="145" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- toolPermissionContext controls box -->
+  <rect x="180" y="145" width="320" height="38" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="340" y="164" text-anchor="middle" font-size="13" fill="#92400e">toolPermissionContext controls</text>
+  <text x="340" y="179" text-anchor="middle" font-size="11" fill="#92400e">canShowPermissionPrompts · runHooks · logDecision</text>
+
+  <!-- Permission modes section -->
+  <line x1="340" y1="183" x2="340" y2="213" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="60" y="213" width="560" height="100" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="340" y="234" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Permission Mode Resolution</text>
+
+  <!-- bubble mode -->
+  <rect x="75" y="245" width="155" height="56" rx="4" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="152" y="263" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">bubble mode</text>
+  <text x="152" y="278" text-anchor="middle" font-size="11" fill="#374151">requests always</text>
+  <text x="152" y="291" text-anchor="middle" font-size="11" fill="#374151">bubble to parent UI</text>
+
+  <!-- acceptEdits mode -->
+  <rect x="262" y="245" width="155" height="56" rx="4" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="339" y="263" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">acceptEdits mode</text>
+  <text x="339" y="278" text-anchor="middle" font-size="11" fill="#374151">worker default</text>
+  <text x="339" y="291" text-anchor="middle" font-size="11" fill="#374151">auto-accept edits</text>
+
+  <!-- bypassPermissions -->
+  <rect x="450" y="245" width="155" height="56" rx="4" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="527" y="263" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">bypassPermissions</text>
+  <text x="527" y="278" text-anchor="middle" font-size="11" fill="#374151">parent mode</text>
+  <text x="527" y="291" text-anchor="middle" font-size="11" fill="#374151">cannot be overridden</text>
+
+  <!-- Note -->
+  <rect x="110" y="330" width="460" height="50" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="340" y="350" text-anchor="middle" font-size="12" font-weight="bold" fill="#92400e">Security: sub-agents cannot make permission decisions</text>
+  <text x="340" y="368" text-anchor="middle" font-size="11" fill="#92400e">cliArg rules (--allowedTools) are always preserved · runAgent.ts:466</text>
+</svg>

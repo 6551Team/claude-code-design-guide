@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+  </defs>
+
+  <text x="300" y="30" font-family="Arial,sans-serif" font-size="16" fill="#1e40af" text-anchor="middle" font-weight="bold">Module Dependencies</text>
+
+  <!-- transitions.ts -->
+  <rect x="200" y="70" width="200" height="60" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="300" y="95" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">transitions.ts</text>
+  <text x="300" y="115" font-family="Arial,sans-serif" font-size="12" fill="#666" text-anchor="middle">(entry, state machine)</text>
+
+  <!-- Arrow down -->
+  <path d="M 300 130 L 300 170" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Three modules -->
+  <rect x="50" y="170" width="150" height="60" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="125" y="195" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">motions.ts</text>
+  <text x="125" y="215" font-family="Arial,sans-serif" font-size="11" fill="#666" text-anchor="middle">(cursor movement)</text>
+
+  <rect x="225" y="170" width="150" height="60" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="300" y="195" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">operators.ts</text>
+  <text x="300" y="215" font-family="Arial,sans-serif" font-size="11" fill="#666" text-anchor="middle">(operation execution)</text>
+
+  <rect x="400" y="170" width="150" height="60" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="475" y="195" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">textObjects.ts</text>
+  <text x="475" y="215" font-family="Arial,sans-serif" font-size="11" fill="#666" text-anchor="middle">(range selection)</text>
+
+  <!-- Arrows from transitions to modules -->
+  <path d="M 250 130 L 125 170" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 350 130 L 475 170" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Arrow from textObjects down -->
+  <path d="M 300 230 L 300 280" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Editor State -->
+  <rect x="150" y="280" width="300" height="80" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="300" y="310" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">Editor State</text>
+  <text x="300" y="335" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">(cursor position, text content)</text>
+</svg>

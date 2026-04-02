@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" width="720" height="420">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="360" y="28" font-family="Arial,sans-serif" font-size="15" fill="#1e40af" text-anchor="middle" font-weight="bold">Memory Retrieval Pipeline (findRelevantMemories)</text>
+
+  <!-- User Query box -->
+  <rect x="270" y="45" width="180" height="40" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="360" y="70" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">User Query</text>
+
+  <!-- Arrow down -->
+  <line x1="360" y1="85" x2="360" y2="115" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- scanMemoryFiles box -->
+  <rect x="210" y="115" width="300" height="40" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="360" y="140" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">scanMemoryFiles(memoryDir)</text>
+
+  <!-- Arrow down -->
+  <line x1="360" y1="155" x2="360" y2="185" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Filter alreadySurfaced box -->
+  <rect x="195" y="185" width="330" height="40" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="360" y="210" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">Filter alreadySurfaced (exclude shown memories)</text>
+
+  <!-- Arrow down -->
+  <line x1="360" y1="225" x2="360" y2="255" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- selectRelevantMemories box -->
+  <rect x="185" y="255" width="350" height="80" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="360" y="278" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">selectRelevantMemories()</text>
+  <text x="360" y="298" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">Call Sonnet model with SELECT_MEMORIES_SYSTEM_PROMPT</text>
+  <text x="360" y="314" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">Input: query + manifest | Output: up to 5 filenames</text>
+  <text x="360" y="330" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">Skip tool-usage refs if recentTools present</text>
+
+  <!-- Arrow down -->
+  <line x1="360" y1="335" x2="360" y2="365" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Return result box -->
+  <rect x="210" y="365" width="300" height="40" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="360" y="390" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">Return { path, mtimeMs }[] (relevant memories)</text>
+</svg>

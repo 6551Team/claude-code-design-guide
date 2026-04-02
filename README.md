@@ -106,4 +106,19 @@ Claude Code 是 Anthropic 官方发布的 AI 编程助手 CLI 工具。它不只
 
 ---
 
+## 进阶阅读
+
+如果你想深入了解 Claude Code 的源码实现细节，可以阅读我们的进阶文档：
+
+**[📚 Claude Code 源码架构分析](./architecture/README.md)** | **[English Version](./architecture/README_EN.md)**
+
+进阶文档包含：
+- 完整的源码树结构（1884个TypeScript文件）
+- 6层架构设计详解
+- 查询引擎、工具系统、权限模型的实现细节
+- 40+工具、70+ Hooks、87+命令的源码分析
+- 完整的模块依赖图和数据流图
+
+---
+
 *本书开源，欢迎贡献和勘误。*

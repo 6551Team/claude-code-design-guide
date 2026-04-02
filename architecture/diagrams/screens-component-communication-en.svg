@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <rect x="250" y="20" width="200" height="50" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="45" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">AppStateProvider</text>
+  <text x="350" y="60" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">(global state)</text>
+
+  <line x1="350" y1="70" x2="150" y2="130" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="220" y="95" font-family="Arial,sans-serif" font-size="10" fill="#666">session state</text>
+
+  <line x1="350" y1="70" x2="350" y2="130" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="360" y="105" font-family="Arial,sans-serif" font-size="10" fill="#666">session list</text>
+
+  <line x1="350" y1="70" x2="550" y2="130" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="480" y="95" font-family="Arial,sans-serif" font-size="10" fill="#666">env config</text>
+
+  <rect x="50" y="130" width="200" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="150" y="155" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">REPL</text>
+  <text x="150" y="170" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">(display/interaction)</text>
+
+  <rect x="250" y="130" width="200" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="150" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">ResumeConversation</text>
+  <text x="350" y="170" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">(restoration selection)</text>
+
+  <rect x="450" y="130" width="200" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="550" y="155" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">Doctor</text>
+  <text x="550" y="170" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">(diagnostic checks)</text>
+
+  <rect x="250" y="230" width="200" height="50" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="350" y="255" font-family="Arial,sans-serif" font-size="14" fill="#78350f" text-anchor="middle" font-weight="bold">StatsProvider</text>
+  <text x="350" y="270" font-family="Arial,sans-serif" font-size="11" fill="#78350f" text-anchor="middle">(telemetry)</text>
+
+  <line x1="350" y1="280" x2="350" y2="310" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="360" y="300" font-family="Arial,sans-serif" font-size="10" fill="#666">usage metrics</text>
+
+  <rect x="250" y="310" width="200" height="50" fill="#f0f4f8" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="350" y="340" font-family="Arial,sans-serif" font-size="13" fill="#78350f" text-anchor="middle">All child components</text>
+
+  <rect x="250" y="390" width="200" height="50" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="5"/>
+  <text x="350" y="410" font-family="Arial,sans-serif" font-size="14" fill="#14532d" text-anchor="middle" font-weight="bold">FpsMetricsProvider</text>
+  <text x="350" y="428" font-family="Arial,sans-serif" font-size="11" fill="#14532d" text-anchor="middle">(performance)</text>
+
+  <line x1="250" y1="415" x2="150" y2="180" stroke="#16a34a" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="180" y="300" font-family="Arial,sans-serif" font-size="10" fill="#16a34a">frame timing</text>
+</svg>

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 480" width="700" height="480">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#666"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="350" y="28" font-family="Arial,sans-serif" font-size="15" font-weight="bold" fill="#1e40af" text-anchor="middle">State Flow Overview</text>
+
+  <!-- Process Startup -->
+  <rect x="270" y="44" width="160" height="36" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="350" y="67" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold">Process Startup</text>
+
+  <!-- Vertical down then branch -->
+  <line x1="350" y1="80" x2="350" y2="100" stroke="#666" stroke-width="1.5"/>
+  <line x1="175" y1="100" x2="525" y2="100" stroke="#666" stroke-width="1.5"/>
+  <line x1="175" y1="100" x2="175" y2="118" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="525" y1="100" x2="525" y2="118" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Bootstrap State box -->
+  <rect x="30" y="120" width="290" height="130" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="175" y="142" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">Bootstrap State</text>
+  <text x="175" y="158" font-family="Arial,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">getInitialState() — global mutable singleton</text>
+  <line x1="50" y1="167" x2="300" y2="167" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="175" y="182" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">• Read/write via get*/set* functions</text>
+  <text x="175" y="198" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">• Lifecycle: process-level</text>
+  <text x="175" y="214" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">• sessionId, apiKey, totalCostUSD,</text>
+  <text x="175" y="230" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">  feature flags, telemetry providers</text>
+  <text x="175" y="245" font-family="Arial,sans-serif" font-size="10" fill="#ef4444" text-anchor="middle">⚠ "DO NOT ADD MORE STATE HERE"</text>
+
+  <!-- AppStateProvider box -->
+  <rect x="380" y="120" width="290" height="130" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="525" y="142" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">AppStateProvider</text>
+  <text x="525" y="158" font-family="Arial,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">createStore(getDefaultAppState())</text>
+  <line x1="400" y1="167" x2="650" y2="167" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="525" y="182" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">• Immutable (DeepImmutable)</text>
+  <text x="525" y="198" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">• setState(updater) → triggers listeners</text>
+  <text x="525" y="214" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">• onChangeAppState callback</text>
+  <text x="525" y="230" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">• Lifecycle: React component tree level</text>
+  <text x="525" y="245" font-family="Arial,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">messages, tasks, UI modes, permissions</text>
+
+  <!-- Arrows down from both boxes -->
+  <line x1="175" y1="250" x2="175" y2="284" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="525" y1="250" x2="525" y2="284" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Non-React Code box -->
+  <rect x="30" y="286" width="290" height="76" rx="5" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text x="175" y="306" font-family="Arial,sans-serif" font-size="13" fill="#166534" text-anchor="middle" font-weight="bold">Non-React Code</text>
+  <text x="175" y="322" font-family="Arial,sans-serif" font-size="11" fill="#166534" text-anchor="middle">(tools, API calls, services)</text>
+  <text x="175" y="340" font-family="Arial,sans-serif" font-size="11" fill="#166534" text-anchor="middle">Direct access: getSessionId(), getTotalCostUSD()</text>
+  <text x="175" y="356" font-family="Arial,sans-serif" font-size="11" fill="#166534" text-anchor="middle">store.getState() / store.setState()</text>
+
+  <!-- React Components box -->
+  <rect x="380" y="286" width="290" height="76" rx="5" fill="#fdf4ff" stroke="#9333ea" stroke-width="2"/>
+  <text x="525" y="306" font-family="Arial,sans-serif" font-size="13" fill="#6b21a8" text-anchor="middle" font-weight="bold">React Components</text>
+  <text x="525" y="322" font-family="Arial,sans-serif" font-size="11" fill="#6b21a8" text-anchor="middle">useSyncExternalStore(store)</text>
+  <text x="525" y="340" font-family="Arial,sans-serif" font-size="11" fill="#6b21a8" text-anchor="middle">useContext(AppStoreContext)</text>
+  <text x="525" y="356" font-family="Arial,sans-serif" font-size="11" fill="#6b21a8" text-anchor="middle">useContext(...) — Context Providers</text>
+
+  <!-- onChangeAppState sync arrow -->
+  <line x1="525" y1="250" x2="260" y2="250" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+  <text x="390" y="244" font-family="Arial,sans-serif" font-size="10" fill="#b45309" text-anchor="middle">onChangeAppState sync</text>
+
+  <!-- Bottom note -->
+  <rect x="30" y="390" width="640" height="52" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="350" y="410" font-family="Arial,sans-serif" font-size="11" fill="#475569" text-anchor="middle" font-weight="bold">Key Design Principle</text>
+  <text x="350" y="428" font-family="Arial,sans-serif" font-size="11" fill="#475569" text-anchor="middle">Bootstrap: process-init state, low-freq, accessible from non-React code</text>
+  <text x="350" y="444" font-family="Arial,sans-serif" font-size="11" fill="#475569" text-anchor="middle">AppState: runtime high-freq UI state, immutable, drives React rendering</text>
+</svg>

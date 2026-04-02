@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 600">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="25" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">Telemetry Data Flow</text>
+
+  <rect x="250" y="50" width="200" height="50" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="70" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">Operation occurs</text>
+  <text x="350" y="88" font-family="Arial,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">API call / tool exec / user interaction</text>
+
+  <rect x="50" y="140" width="150" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="125" y="160" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">logEvent()</text>
+  <text x="125" y="178" font-family="Arial,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">→ AnalyticsSink</text>
+
+  <rect x="220" y="140" width="150" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="295" y="160" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">logOTelEvent()</text>
+  <text x="295" y="178" font-family="Arial,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">→ LoggerProvider</text>
+
+  <rect x="390" y="140" width="150" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="465" y="160" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">sessionTracing</text>
+  <text x="465" y="178" font-family="Arial,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">→ OTel spans</text>
+
+  <rect x="560" y="140" width="120" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="620" y="160" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">cost-tracker</text>
+  <text x="620" y="178" font-family="Arial,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">→ session costs</text>
+
+  <rect x="50" y="220" width="150" height="60" fill="#f8fafc" stroke="#64748b" stroke-width="1" rx="3"/>
+  <text x="125" y="240" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">Datadog</text>
+  <text x="125" y="255" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">+</text>
+  <text x="125" y="270" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">1P event log</text>
+
+  <rect x="220" y="220" width="150" height="80" fill="#f8fafc" stroke="#64748b" stroke-width="1" rx="3"/>
+  <text x="295" y="240" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">Exporters:</text>
+  <text x="295" y="255" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">• console</text>
+  <text x="295" y="270" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">• otlp (grpc/http)</text>
+  <text x="295" y="285" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">• prometheus</text>
+  <text x="295" y="300" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">• BigQuery</text>
+
+  <rect x="390" y="220" width="150" height="100" fill="#f8fafc" stroke="#64748b" stroke-width="1" rx="3"/>
+  <text x="465" y="240" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">Span hierarchy:</text>
+  <text x="465" y="255" font-family="Arial,sans-serif" font-size="9" fill="#475569" text-anchor="middle">• startInteractionSpan</text>
+  <text x="465" y="268" font-family="Arial,sans-serif" font-size="9" fill="#475569" text-anchor="middle">  • startLLMRequestSpan</text>
+  <text x="465" y="281" font-family="Arial,sans-serif" font-size="9" fill="#475569" text-anchor="middle">    (ttft_ms, tokens)</text>
+  <text x="465" y="294" font-family="Arial,sans-serif" font-size="9" fill="#475569" text-anchor="middle">  • startToolSpan</text>
+  <text x="465" y="307" font-family="Arial,sans-serif" font-size="9" fill="#475569" text-anchor="middle">    • BlockedOnUserSpan</text>
+
+  <rect x="560" y="220" width="120" height="60" fill="#f8fafc" stroke="#64748b" stroke-width="1" rx="3"/>
+  <text x="620" y="240" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">Per-model</text>
+  <text x="620" y="255" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">accumulation</text>
+  <text x="620" y="270" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">→ persist to</text>
+
+  <rect x="200" y="360" width="300" height="60" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="5"/>
+  <text x="350" y="382" font-family="Arial,sans-serif" font-size="12" fill="#14532d" text-anchor="middle" font-weight="bold">Plugin Telemetry</text>
+  <text x="350" y="398" font-family="Arial,sans-serif" font-size="10" fill="#14532d" text-anchor="middle">hashPluginId() → SHA256 truncated to 16 chars</text>
+  <text x="350" y="413" font-family="Arial,sans-serif" font-size="10" fill="#14532d" text-anchor="middle">logPluginsEnabledForSession() / logPluginLoadErrors()</text>
+
+  <rect x="200" y="450" width="300" height="50" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="350" y="470" font-family="Arial,sans-serif" font-size="12" fill="#78350f" text-anchor="middle">Perfetto</text>
+  <text x="350" y="488" font-family="Arial,sans-serif" font-size="10" fill="#78350f" text-anchor="middle">Parallel file tracing (debug mode)</text>
+
+  <line x1="350" y1="100" x2="125" y2="140" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="350" y1="100" x2="295" y2="140" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="350" y1="100" x2="465" y2="140" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="350" y1="100" x2="620" y2="140" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <line x1="125" y1="190" x2="125" y2="220" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="295" y1="190" x2="295" y2="220" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="465" y1="190" x2="465" y2="220" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="620" y1="190" x2="620" y2="220" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <line x1="350" y1="100" x2="350" y2="360" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="350" y1="420" x2="350" y2="450" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

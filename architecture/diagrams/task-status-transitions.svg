@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <rect x="50" y="120" width="120" height="50" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="110" y="150" font-family="Arial,sans-serif" font-size="14" fill="#78350f" text-anchor="middle" font-weight="bold">pending</text>
+
+  <rect x="290" y="120" width="120" height="50" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="150" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">running</text>
+
+  <rect x="530" y="30" width="120" height="50" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="5"/>
+  <text x="590" y="60" font-family="Arial,sans-serif" font-size="14" fill="#14532d" text-anchor="middle" font-weight="bold">completed</text>
+
+  <rect x="530" y="120" width="120" height="50" fill="#fee2e2" stroke="#dc2626" stroke-width="2" rx="5"/>
+  <text x="590" y="150" font-family="Arial,sans-serif" font-size="14" fill="#7f1d1d" text-anchor="middle" font-weight="bold">failed</text>
+
+  <rect x="530" y="210" width="120" height="50" fill="#f3f4f6" stroke="#6b7280" stroke-width="2" rx="5"/>
+  <text x="590" y="240" font-family="Arial,sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">cancelled</text>
+
+  <line x1="170" y1="145" x2="290" y2="145" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="230" y="135" font-family="Arial,sans-serif" font-size="11" fill="#666">[start]</text>
+
+  <line x1="410" y1="130" x2="530" y2="60" stroke="#16a34a" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="470" y="85" font-family="Arial,sans-serif" font-size="11" fill="#16a34a">[success]</text>
+
+  <line x1="410" y1="145" x2="530" y2="145" stroke="#dc2626" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="470" y="135" font-family="Arial,sans-serif" font-size="11" fill="#dc2626">[failure]</text>
+
+  <line x1="410" y1="160" x2="530" y2="235" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="470" y="205" font-family="Arial,sans-serif" font-size="11" fill="#6b7280">[cancel]</text>
+</svg>

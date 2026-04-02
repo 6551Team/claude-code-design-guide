@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 380" width="500" height="380">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="250" y="28" font-family="Arial,sans-serif" font-size="15" font-weight="bold" fill="#1e40af" text-anchor="middle">Provider Nesting Order</text>
+
+  <!-- Layer 1: AppStateProvider -->
+  <rect x="30" y="50" width="440" height="290" rx="8" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="250" y="72" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">AppStateProvider</text>
+  <text x="250" y="90" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">(cross-session persistent UI state)</text>
+  <text x="250" y="106" font-family="Arial,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">messages, settings, toolPermissionContext, tasks</text>
+  <text x="250" y="120" font-family="Arial,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Lifecycle: React component tree — changes LOW to MEDIUM frequency</text>
+
+  <!-- Layer 2: StatsContext -->
+  <rect x="65" y="138" width="370" height="166" rx="8" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+  <text x="250" y="160" font-family="Arial,sans-serif" font-size="13" fill="#0369a1" text-anchor="middle" font-weight="bold">StatsContext</text>
+  <text x="250" y="177" font-family="Arial,sans-serif" font-size="11" fill="#0369a1" text-anchor="middle">(cross-request accumulated statistics)</text>
+  <text x="250" y="193" font-family="Arial,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">StatsStore.observe(name, value) — per-request metrics</text>
+  <text x="250" y="208" font-family="Arial,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Lifecycle: per API request — changes MEDIUM frequency</text>
+
+  <!-- Layer 3: FpsMetricsContext -->
+  <rect x="105" y="224" width="290" height="62" rx="8" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+  <text x="250" y="246" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold">FpsMetricsContext</text>
+  <text x="250" y="263" font-family="Arial,sans-serif" font-size="11" fill="#92400e" text-anchor="middle">(per-frame performance metrics)</text>
+  <text x="250" y="277" font-family="Arial,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">average fps, low1Pct — Lifecycle: per render frame — changes HIGH frequency</text>
+
+  <!-- Business Component Tree indicator -->
+  <text x="250" y="318" font-family="Arial,sans-serif" font-size="12" fill="#374151" text-anchor="middle">↓  Business Component Tree  ↓</text>
+  <text x="250" y="336" font-family="Arial,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">FPS updates only re-render FPS subscribers, not the full AppState tree</text>
+</svg>

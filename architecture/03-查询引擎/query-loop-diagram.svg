@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="780" viewBox="0 0 900 780">
+  <defs>
+    <marker id="arr-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#3b82f6"/>
+    </marker>
+    <marker id="arr-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#d97706"/>
+    </marker>
+    <marker id="arr-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#059669"/>
+    </marker>
+    <marker id="arr-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#dc2626"/>
+    </marker>
+  </defs>
+  <rect width="900" height="780" fill="white"/>
+
+  <!-- Title -->
+  <text x="450" y="34" font-family="'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="bold" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">queryLoop() 五阶段循环</text>
+
+  <!-- Phase 1: Context Preparation -->
+  <rect x="150" y="68" width="600" height="110" rx="8" fill="#fff3bf" stroke="#d97706" stroke-width="2"/>
+  <text x="450" y="92" font-family="'Segoe UI',system-ui,sans-serif" font-size="16" font-weight="600" fill="#92400e" text-anchor="middle" dominant-baseline="middle">Phase 1: 上下文准备</text>
+  <text x="450" y="114" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">applyToolResultBudget (>20KB 持久化)</text>
+  <text x="450" y="134" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">snipCompact → microcompact → contextCollapse</text>
+  <text x="450" y="152" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">autocompact → 组装 fullSystemPrompt → 创建 StreamingToolExecutor</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="450" y1="180" x2="450" y2="208" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Phase 2: API Call -->
+  <rect x="150" y="210" width="600" height="98" rx="8" fill="#a5d8ff" stroke="#1e40af" stroke-width="2"/>
+  <text x="450" y="234" font-family="'Segoe UI',system-ui,sans-serif" font-size="16" font-weight="600" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">Phase 2: API 调用</text>
+  <text x="450" y="256" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">deps.callModel() → queryModelWithStreaming</text>
+  <text x="450" y="276" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">流式接收事件 · 构建 assistantMessages[] · 检测 tool_use block</text>
+  <text x="450" y="294" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">处理 fallback · max_output_tokens 恢复 · reactiveCompact</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="450" y1="310" x2="450" y2="338" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Phase 3: Tool Execution -->
+  <rect x="150" y="340" width="600" height="98" rx="8" fill="#c3fae8" stroke="#059669" stroke-width="2"/>
+  <text x="450" y="364" font-family="'Segoe UI',system-ui,sans-serif" font-size="16" font-weight="600" fill="#065f46" text-anchor="middle" dominant-baseline="middle">Phase 3: 工具执行</text>
+  <text x="450" y="386" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">runTools() → partitionToolCalls() → concurrent/serial batches</text>
+  <text x="450" y="406" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">StreamingToolExecutor → getCompletedResults() + getRemainingResults()</text>
+  <text x="450" y="424" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">runToolUse() → 权限检查 → execute → 结果处理 → postSamplingHooks</text>
+
+  <!-- Arrow 3→4 -->
+  <line x1="450" y1="440" x2="450" y2="468" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Phase 4: Stop Hooks -->
+  <rect x="150" y="470" width="600" height="86" rx="8" fill="#dbe4ff" stroke="#3730a3" stroke-width="2"/>
+  <text x="450" y="494" font-family="'Segoe UI',system-ui,sans-serif" font-size="16" font-weight="600" fill="#3730a3" text-anchor="middle" dominant-baseline="middle">Phase 4: 停止钩子</text>
+  <text x="450" y="516" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">handleStopHooks() → 执行各停止钩子</text>
+  <text x="450" y="536" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">Token Budget 检查 · blockingErrors / preventContinuation 判定</text>
+
+  <!-- Arrow 4→5 -->
+  <line x1="450" y1="558" x2="450" y2="586" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Phase 5: Continue/Terminate -->
+  <rect x="150" y="588" width="600" height="98" rx="8" fill="#d0bfff" stroke="#9333ea" stroke-width="2"/>
+  <text x="450" y="612" font-family="'Segoe UI',system-ui,sans-serif" font-size="16" font-weight="600" fill="#6b21a8" text-anchor="middle" dominant-baseline="middle">Phase 5: 继续/终止判定</text>
+  <text x="450" y="634" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">工具结果附加到消息列表 · 获取 attachment messages</text>
+  <text x="450" y="654" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">检查 maxTurns 限制 · 组装下一个 State 对象</text>
+  <text x="450" y="672" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">state = next → 回到 while(true) 头部</text>
+
+  <!-- Loop back arrow (left side) -->
+  <line x1="150" y1="638" x2="90" y2="638" stroke="#d97706" stroke-width="2"/>
+  <line x1="90" y1="638" x2="90" y2="123" stroke="#d97706" stroke-width="2"/>
+  <line x1="90" y1="123" x2="148" y2="123" stroke="#d97706" stroke-width="2" marker-end="url(#arr-orange)"/>
+  <text x="60" y="380" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#d97706" text-anchor="middle" dominant-baseline="middle">Loop</text>
+
+  <!-- Terminate arrow (right side) -->
+  <line x1="752" y1="638" x2="820" y2="638" stroke="#dc2626" stroke-width="2" marker-end="url(#arr-red)"/>
+  <text x="800" y="628" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle" dominant-baseline="middle">9 种终止原因</text>
+
+  <!-- Footer note -->
+  <rect x="150" y="710" width="600" height="28" rx="5" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+  <text x="450" y="724" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">completed · aborted_streaming · aborted_tools · model_error · image_error · prompt_too_long · blocking_limit · hook_stopped · max_turns</text>
+</svg>

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 360" font-family="Arial,sans-serif">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0,10 3,0 6" fill="#666"/>
+    </marker>
+  </defs>
+  <rect width="700" height="360" fill="white"/>
+
+  <!-- Title -->
+  <text x="350" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e40af">API Client Architecture</text>
+
+  <!-- query.ts -->
+  <rect x="275" y="50" width="150" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="75" text-anchor="middle" font-size="13" fill="#1e40af">query.ts</text>
+
+  <!-- Arrow to claude.ts -->
+  <line x1="350" y1="90" x2="350" y2="118" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- claude.ts -->
+  <rect x="215" y="118" width="270" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="143" text-anchor="middle" font-size="13" fill="#1e40af">claude.ts::queryModelWithStreaming()</text>
+
+  <!-- Four arrows to child modules -->
+  <!-- client.ts -->
+  <line x1="250" y1="158" x2="130" y2="215" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+  <!-- withRetry.ts -->
+  <line x1="310" y1="158" x2="295" y2="215" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+  <!-- errors.ts -->
+  <line x1="395" y1="158" x2="430" y2="215" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+  <!-- logging.ts -->
+  <line x1="455" y1="158" x2="575" y2="215" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- client.ts box -->
+  <rect x="35" y="215" width="185" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="127" y="236" text-anchor="middle" font-size="12" fill="#1e40af">client.ts</text>
+  <text x="127" y="252" text-anchor="middle" font-size="11" fill="#6b7280">getAnthropicClient()</text>
+  <text x="127" y="266" text-anchor="middle" font-size="11" fill="#6b7280">Backend Routing</text>
+
+  <!-- withRetry.ts box -->
+  <rect x="235" y="215" width="130" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="300" y="236" text-anchor="middle" font-size="12" fill="#1e40af">withRetry.ts</text>
+  <text x="300" y="252" text-anchor="middle" font-size="11" fill="#6b7280">Retry Engine</text>
+  <text x="300" y="266" text-anchor="middle" font-size="11" fill="#6b7280">Exponential Backoff</text>
+
+  <!-- errors.ts box -->
+  <rect x="380" y="215" width="130" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="445" y="236" text-anchor="middle" font-size="12" fill="#1e40af">errors.ts</text>
+  <text x="445" y="252" text-anchor="middle" font-size="11" fill="#6b7280">Error Classification</text>
+  <text x="445" y="266" text-anchor="middle" font-size="11" fill="#6b7280">classifyAPIError()</text>
+
+  <!-- logging.ts box -->
+  <rect x="525" y="215" width="150" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="600" y="236" text-anchor="middle" font-size="12" fill="#1e40af">logging.ts</text>
+  <text x="600" y="252" text-anchor="middle" font-size="11" fill="#6b7280">Usage Tracking</text>
+  <text x="600" y="266" text-anchor="middle" font-size="11" fill="#6b7280">Gateway Detection</text>
+
+  <!-- Backend boxes under client.ts -->
+  <text x="127" y="295" text-anchor="middle" font-size="11" fill="#9ca3af">Routes to:</text>
+  <rect x="10" y="305" width="90" height="30" fill="#fef9c3" stroke="#ca8a04" stroke-width="1" rx="3"/>
+  <text x="55" y="324" text-anchor="middle" font-size="10" fill="#78350f">Anthropic</text>
+  <rect x="108" y="305" width="65" height="30" fill="#fef9c3" stroke="#ca8a04" stroke-width="1" rx="3"/>
+  <text x="140" y="324" text-anchor="middle" font-size="10" fill="#78350f">Bedrock</text>
+  <rect x="181" y="305" width="55" height="30" fill="#fef9c3" stroke="#ca8a04" stroke-width="1" rx="3"/>
+  <text x="208" y="324" text-anchor="middle" font-size="10" fill="#78350f">Vertex</text>
+
+  <line x1="55" y1="265" x2="55" y2="305" stroke="#ca8a04" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="140" y1="265" x2="140" y2="305" stroke="#ca8a04" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="208" y1="265" x2="208" y2="305" stroke="#ca8a04" stroke-width="1" stroke-dasharray="3,3"/>
+</svg>

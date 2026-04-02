@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+  </defs>
+
+  <!-- CLI / REPL -->
+  <rect x="50" y="30" width="150" height="100" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="125" y="60" font-family="Arial,sans-serif" fill="#1e40af" font-size="13" font-weight="bold" text-anchor="middle">CLI / REPL</text>
+  <text x="125" y="85" font-family="Arial,sans-serif" fill="#666" font-size="11" text-anchor="middle">用户交互层</text>
+
+  <!-- Teleport API -->
+  <rect x="275" y="30" width="150" height="100" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="60" font-family="Arial,sans-serif" fill="#1e40af" font-size="13" font-weight="bold" text-anchor="middle">Teleport API</text>
+  <text x="350" y="80" font-family="Arial,sans-serif" fill="#666" font-size="11" text-anchor="middle">api.ts (467行)</text>
+
+  <!-- Remote Session -->
+  <rect x="500" y="30" width="150" height="100" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="575" y="60" font-family="Arial,sans-serif" fill="#1e40af" font-size="13" font-weight="bold" text-anchor="middle">Remote Session</text>
+  <text x="575" y="85" font-family="Arial,sans-serif" fill="#666" font-size="11" text-anchor="middle">云端执行环境</text>
+
+  <!-- Arrows CLI to API -->
+  <line x1="200" y1="80" x2="275" y2="80" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Arrows API to Remote -->
+  <line x1="425" y1="80" x2="500" y2="80" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Git Bundle -->
+  <rect x="275" y="170" width="150" height="60" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="350" y="195" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold" text-anchor="middle">Git Bundle</text>
+  <text x="350" y="215" font-family="Arial,sans-serif" fill="#666" font-size="11" text-anchor="middle">gitBundle.ts</text>
+
+  <!-- Arrow from API to Git Bundle -->
+  <line x1="350" y1="130" x2="350" y2="170" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Arrow from Git Bundle to Remote -->
+  <line x1="425" y1="200" x2="575" y2="130" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Environments API -->
+  <rect x="50" y="270" width="150" height="60" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="125" y="295" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold" text-anchor="middle">Environments API</text>
+  <text x="125" y="315" font-family="Arial,sans-serif" fill="#666" font-size="11" text-anchor="middle">environments.ts</text>
+
+  <!-- Arrow from CLI to Environments -->
+  <line x1="125" y1="130" x2="125" y2="270" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Arrow from Environments to Remote -->
+  <line x1="200" y1="300" x2="575" y2="130" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Ultraplan -->
+  <rect x="500" y="270" width="150" height="60" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="575" y="295" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold" text-anchor="middle">Ultraplan</text>
+  <text x="575" y="315" font-family="Arial,sans-serif" fill="#666" font-size="11" text-anchor="middle">utils/ultraplan/</text>
+
+  <!-- Arrow from CLI to Ultraplan -->
+  <line x1="125" y1="130" x2="575" y2="270" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Arrow from Remote to Ultraplan -->
+  <line x1="575" y1="130" x2="575" y2="270" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

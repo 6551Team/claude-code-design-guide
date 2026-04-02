@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620">
+  <defs>
+    <marker id="arr-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#3b82f6"/>
+    </marker>
+    <marker id="arr-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#059669"/>
+    </marker>
+  </defs>
+  <rect width="900" height="620" fill="white"/>
+
+  <!-- Title -->
+  <text x="450" y="34" font-family="'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="bold" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">工具系统架构</text>
+
+  <!-- Top: tools.ts -->
+  <rect x="250" y="68" width="400" height="68" rx="10" fill="#a5d8ff" stroke="#1e40af" stroke-width="2.5"/>
+  <text x="450" y="92" font-family="'Segoe UI',system-ui,sans-serif" font-size="18" font-weight="600" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">tools.ts (注册总表)</text>
+  <text x="450" y="116" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">getAllBaseTools() · getTools() · assembleToolPool()</text>
+
+  <!-- Arrow down -->
+  <line x1="450" y1="138" x2="450" y2="166" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Middle: Tool.ts -->
+  <rect x="250" y="168" width="400" height="68" rx="10" fill="#fff3bf" stroke="#d97706" stroke-width="2"/>
+  <text x="450" y="192" font-family="'Segoe UI',system-ui,sans-serif" font-size="18" font-weight="600" fill="#92400e" text-anchor="middle" dominant-baseline="middle">Tool.ts (类型定义)</text>
+  <text x="450" y="216" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">Tool 接口 · ToolUseContext (40+ 属性)</text>
+
+  <!-- Arrow down -->
+  <line x1="450" y1="238" x2="450" y2="266" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Bottom: services/tools/ -->
+  <rect x="250" y="268" width="400" height="88" rx="10" fill="#c3fae8" stroke="#059669" stroke-width="2"/>
+  <text x="450" y="292" font-family="'Segoe UI',system-ui,sans-serif" font-size="18" font-weight="600" fill="#065f46" text-anchor="middle" dominant-baseline="middle">services/tools/ (编排层)</text>
+  <text x="450" y="314" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">toolOrchestration.ts · toolExecution.ts</text>
+  <text x="450" y="334" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">StreamingToolExecutor.ts · toolHooks.ts</text>
+
+  <!-- Arrow down to tools -->
+  <line x1="450" y1="358" x2="450" y2="386" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Tools grid -->
+  <rect x="60" y="388" width="780" height="200" rx="8" fill="#dbe4ff" stroke="#3730a3" stroke-width="2"/>
+  <text x="450" y="412" font-family="'Segoe UI',system-ui,sans-serif" font-size="16" font-weight="600" fill="#3730a3" text-anchor="middle" dominant-baseline="middle">tools/ (40+ 工具实现)</text>
+
+  <!-- Tool boxes in grid -->
+  <rect x="80" y="430" width="160" height="38" rx="6" fill="#e0e7ff" stroke="#4c51bf" stroke-width="1.5"/>
+  <text x="160" y="449" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#3730a3" text-anchor="middle" dominant-baseline="middle">AgentTool · BashTool</text>
+
+  <rect x="260" y="430" width="160" height="38" rx="6" fill="#e0e7ff" stroke="#4c51bf" stroke-width="1.5"/>
+  <text x="340" y="449" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#3730a3" text-anchor="middle" dominant-baseline="middle">FileRead · FileEdit</text>
+
+  <rect x="440" y="430" width="160" height="38" rx="6" fill="#e0e7ff" stroke="#4c51bf" stroke-width="1.5"/>
+  <text x="520" y="449" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#3730a3" text-anchor="middle" dominant-baseline="middle">FileWrite · GlobTool</text>
+
+  <rect x="620" y="430" width="160" height="38" rx="6" fill="#e0e7ff" stroke="#4c51bf" stroke-width="1.5"/>
+  <text x="700" y="449" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#3730a3" text-anchor="middle" dominant-baseline="middle">GrepTool · MCPTool</text>
+
+  <rect x="80" y="480" width="160" height="38" rx="6" fill="#e0e7ff" stroke="#4c51bf" stroke-width="1.5"/>
+  <text x="160" y="499" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#3730a3" text-anchor="middle" dominant-baseline="middle">WebFetch · WebSearch</text>
+
+  <rect x="260" y="480" width="160" height="38" rx="6" fill="#e0e7ff" stroke="#4c51bf" stroke-width="1.5"/>
+  <text x="340" y="499" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#3730a3" text-anchor="middle" dominant-baseline="middle">SkillTool · TodoWrite</text>
+
+  <rect x="440" y="480" width="160" height="38" rx="6" fill="#e0e7ff" stroke="#4c51bf" stroke-width="1.5"/>
+  <text x="520" y="499" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#3730a3" text-anchor="middle" dominant-baseline="middle">TaskCreate · TaskGet</text>
+
+  <rect x="620" y="480" width="160" height="38" rx="6" fill="#e0e7ff" stroke="#4c51bf" stroke-width="1.5"/>
+  <text x="700" y="499" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#3730a3" text-anchor="middle" dominant-baseline="middle">ToolSearch · LSPTool</text>
+
+  <rect x="80" y="530" width="160" height="38" rx="6" fill="#e0e7ff" stroke="#4c51bf" stroke-width="1.5"/>
+  <text x="160" y="549" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#3730a3" text-anchor="middle" dominant-baseline="middle">NotebookEdit · Cron</text>
+
+  <rect x="260" y="530" width="160" height="38" rx="6" fill="#e0e7ff" stroke="#4c51bf" stroke-width="1.5"/>
+  <text x="340" y="549" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#3730a3" text-anchor="middle" dominant-baseline="middle">RemoteTrigger · Brief</text>
+
+  <rect x="440" y="530" width="340" height="38" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="610" y="549" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">+ 20 more tools...</text>
+</svg>

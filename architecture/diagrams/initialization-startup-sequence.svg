@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 780" font-family="Arial,sans-serif">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0,10 3,0 6" fill="#666"/>
+    </marker>
+  </defs>
+  <rect width="820" height="780" fill="white"/>
+
+  <!-- Title -->
+  <text x="410" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e40af">Claude Code Startup Sequence</text>
+
+  <!-- Process Entry -->
+  <rect x="285" y="45" width="250" height="36" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="410" y="68" text-anchor="middle" font-size="13" fill="#1e40af">Process Entry (main_tsx_entry)</text>
+
+  <line x1="410" y1="81" x2="410" y2="105" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Parallel effects group -->
+  <rect x="100" y="105" width="620" height="70" fill="#eff6ff" stroke="#93c5fd" stroke-width="1" rx="5" stroke-dasharray="5,3"/>
+  <text x="160" y="120" font-size="11" fill="#3b82f6">Parallel Side Effects</text>
+  <rect x="120" y="125" width="175" height="36" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="207" y="148" text-anchor="middle" font-size="12" fill="#1e40af">startMdmRawRead()</text>
+  <rect x="315" y="125" width="200" height="36" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="415" y="148" text-anchor="middle" font-size="12" fill="#1e40af">startKeychainPrefetch()</text>
+  <rect x="530" y="125" width="175" height="36" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="617" y="148" text-anchor="middle" font-size="12" fill="#1e40af">import chain (~135ms)</text>
+
+  <line x1="410" y1="175" x2="410" y2="199" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Detect interactive mode -->
+  <rect x="265" y="199" width="290" height="36" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="410" y="222" text-anchor="middle" font-size="13" fill="#1e40af">Detect Interactive/Non-Interactive Mode</text>
+
+  <line x1="410" y1="235" x2="410" y2="259" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- initializeEntrypoint -->
+  <rect x="245" y="259" width="330" height="36" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="410" y="282" text-anchor="middle" font-size="13" fill="#1e40af">initializeEntrypoint()  → CLAUDE_CODE_ENTRYPOINT</text>
+
+  <line x1="410" y1="295" x2="410" y2="319" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- eagerLoadSettings -->
+  <rect x="245" y="319" width="330" height="36" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="410" y="342" text-anchor="middle" font-size="13" fill="#1e40af">eagerLoadSettings()  → --settings / --setting-sources</text>
+
+  <line x1="410" y1="355" x2="410" y2="379" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- run() -->
+  <rect x="335" y="379" width="150" height="36" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="410" y="402" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">run()</text>
+
+  <line x1="410" y1="415" x2="410" y2="439" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- run() steps group -->
+  <rect x="80" y="439" width="660" height="300" fill="#f8faff" stroke="#bfdbfe" stroke-width="1" rx="5"/>
+
+  <!-- init() block -->
+  <rect x="100" y="455" width="190" height="100" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="195" y="473" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">init()  (memoized, 15 steps)</text>
+  <text x="115" y="490" font-size="11" fill="#4b5563">enableConfigs</text>
+  <text x="115" y="505" font-size="11" fill="#4b5563">applySafeConfigEnvVars</text>
+  <text x="115" y="520" font-size="11" fill="#4b5563">setupGracefulShutdown</text>
+  <text x="115" y="535" font-size="11" fill="#4b5563">mTLS / proxy / preconnect</text>
+  <text x="115" y="550" font-size="11" fill="#4b5563">scratchpad</text>
+
+  <!-- showSetupScreens block -->
+  <rect x="310" y="455" width="180" height="100" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="400" y="473" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">showSetupScreens()</text>
+  <text x="325" y="490" font-size="11" fill="#4b5563">GrowthBook Initialization</text>
+  <text x="325" y="505" font-size="11" fill="#4b5563">Trust Dialog</text>
+  <text x="325" y="520" font-size="11" fill="#4b5563">Onboarding</text>
+  <text x="325" y="535" font-size="11" fill="#4b5563">MCP Server Approval</text>
+
+  <!-- Arrow between init and showSetupScreens -->
+  <line x1="290" y1="505" x2="310" y2="505" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- setup() block -->
+  <rect x="510" y="455" width="210" height="100" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="615" y="473" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">setup()  (12 steps)</text>
+  <text x="525" y="490" font-size="11" fill="#4b5563">Node Version Check</text>
+  <text x="525" y="505" font-size="11" fill="#4b5563">UDS / Teammate / Terminal</text>
+  <text x="525" y="520" font-size="11" fill="#4b5563">setCwd / Hooks Snapshot</text>
+  <text x="525" y="535" font-size="11" fill="#4b5563">Worktree (Optional)</text>
+  <text x="525" y="550" font-size="11" fill="#4b5563">Security Validation / tengu_exit</text>
+
+  <!-- Arrow from showSetupScreens to skills -->
+  <line x1="490" y1="505" x2="510" y2="505" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- initBundledSkills -->
+  <rect x="140" y="575" width="260" height="36" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="270" y="598" text-anchor="middle" font-size="12" fill="#1e40af">initBundledSkills() + initBuiltinPlugins()</text>
+
+  <!-- renderAndRun -->
+  <rect x="440" y="575" width="270" height="60" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="5"/>
+  <text x="575" y="596" text-anchor="middle" font-size="13" font-weight="bold" fill="#166534">renderAndRun()</text>
+  <text x="575" y="612" text-anchor="middle" font-size="11" fill="#4b5563">initializeTelemetryAfterTrust()</text>
+  <text x="575" y="628" text-anchor="middle" font-size="11" fill="#4b5563">Ink root.render() → AppStateProvider → REPL</text>
+
+  <!-- Flow arrows within run() group -->
+  <line x1="270" y1="611" x2="440" y2="611" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="615" y1="555" x2="615" y2="575" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="270" y1="555" x2="270" y2="575" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+</svg>

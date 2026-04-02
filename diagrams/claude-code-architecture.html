@@ -44,7 +44,7 @@
         .architecture {
             display: flex;
             flex-direction: column;
-            gap: 0;
+            gap: var(--space-2xl);
         }
 
         /* User Layer - Most important, generous spacing */
@@ -53,7 +53,6 @@
             border-radius: 12px;
             padding: var(--space-xl);
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            margin-bottom: var(--space-lg);
         }
 
         .layer-title {
@@ -65,11 +64,15 @@
             gap: var(--space-sm);
         }
 
+        .layer-subtitle {
+            text-align: center;
+            font-size: 0.9375rem;
+        }
+
         .user-layer {
             background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
             border: 2px solid #3b82f6;
             padding: var(--space-2xl);
-            margin-bottom: var(--space-xl);
         }
 
         .user-layer .layer-title {
@@ -77,12 +80,15 @@
             font-size: 1.25rem;
         }
 
+        .user-layer .layer-subtitle {
+            color: #1e40af;
+        }
+
         /* Core Engine - Second most important */
         .engine-layer {
             background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
             border: 2px solid #6366f1;
             padding: var(--space-2xl);
-            margin-bottom: var(--space-2xl);
         }
 
         .engine-layer .layer-title {
@@ -90,12 +96,15 @@
             font-size: 1.25rem;
         }
 
+        .engine-layer .layer-subtitle {
+            color: #4338ca;
+        }
+
         /* Three columns - Tight grouping within, generous between */
         .three-columns {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--space-lg);
-            margin-bottom: var(--space-2xl);
+            gap: var(--space-xl);
         }
 
         .column {
@@ -191,7 +200,7 @@
         .two-columns {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: var(--space-lg);
+            gap: var(--space-xl);
         }
 
         /* State Management */
@@ -254,31 +263,31 @@
             margin-bottom: 0;
         }
 
-        /* Arrows - More breathing room */
+        /* Arrows - Generous breathing room */
         .arrow {
             text-align: center;
             color: #3b82f6;
-            font-size: 1.75rem;
-            margin: var(--space-md) 0;
+            font-size: 2rem;
             line-height: 1;
+            margin: calc(var(--space-2xl) * -0.5) 0;
         }
 
         .arrow-split {
             display: flex;
             justify-content: space-around;
-            margin: var(--space-lg) 0;
+            margin: calc(var(--space-2xl) * -0.5) 0;
         }
 
         .arrow-split span {
             color: #3b82f6;
-            font-size: 1.75rem;
+            font-size: 2rem;
             line-height: 1;
         }
 
         @media (max-width: 1024px) {
             .three-columns {
                 grid-template-columns: 1fr;
-                gap: var(--space-md);
+                gap: var(--space-lg);
             }
         }
 
@@ -298,7 +307,7 @@
 
             .two-columns {
                 grid-template-columns: 1fr;
-                gap: var(--space-md);
+                gap: var(--space-lg);
             }
         }
 
@@ -319,7 +328,7 @@
                 <div class="layer-title">
                     👤 用户层
                 </div>
-                <div style="text-align: center; color: #1e40af; font-size: 15px;">
+                <div class="layer-subtitle">
                     CLI / Desktop / Web
                 </div>
             </div>
@@ -331,7 +340,7 @@
                 <div class="layer-title">
                     ⚙️ QueryEngine（核心引擎）
                 </div>
-                <div style="text-align: center; color: #4338ca; font-size: 14px;">
+                <div class="layer-subtitle">
                     消息循环 · Agent 执行 · 流式响应
                 </div>
             </div>

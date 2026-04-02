@@ -106,4 +106,19 @@ This book's analysis is based on the leaked complete TypeScript source code of C
 
 ---
 
+## Advanced Reading
+
+For those who want to dive deeper into Claude Code's source code implementation details, check out our advanced documentation:
+
+**[📚 Claude Code Source Code Architecture Analysis](./architecture/README_EN.md)** | **[中文版本](./architecture/README.md)**
+
+The advanced documentation includes:
+- Complete source tree structure (1,884 TypeScript files)
+- Detailed explanation of the 6-layer architecture
+- Implementation details of Query Engine, Tool System, and Permission Model
+- Source code analysis of 40+ tools, 70+ hooks, and 87+ commands
+- Complete module dependency graphs and data flow diagrams
+
+---
+
 *This book is open source. Contributions and corrections are welcome.*

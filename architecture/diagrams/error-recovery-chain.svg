@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 640" width="780" height="640">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="390" y="28" font-family="Arial,sans-serif" font-size="15" fill="#1e40af" text-anchor="middle" font-weight="bold">5-Layer Error Recovery Chain (Lowest Cost → Highest Cost)</text>
+
+  <!-- Error occurs -->
+  <rect x="290" y="45" width="200" height="38" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="390" y="69" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold">Error Occurs</text>
+
+  <!-- Arrow -->
+  <line x1="390" y1="83" x2="390" y2="103" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Layer 1 -->
+  <rect x="60" y="103" width="660" height="68" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="100" y="125" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" font-weight="bold">Layer 1: Context Collapse Drain</text>
+  <text x="100" y="143" font-family="Arial,sans-serif" font-size="11" fill="#374151">Trigger: prompt-too-long withheld error</text>
+  <text x="100" y="159" font-family="Arial,sans-serif" font-size="11" fill="#374151">Action: contextCollapse.recoverFromOverflow()  |  Cost: Zero (no API call)</text>
+  <text x="630" y="135" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">Success</text>
+  <text x="630" y="152" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">→ retry</text>
+
+  <!-- Arrow -->
+  <line x1="390" y1="171" x2="390" y2="191" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Layer 2 -->
+  <rect x="60" y="191" width="660" height="72" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="100" y="213" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" font-weight="bold">Layer 2: Reactive Compaction</text>
+  <text x="100" y="231" font-family="Arial,sans-serif" font-size="11" fill="#374151">Trigger: collapse drain insufficient, or direct PTL (Prompt Too Long)</text>
+  <text x="100" y="248" font-family="Arial,sans-serif" font-size="11" fill="#374151">Action: strip oversized media → summarize obsolete msgs → yield boundary msgs</text>
+  <text x="100" y="257" font-family="Arial,sans-serif" font-size="11" fill="#374151">Limit: one attempt per loop iteration (hasAttemptedReactiveCompact flag)</text>
+  <text x="630" y="222" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">Success</text>
+  <text x="630" y="238" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">→ retry</text>
+
+  <!-- Arrow -->
+  <line x1="390" y1="263" x2="390" y2="283" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Layer 3 -->
+  <rect x="60" y="283" width="660" height="80" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="100" y="305" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" font-weight="bold">Layer 3: Max Output Tokens Recovery</text>
+  <text x="100" y="323" font-family="Arial,sans-serif" font-size="11" fill="#374151">Trigger: output truncated (max_output_tokens hit)</text>
+  <text x="100" y="340" font-family="Arial,sans-serif" font-size="11" fill="#374151">1st: use ESCALATED_MAX_TOKENS (64K), no injection</text>
+  <text x="100" y="357" font-family="Arial,sans-serif" font-size="11" fill="#374151">2nd-3rd: inject "Output token limit hit. Resume directly..."  |  MAX = 3 attempts, resets each user turn</text>
+  <text x="630" y="322" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">Success</text>
+  <text x="630" y="338" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">→ retry</text>
+
+  <!-- Arrow -->
+  <line x1="390" y1="363" x2="390" y2="383" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Layer 4 -->
+  <rect x="60" y="383" width="660" height="84" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="100" y="405" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" font-weight="bold">Layer 4: Model Fallback</text>
+  <text x="100" y="423" font-family="Arial,sans-serif" font-size="11" fill="#374151">Trigger: FallbackTriggeredError (HTTP 529 overload)</text>
+  <text x="100" y="440" font-family="Arial,sans-serif" font-size="11" fill="#374151">Action: yield tombstone → clear tool state → switch currentModel → fallbackModel</text>
+  <text x="100" y="457" font-family="Arial,sans-serif" font-size="11" fill="#374151">  → clear StreamingToolExecutor → stripSignatureBlocks → retry</text>
+  <text x="630" y="422" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">Success</text>
+  <text x="630" y="438" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">→ retry</text>
+
+  <!-- Arrow -->
+  <line x1="390" y1="467" x2="390" y2="487" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Layer 5 -->
+  <rect x="60" y="487" width="660" height="80" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="100" y="509" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" font-weight="bold">Layer 5: User Interruption (AbortSignal / Ctrl+C)</text>
+  <text x="100" y="527" font-family="Arial,sans-serif" font-size="11" fill="#374151">During streaming: drain executor → synthetic tool_result → return { reason: 'aborted_streaming' }</text>
+  <text x="100" y="544" font-family="Arial,sans-serif" font-size="11" fill="#374151">During tool exec: wait for current tool → collect results → return { reason: 'aborted_tools' }</text>
+
+  <!-- Arrow -->
+  <line x1="390" y1="567" x2="390" y2="587" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Expose error -->
+  <rect x="270" y="587" width="240" height="38" rx="5" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="390" y="611" font-family="Arial,sans-serif" font-size="13" fill="#991b1b" text-anchor="middle">Expose Error to User</text>
+</svg>

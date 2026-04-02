@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 780">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0,10 3,0 6" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="860" height="780" fill="white"/>
+
+  <!-- Title -->
+  <text x="430" y="28" font-family="Arial,sans-serif" font-size="15" font-weight="bold" fill="#1e40af" text-anchor="middle">Full Context Management Data Flow (per query() iteration)</text>
+
+  <!-- Trunk vertical line -->
+  <line x1="220" y1="44" x2="220" y2="720" stroke="#666" stroke-width="2"/>
+
+  <!-- ===== STEP 1: applyToolResultBudget ===== -->
+  <text x="200" y="62" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#6b7280" text-anchor="middle">1</text>
+  <line x1="220" y1="68" x2="290" y2="68" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="290" y="54" width="530" height="28" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="555" y="65" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle" font-weight="bold">applyToolResultBudget</text>
+  <text x="555" y="78" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">tool results &gt;maxResultSizeChars → persisted to disk; replaced with pointer</text>
+
+  <!-- ===== STEP 2: snipCompact ===== -->
+  <text x="200" y="116" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#6b7280" text-anchor="middle">2</text>
+  <line x1="220" y1="122" x2="290" y2="122" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="290" y="108" width="530" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="555" y="121" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle" font-weight="bold">snipCompact  <tspan font-size="11" fill="#6b7280">(feature HISTORY_SNIP)</tspan></text>
+  <text x="555" y="136" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">trim old history messages</text>
+  <text x="555" y="148" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">snipTokensFreed → passed to autocompact</text>
+
+  <!-- ===== STEP 3: microcompact ===== -->
+  <text x="200" y="176" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#6b7280" text-anchor="middle">3</text>
+  <line x1="220" y1="182" x2="290" y2="182" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="290" y="168" width="530" height="54" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="555" y="181" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle" font-weight="bold">microcompact  <tspan font-size="11" fill="#6b7280">(no API call)</tspan></text>
+  <text x="555" y="196" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">scan COMPACTABLE_TOOLS old results</text>
+  <text x="555" y="210" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">replace with TIME_BASED_MC_CLEARED_MESSAGE</text>
+  <text x="555" y="222" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">(Cached MC: produce pendingCacheEdits)</text>
+
+  <!-- ===== STEP 4: contextCollapse ===== -->
+  <text x="200" y="250" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#6b7280" text-anchor="middle">4</text>
+  <line x1="220" y1="256" x2="290" y2="256" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="290" y="242" width="530" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="555" y="255" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle" font-weight="bold">contextCollapse  <tspan font-size="11" fill="#6b7280">(feature CONTEXT_COLLAPSE)</tspan></text>
+  <text x="555" y="270" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">staged context fold — if sufficient, skips autocompact</text>
+  <text x="555" y="282" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">(preserves finer-grained context vs. autocompact)</text>
+
+  <!-- ===== STEP 5: autocompact ===== -->
+  <text x="200" y="312" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#6b7280" text-anchor="middle">5</text>
+  <line x1="220" y1="318" x2="290" y2="318" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+  <!-- Big box for autocompact with sub-steps -->
+  <rect x="290" y="304" width="530" height="220" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="555" y="319" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle" font-weight="bold">autocompact</text>
+
+  <!-- Decision diamond: tokenCount > threshold? -->
+  <polygon points="420,334 480,346 420,358 360,346" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="420" y="350" font-family="Arial,sans-serif" font-size="10" fill="#92400e" text-anchor="middle">tokenCount &gt; threshold?</text>
+
+  <!-- NO path -->
+  <line x1="480" y1="346" x2="540" y2="346" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="540" y="338" width="60" height="16" fill="#f5f5f5" stroke="#aaa" stroke-width="1" rx="3"/>
+  <text x="570" y="350" font-family="Arial,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">skip</text>
+
+  <!-- YES path items -->
+  <line x1="420" y1="358" x2="420" y2="378" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- sub steps inside autocompact box -->
+  <line x1="340" y1="378" x2="780" y2="378" stroke="#dbeafe" stroke-width="1"/>
+
+  <text x="350" y="392" font-family="Arial,sans-serif" font-size="11" fill="#374151">• check: consecutiveFailures &lt; 3 (circuit breaker)</text>
+  <text x="350" y="408" font-family="Arial,sans-serif" font-size="11" fill="#374151">• pre_compact_hooks → stripImages → groupByApiRound → preserve tail</text>
+  <text x="350" y="424" font-family="Arial,sans-serif" font-size="11" fill="#374151">• API call → generate summary (queryModelWithStreaming)</text>
+  <text x="350" y="440" font-family="Arial,sans-serif" font-size="11" fill="#374151">• createCompactBoundaryMessage</text>
+  <text x="350" y="456" font-family="Arial,sans-serif" font-size="11" fill="#374151">• post_compact_hooks → restore files (max 5, 5K/file, 50K total)</text>
+  <text x="350" y="472" font-family="Arial,sans-serif" font-size="11" fill="#374151">• restore skills (5K/skill, 25K total) → cleanup + notifications</text>
+  <text x="350" y="488" font-family="Arial,sans-serif" font-size="11" fill="#374151">• else (failures ≥ 3): skip (circuit breaker tripped)</text>
+  <text x="350" y="504" font-family="Arial,sans-serif" font-size="11" fill="#374151">• snipTokensFreed subtracted from tokenCount before threshold check</text>
+
+  <!-- ===== STEP 6: API call + reactive ===== -->
+  <text x="200" y="552" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#6b7280" text-anchor="middle">6</text>
+  <line x1="220" y1="558" x2="290" y2="558" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="290" y="544" width="530" height="56" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="555" y="557" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle" font-weight="bold">API Call</text>
+  <text x="555" y="572" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">if 413 returned →</text>
+  <rect x="400" y="578" width="340" height="18" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5" rx="3"/>
+  <text x="570" y="591" font-family="Arial,sans-serif" font-size="11" fill="#92400e" text-anchor="middle">reactiveCompact (REACTIVE_COMPACT) — one attempt → retry API</text>
+
+  <!-- ===== STEP 7: Token Budget ===== -->
+  <text x="200" y="628" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#6b7280" text-anchor="middle">7</text>
+  <line x1="220" y1="634" x2="290" y2="634" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="290" y="620" width="530" height="56" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="555" y="633" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle" font-weight="bold">Token Budget Check  <tspan font-size="11" fill="#6b7280">(feature TOKEN_BUDGET)</tspan></text>
+  <text x="555" y="648" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">turnTokens &lt; budget × 90% → continue</text>
+  <text x="555" y="663" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">delta &lt; 500 for 3+ iters (diminishing returns) → stop</text>
+  <text x="555" y="676" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">otherwise → stop</text>
+
+  <!-- End -->
+  <line x1="220" y1="720" x2="220" y2="740" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="228" y="756" font-family="Arial,sans-serif" font-size="11" fill="#6b7280">next iteration or response returned</text>
+</svg>

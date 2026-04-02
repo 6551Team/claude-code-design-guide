@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400">
+  <rect x="50" y="30" width="600" height="340" fill="#fff" stroke="#2563eb" stroke-width="3" rx="5"/>
+
+  <rect x="70" y="50" width="560" height="40" fill="#e0f2fe" stroke="#0284c7" stroke-width="1" rx="3"/>
+  <text x="80" y="73" font-family="Arial,sans-serif" font-size="12" fill="#0c4a6e" font-weight="bold">[user]</text>
+  <text x="140" y="73" font-family="Arial,sans-serif" font-size="12" fill="#0c4a6e">Please fix the type error in login.ts</text>
+
+  <rect x="70" y="110" width="560" height="140" fill="#f0fdf4" stroke="#16a34a" stroke-width="1" rx="3"/>
+  <text x="80" y="133" font-family="Arial,sans-serif" font-size="12" fill="#14532d" font-weight="bold">[assistant]</text>
+  <text x="170" y="133" font-family="Arial,sans-serif" font-size="12" fill="#14532d">Let me take a look at this file...</text>
+
+  <rect x="90" y="150" width="520" height="25" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="3"/>
+  <text x="100" y="168" font-family="Arial,sans-serif" font-size="11" fill="#78350f">[tool: Read] login.ts (lines 1-50)</text>
+
+  <rect x="90" y="185" width="520" height="55" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="3"/>
+  <text x="100" y="203" font-family="Arial,sans-serif" font-size="11" fill="#78350f">[tool: Edit] login.ts</text>
+  <text x="110" y="218" font-family="Monaco,monospace" font-size="10" fill="#dc2626">- old: const user: any = ...</text>
+  <text x="110" y="233" font-family="Monaco,monospace" font-size="10" fill="#16a34a">+ new: const user: User = ...</text>
+
+  <text x="80" y="270" font-family="Arial,sans-serif" font-size="12" fill="#14532d" font-weight="bold">[assistant]</text>
+  <text x="170" y="270" font-family="Arial,sans-serif" font-size="12" fill="#14532d">The type error has been fixed.</text>
+
+  <rect x="70" y="300" width="560" height="50" fill="#f8fafc" stroke="#64748b" stroke-width="1" rx="3"/>
+  <text x="80" y="330" font-family="Monaco,monospace" font-size="13" fill="#334155">&gt; _</text>
+  <text x="550" y="330" font-family="Arial,sans-serif" font-size="10" fill="#94a3b8">[input area]</text>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="260" viewBox="0 0 600 260">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+    <marker id="arrow-left" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+      <polygon points="10 0, 0 3.5, 10 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Foreground box -->
+  <rect x="20" y="70" width="185" height="100" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="113" y="95" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="13" font-weight="bold">Foreground</text>
+  <text x="113" y="115" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="11">(active interaction)</text>
+  <text x="113" y="135" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="11">full UI visible</text>
+  <text x="113" y="155" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="11">user responds</text>
+
+  <!-- Arrow right: backgroundSession() -->
+  <line x1="205" y1="100" x2="395" y2="100" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="300" y="93" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="11">backgroundSession()</text>
+
+  <!-- Arrow left: foregroundSession() -->
+  <line x1="395" y1="135" x2="205" y2="135" stroke="#666" stroke-width="2" marker-end="url(#arrow-left)"/>
+  <text x="300" y="155" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="11">foregroundSession()</text>
+
+  <!-- Backgrounded box -->
+  <rect x="395" y="70" width="185" height="100" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="488" y="95" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="13" font-weight="bold">Backgrounded</text>
+  <text x="488" y="115" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="11">(running in bg)</text>
+  <text x="488" y="135" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="11">UI minimizable</text>
+  <text x="488" y="155" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="11">API continues</text>
+
+  <!-- Still processing notes below backgrounded -->
+  <line x1="488" y1="170" x2="488" y2="195" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
+  <rect x="380" y="198" width="210" height="50" rx="5" fill="#f0f4f8" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="485" y="216" text-anchor="middle" font-family="Arial,sans-serif" fill="#666" font-size="11">Still processing requests</text>
+  <text x="485" y="232" text-anchor="middle" font-family="Arial,sans-serif" fill="#666" font-size="11">Still consuming tokens</text>
+  <text x="485" y="248" text-anchor="middle" font-family="Arial,sans-serif" fill="#666" font-size="11">UI can be minimized</text>
+</svg>

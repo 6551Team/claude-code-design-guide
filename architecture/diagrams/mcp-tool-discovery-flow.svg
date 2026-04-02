@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 550">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="25" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">MCP Tool Discovery &amp; Execution Flow</text>
+
+  <rect x="200" y="50" width="300" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="75" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">getAllMcpConfigs() — At startup</text>
+
+  <rect x="50" y="120" width="160" height="40" fill="#f8fafc" stroke="#64748b" stroke-width="1" rx="3"/>
+  <text x="130" y="143" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">user settings (.claude/)</text>
+
+  <rect x="270" y="120" width="160" height="40" fill="#f8fafc" stroke="#64748b" stroke-width="1" rx="3"/>
+  <text x="350" y="143" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">project settings (.mcp.json)</text>
+
+  <rect x="490" y="120" width="160" height="40" fill="#f8fafc" stroke="#64748b" stroke-width="1" rx="3"/>
+  <text x="570" y="143" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">policy settings (remote)</text>
+
+  <rect x="200" y="185" width="300" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="210" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">useManageMCPConnections (React Hook)</text>
+
+  <rect x="50" y="250" width="130" height="40" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="3"/>
+  <text x="115" y="265" font-family="Arial,sans-serif" font-size="10" fill="#78350f" text-anchor="middle">stdio → subprocess</text>
+  <text x="115" y="280" font-family="Arial,sans-serif" font-size="10" fill="#78350f" text-anchor="middle">stdin/stdout</text>
+
+  <rect x="200" y="250" width="100" height="40" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="3"/>
+  <text x="250" y="265" font-family="Arial,sans-serif" font-size="10" fill="#78350f" text-anchor="middle">SSE →</text>
+  <text x="250" y="280" font-family="Arial,sans-serif" font-size="10" fill="#78350f" text-anchor="middle">HTTP stream</text>
+
+  <rect x="320" y="250" width="100" height="40" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="3"/>
+  <text x="370" y="265" font-family="Arial,sans-serif" font-size="10" fill="#78350f" text-anchor="middle">HTTP →</text>
+  <text x="370" y="280" font-family="Arial,sans-serif" font-size="10" fill="#78350f" text-anchor="middle">REST API</text>
+
+  <rect x="440" y="250" width="130" height="40" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="3"/>
+  <text x="505" y="265" font-family="Arial,sans-serif" font-size="10" fill="#78350f" text-anchor="middle">WebSocket →</text>
+  <text x="505" y="280" font-family="Arial,sans-serif" font-size="10" fill="#78350f" text-anchor="middle">WS connection</text>
+
+  <rect x="200" y="320" width="300" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="342" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">getMcpToolsCommandsAndResources()</text>
+  <text x="350" y="358" font-family="Arial,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">creates MCPTool instances (mcp__server__tool)</text>
+
+  <rect x="200" y="395" width="300" height="50" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="5"/>
+  <text x="350" y="415" font-family="Arial,sans-serif" font-size="12" fill="#14532d" text-anchor="middle">Lazy Tool Loading</text>
+  <text x="350" y="430" font-family="Arial,sans-serif" font-size="10" fill="#14532d" text-anchor="middle">LLM calls ToolSearchTool for schema</text>
+
+  <rect x="200" y="465" width="300" height="40" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="5"/>
+  <text x="350" y="490" font-family="Arial,sans-serif" font-size="12" fill="#14532d" text-anchor="middle">Tool becomes callable</text>
+
+  <line x1="350" y1="90" x2="130" y2="120" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="350" y1="90" x2="350" y2="120" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="350" y1="90" x2="570" y2="120" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <line x1="130" y1="160" x2="350" y2="185" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="350" y1="160" x2="350" y2="185" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="570" y1="160" x2="350" y2="185" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <line x1="350" y1="225" x2="115" y2="250" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="350" y1="225" x2="250" y2="250" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="350" y1="225" x2="370" y2="250" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="350" y1="225" x2="505" y2="250" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <line x1="350" y1="290" x2="350" y2="320" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="350" y1="370" x2="350" y2="395" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="350" y1="445" x2="350" y2="465" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

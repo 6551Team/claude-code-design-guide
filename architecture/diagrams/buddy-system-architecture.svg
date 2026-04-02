@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+  </defs>
+
+  <!-- UI Layer -->
+  <rect x="50" y="20" width="500" height="80" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="300" y="45" font-family="Arial,sans-serif" fill="#1e40af" font-size="14" font-weight="bold" text-anchor="middle">UI Layer</text>
+  <text x="150" y="70" font-family="Arial,sans-serif" fill="#1e40af" font-size="12">CompanionSprite.tsx</text>
+  <text x="150" y="88" font-family="Arial,sans-serif" fill="#666" font-size="11">(精灵渲染)</text>
+  <text x="400" y="70" font-family="Arial,sans-serif" fill="#1e40af" font-size="12">useBuddyNotification.tsx</text>
+  <text x="400" y="88" font-family="Arial,sans-serif" fill="#666" font-size="11">(通知 hook)</text>
+
+  <!-- Logic Layer -->
+  <rect x="50" y="120" width="500" height="80" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="300" y="145" font-family="Arial,sans-serif" fill="#1e40af" font-size="14" font-weight="bold" text-anchor="middle">Logic Layer</text>
+  <text x="150" y="170" font-family="Arial,sans-serif" fill="#1e40af" font-size="12">companion.ts</text>
+  <text x="150" y="188" font-family="Arial,sans-serif" fill="#666" font-size="11">(角色生成)</text>
+  <text x="400" y="170" font-family="Arial,sans-serif" fill="#1e40af" font-size="12">prompt.ts</text>
+  <text x="400" y="188" font-family="Arial,sans-serif" fill="#666" font-size="11">(提示生成)</text>
+
+  <!-- Data Layer -->
+  <rect x="50" y="220" width="500" height="80" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="300" y="245" font-family="Arial,sans-serif" fill="#1e40af" font-size="14" font-weight="bold" text-anchor="middle">Data Layer</text>
+  <text x="150" y="270" font-family="Arial,sans-serif" fill="#1e40af" font-size="12">types.ts</text>
+  <text x="150" y="288" font-family="Arial,sans-serif" fill="#666" font-size="11">(数据模型)</text>
+  <text x="400" y="270" font-family="Arial,sans-serif" fill="#1e40af" font-size="12">sprites.ts</text>
+  <text x="400" y="288" font-family="Arial,sans-serif" fill="#666" font-size="11">(精灵数据)</text>
+</svg>

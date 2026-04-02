@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 380">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- fennec -->
+  <rect x="50" y="50" width="120" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="110" y="80" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">fennec</text>
+
+  <!-- Arrow #4 to opus -->
+  <line x1="170" y1="75" x2="250" y2="75" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="210" y="65" font-family="Arial,sans-serif" font-size="11" fill="#666">[#4]</text>
+
+  <!-- opus -->
+  <rect x="250" y="50" width="120" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="310" y="80" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">opus</text>
+
+  <!-- Arrow #6 to opus-1m -->
+  <line x1="370" y1="75" x2="450" y2="75" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="410" y="65" font-family="Arial,sans-serif" font-size="11" fill="#666">[#6]</text>
+
+  <!-- opus-1m -->
+  <rect x="450" y="50" width="120" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="510" y="80" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">opus-1m</text>
+
+  <!-- legacy-opus -->
+  <rect x="50" y="180" width="150" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="125" y="210" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">legacy-opus</text>
+
+  <!-- Arrow #5 to opus -->
+  <line x1="200" y1="205" x2="280" y2="100" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="220" y="150" font-family="Arial,sans-serif" font-size="11" fill="#666">[#5]</text>
+
+  <!-- sonnet-1m -->
+  <rect x="50" y="300" width="140" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="120" y="330" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">sonnet-1m</text>
+
+  <!-- Arrow #8 to sonnet-4.5 -->
+  <line x1="190" y1="325" x2="270" y2="325" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="230" y="315" font-family="Arial,sans-serif" font-size="11" fill="#666">[#8]</text>
+
+  <!-- sonnet-4.5 -->
+  <rect x="270" y="300" width="140" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="340" y="330" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">sonnet-4.5</text>
+
+  <!-- Arrow #9 to sonnet-4.6 -->
+  <line x1="410" y1="325" x2="490" y2="325" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="450" y="315" font-family="Arial,sans-serif" font-size="11" fill="#666">[#9]</text>
+
+  <!-- sonnet-4.6 -->
+  <rect x="490" y="300" width="140" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="560" y="330" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">sonnet-4.6</text>
+</svg>

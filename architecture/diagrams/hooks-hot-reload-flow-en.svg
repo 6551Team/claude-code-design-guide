@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 480" font-family="Arial,sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="310" y="30" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Hooks Hot Reload Flow (ConfigChange / FileChanged)</text>
+
+  <!-- settings.json modified -->
+  <rect x="185" y="55" width="250" height="38" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="310" y="79" text-anchor="middle" font-size="13" fill="#1e40af">settings.json / skill file modified</text>
+
+  <!-- Arrow down -->
+  <line x1="310" y1="93" x2="310" y2="118" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- chokidar / fs.watch detects change -->
+  <rect x="165" y="118" width="290" height="38" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="310" y="142" text-anchor="middle" font-size="13" fill="#1e40af">chokidar / fs.watch detects change</text>
+
+  <!-- Arrow down -->
+  <line x1="310" y1="156" x2="310" y2="181" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Debounce diamond -->
+  <polygon points="310,181 410,211 310,241 210,211" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="310" y="207" text-anchor="middle" font-size="12" fill="#92400e">RELOAD_DEBOUNCE</text>
+  <text x="310" y="222" text-anchor="middle" font-size="12" fill="#92400e">300ms elapsed?</text>
+
+  <!-- No branch - right -->
+  <line x1="410" y1="211" x2="490" y2="211" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="455" y="205" text-anchor="middle" font-size="11" fill="#666">No</text>
+  <rect x="490" y="193" width="90" height="36" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="535" y="211" text-anchor="middle" font-size="12" fill="#1e40af">Wait /</text>
+  <text x="535" y="224" text-anchor="middle" font-size="12" fill="#1e40af">reset timer</text>
+
+  <!-- Yes branch - down -->
+  <line x1="310" y1="241" x2="310" y2="266" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="322" y="258" font-size="11" fill="#666">Yes</text>
+
+  <!-- FILE_STABILITY wait -->
+  <rect x="165" y="266" width="290" height="38" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="310" y="285" text-anchor="middle" font-size="13" fill="#1e40af">Wait FILE_STABILITY_THRESHOLD</text>
+  <text x="310" y="299" text-anchor="middle" font-size="12" fill="#1e40af">(1000ms — file write completes)</text>
+
+  <!-- Arrow down -->
+  <line x1="310" y1="304" x2="310" y2="329" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Clear caches box -->
+  <rect x="155" y="329" width="310" height="60" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="310" y="350" text-anchor="middle" font-size="13" fill="#1e40af">Clear caches</text>
+  <text x="310" y="366" text-anchor="middle" font-size="11" fill="#374151">clearSkillCaches() · clearCommandsCache()</text>
+  <text x="310" y="380" text-anchor="middle" font-size="11" fill="#374151">clearCommandMemoizationCaches() · resetSentSkillNames()</text>
+
+  <!-- Arrow down -->
+  <line x1="310" y1="389" x2="310" y2="414" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- executeConfigChangeHooks -->
+  <rect x="155" y="414" width="310" height="38" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="310" y="433" text-anchor="middle" font-size="13" fill="#1e40af">executeConfigChangeHooks()</text>
+  <text x="310" y="448" text-anchor="middle" font-size="11" fill="#374151">(abort if blocking result)</text>
+
+  <!-- Arrow right to skillsChanged.notify -->
+  <line x1="465" y1="433" x2="520" y2="433" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="520" y="414" width="85" height="38" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="562" y="433" text-anchor="middle" font-size="12" fill="#1e40af">skills</text>
+  <text x="562" y="447" text-anchor="middle" font-size="12" fill="#1e40af">Changed</text>
+  <text x="562" y="461" text-anchor="middle" font-size="11" fill="#374151">.notify()</text>
+</svg>

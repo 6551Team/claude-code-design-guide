@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+  </defs>
+
+  <!-- Bones Box -->
+  <rect x="50" y="30" width="200" height="140" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="150" y="55" font-family="Arial,sans-serif" fill="#1e40af" font-size="14" font-weight="bold" text-anchor="middle">Bones</text>
+  <text x="150" y="75" font-family="Arial,sans-serif" fill="#666" font-size="12" text-anchor="middle">(Deterministic)</text>
+  <text x="70" y="100" font-family="Arial,sans-serif" fill="#1e40af" font-size="12">rarity</text>
+  <text x="70" y="120" font-family="Arial,sans-serif" fill="#1e40af" font-size="12">species</text>
+  <text x="70" y="140" font-family="Arial,sans-serif" fill="#1e40af" font-size="12">eye</text>
+  <text x="70" y="160" font-family="Arial,sans-serif" fill="#1e40af" font-size="12">stats</text>
+
+  <!-- Bones Description -->
+  <rect x="50" y="180" width="200" height="60" fill="#e0f2fe" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="150" y="200" font-family="Arial,sans-serif" fill="#1e40af" font-size="11" text-anchor="middle">Can be fully rebuilt</text>
+  <text x="150" y="220" font-family="Arial,sans-serif" fill="#1e40af" font-size="11" text-anchor="middle">from userId</text>
+
+  <!-- Soul Box -->
+  <rect x="350" y="30" width="200" height="140" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="450" y="55" font-family="Arial,sans-serif" fill="#1e40af" font-size="14" font-weight="bold" text-anchor="middle">Soul</text>
+  <text x="450" y="75" font-family="Arial,sans-serif" fill="#666" font-size="12" text-anchor="middle">(Persistent)</text>
+  <text x="370" y="100" font-family="Arial,sans-serif" fill="#1e40af" font-size="12">name</text>
+  <text x="370" y="120" font-family="Arial,sans-serif" fill="#1e40af" font-size="12">personality</text>
+
+  <!-- Soul Description -->
+  <rect x="350" y="180" width="200" height="60" fill="#e0f2fe" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="450" y="200" font-family="Arial,sans-serif" fill="#1e40af" font-size="11" text-anchor="middle">Stored locally</text>
+  <text x="450" y="220" font-family="Arial,sans-serif" fill="#1e40af" font-size="11" text-anchor="middle">Unrecoverable if lost</text>
+
+  <!-- Arrows to Companion -->
+  <line x1="150" y1="240" x2="300" y2="270" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="450" y1="240" x2="300" y2="270" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Companion Box -->
+  <rect x="200" y="270" width="200" height="40" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="300" y="295" font-family="Arial,sans-serif" fill="#1e40af" font-size="13" font-weight="bold" text-anchor="middle">Companion</text>
+  <text x="300" y="305" font-family="Arial,sans-serif" fill="#666" font-size="11" text-anchor="middle">(Complete Character)</text>
+</svg>

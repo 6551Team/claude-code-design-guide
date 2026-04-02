@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+  </defs>
+
+  <text x="450" y="30" font-family="Arial,sans-serif" font-size="16" fill="#1e40af" text-anchor="middle" font-weight="bold">Remote Session Architecture</text>
+
+  <!-- Client Side container -->
+  <rect x="50" y="60" width="800" height="240" fill="none" stroke="#2563eb" stroke-width="3" rx="5"/>
+  <text x="450" y="85" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">Client Side</text>
+
+  <!-- RemoteSessionManager -->
+  <rect x="80" y="110" width="250" height="120" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="205" y="135" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">RemoteSessionManager</text>
+  <text x="205" y="160" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">- connect()</text>
+  <text x="205" y="180" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">- sendMessage()</text>
+  <text x="205" y="200" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">- cancelSession()</text>
+
+  <!-- remotePermissionBridge -->
+  <rect x="380" y="110" width="280" height="80" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="520" y="135" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">remotePermissionBridge.ts</text>
+  <text x="520" y="160" font-family="Arial,sans-serif" font-size="11" fill="#666" text-anchor="middle">(permission request forwarding)</text>
+
+  <!-- Bidirectional arrow -->
+  <path d="M 330 150 L 380 150" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 380 170 L 330 170" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- WebSocket label -->
+  <text x="205" y="260" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">WebSocket</text>
+  <path d="M 205 270 L 205 330" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Divider line -->
+  <line x1="50" y1="310" x2="850" y2="310" stroke="#666" stroke-width="2" stroke-dasharray="5,5"/>
+
+  <!-- Server Side container -->
+  <rect x="50" y="320" width="800" height="250" fill="none" stroke="#2563eb" stroke-width="3" rx="5"/>
+  <text x="450" y="345" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">Server Side</text>
+
+  <!-- SessionsWebSocket -->
+  <rect x="80" y="370" width="250" height="120" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="205" y="395" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">SessionsWebSocket</text>
+  <text x="205" y="415" font-family="Arial,sans-serif" font-size="11" fill="#666" text-anchor="middle">(CCR WebSocket)</text>
+  <text x="205" y="440" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">- Exponential backoff reconnect</text>
+  <text x="205" y="460" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">- Permission protocol</text>
+
+  <!-- Server Mode -->
+  <rect x="380" y="370" width="280" height="140" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="520" y="395" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">Server Mode (src/server/)</text>
+  <text x="520" y="425" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">- ServerConfig</text>
+  <text x="520" y="450" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">- SessionState management</text>
+  <text x="520" y="475" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">- directConnectManager</text>
+</svg>

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 550">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+  </defs>
+
+  <!-- User Request -->
+  <rect x="250" y="20" width="200" height="50" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="350" y="40" font-family="Arial,sans-serif" fill="#1e40af" font-size="13" font-weight="bold" text-anchor="middle">User Request</text>
+  <text x="350" y="58" font-family="Arial,sans-serif" fill="#666" font-size="11" text-anchor="middle">"Refactor entire auth module"</text>
+
+  <!-- Arrow down -->
+  <line x1="350" y1="70" x2="350" y2="100" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Coordinator -->
+  <rect x="200" y="100" width="300" height="120" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="125" font-family="Arial,sans-serif" fill="#1e40af" font-size="14" font-weight="bold" text-anchor="middle">Coordinator</text>
+  <text x="220" y="150" font-family="Arial,sans-serif" fill="#1e40af" font-size="11">- Task decomposition &amp; planning</text>
+  <text x="220" y="170" font-family="Arial,sans-serif" fill="#1e40af" font-size="11">- Assign workers</text>
+  <text x="220" y="190" font-family="Arial,sans-serif" fill="#1e40af" font-size="11">- Aggregate results</text>
+  <text x="220" y="210" font-family="Arial,sans-serif" fill="#666" font-size="10">Tools: Agent, SendMessage, TaskStop</text>
+
+  <!-- Arrows to workers -->
+  <line x1="250" y1="220" x2="120" y2="270" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="350" y1="220" x2="350" y2="270" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="450" y1="220" x2="580" y2="270" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Worker 1 -->
+  <rect x="20" y="270" width="200" height="100" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="120" y="295" font-family="Arial,sans-serif" fill="#1e40af" font-size="13" font-weight="bold" text-anchor="middle">Worker #1</text>
+  <text x="120" y="320" font-family="Arial,sans-serif" fill="#666" font-size="11" text-anchor="middle">"Refactor auth service"</text>
+  <text x="120" y="350" font-family="Arial,sans-serif" fill="#666" font-size="10" text-anchor="middle">Report: XML</text>
+
+  <!-- Worker 2 -->
+  <rect x="250" y="270" width="200" height="100" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="295" font-family="Arial,sans-serif" fill="#1e40af" font-size="13" font-weight="bold" text-anchor="middle">Worker #2</text>
+  <text x="350" y="320" font-family="Arial,sans-serif" fill="#666" font-size="11" text-anchor="middle">"Update all import paths"</text>
+  <text x="350" y="350" font-family="Arial,sans-serif" fill="#666" font-size="10" text-anchor="middle">Report: XML</text>
+
+  <!-- Worker 3 -->
+  <rect x="480" y="270" width="200" height="100" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="580" y="295" font-family="Arial,sans-serif" fill="#1e40af" font-size="13" font-weight="bold" text-anchor="middle">Worker #3</text>
+  <text x="580" y="320" font-family="Arial,sans-serif" fill="#666" font-size="11" text-anchor="middle">"Write new test cases"</text>
+  <text x="580" y="350" font-family="Arial,sans-serif" fill="#666" font-size="10" text-anchor="middle">Report: XML</text>
+
+  <!-- Arrows back -->
+  <line x1="120" y1="370" x2="250" y2="420" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="350" y1="370" x2="350" y2="420" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="580" y1="370" x2="450" y2="420" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Final Result -->
+  <rect x="200" y="420" width="300" height="60" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="350" y="445" font-family="Arial,sans-serif" fill="#1e40af" font-size="13" font-weight="bold" text-anchor="middle">Coordinator Aggregation</text>
+  <text x="350" y="465" font-family="Arial,sans-serif" fill="#666" font-size="11" text-anchor="middle">→ Final result output</text>
+</svg>

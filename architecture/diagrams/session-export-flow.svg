@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="250" viewBox="0 0 420 250">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- /export command -->
+  <rect x="145" y="10" width="130" height="36" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="210" y="28" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="14" font-weight="bold">/export</text>
+  <text x="210" y="42" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="10">user command</text>
+
+  <!-- Arrow down -->
+  <line x1="210" y1="46" x2="210" y2="76" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Export session record box -->
+  <rect x="60" y="79" width="300" height="40" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="210" y="96" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="13" font-weight="bold">Export current session conversation</text>
+  <text x="210" y="113" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="11">complete message history</text>
+
+  <!-- Branch -->
+  <line x1="140" y1="119" x2="140" y2="148" stroke="#666" stroke-width="2"/>
+  <line x1="280" y1="119" x2="280" y2="148" stroke="#666" stroke-width="2"/>
+  <line x1="140" y1="148" x2="280" y2="148" stroke="#666" stroke-width="2"/>
+  <line x1="140" y1="148" x2="100" y2="168" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="280" y1="148" x2="320" y2="168" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- JSON format -->
+  <rect x="20" y="171" width="160" height="50" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="100" y="192" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold">JSON format</text>
+  <text x="100" y="210" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="11">structured output</text>
+  <text x="100" y="215" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="10">for programmatic use</text>
+
+  <!-- Markdown format -->
+  <rect x="240" y="171" width="160" height="50" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="320" y="192" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold">Markdown format</text>
+  <text x="320" y="210" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="11">human-readable</text>
+  <text x="320" y="215" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="10">for review / sharing</text>
+
+  <text x="210" y="248" text-anchor="middle" font-family="Arial,sans-serif" fill="#666" font-size="11">User-initiated only — never auto-synced</text>
+</svg>

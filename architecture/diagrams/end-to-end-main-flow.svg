@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <rect x="300" y="20" width="200" height="40" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="400" y="45" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">User types text</text>
+
+  <rect x="300" y="80" width="200" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="400" y="105" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">PromptInput (React/Ink)</text>
+
+  <rect x="300" y="140" width="200" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="400" y="165" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">processUserInput()</text>
+
+  <rect x="300" y="200" width="200" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="400" y="225" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">AppState.messages</text>
+
+  <rect x="250" y="260" width="300" height="60" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="400" y="285" font-family="Arial,sans-serif" font-size="13" fill="#78350f" text-anchor="middle" font-weight="bold">query() main loop</text>
+  <text x="400" y="305" font-family="Arial,sans-serif" font-size="11" fill="#78350f" text-anchor="middle">(async generator)</text>
+
+  <rect x="50" y="350" width="180" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="140" y="370" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">Phase 1:</text>
+  <text x="140" y="388" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">Context Assembly</text>
+
+  <rect x="250" y="350" width="140" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="320" y="370" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">Phase 2:</text>
+  <text x="320" y="388" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">API Call</text>
+
+  <rect x="410" y="350" width="140" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="480" y="370" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">Phase 3:</text>
+  <text x="480" y="388" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">Tool Execution</text>
+
+  <rect x="570" y="350" width="180" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="660" y="370" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">Phase 4:</text>
+  <text x="660" y="388" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">Recovery & Control</text>
+
+  <rect x="50" y="420" width="180" height="80" fill="#f8fafc" stroke="#64748b" stroke-width="1" rx="3"/>
+  <text x="140" y="440" font-family="Arial,sans-serif" font-size="10" fill="#475569">• Memory prefetch</text>
+  <text x="140" y="455" font-family="Arial,sans-serif" font-size="10" fill="#475569">• Tool result budget</text>
+  <text x="140" y="470" font-family="Arial,sans-serif" font-size="10" fill="#475569">• Attachments</text>
+  <text x="140" y="485" font-family="Arial,sans-serif" font-size="10" fill="#475569">• Auto-compact</text>
+  <text x="140" y="500" font-family="Arial,sans-serif" font-size="10" fill="#475569">• System prompt</text>
+
+  <rect x="250" y="420" width="140" height="80" fill="#f8fafc" stroke="#64748b" stroke-width="1" rx="3"/>
+  <text x="320" y="440" font-family="Arial,sans-serif" font-size="10" fill="#475569">• Multi-backend</text>
+  <text x="320" y="455" font-family="Arial,sans-serif" font-size="10" fill="#475569">• Normalize</text>
+  <text x="320" y="470" font-family="Arial,sans-serif" font-size="10" fill="#475569">• Retry logic</text>
+  <text x="320" y="485" font-family="Arial,sans-serif" font-size="10" fill="#475569">• Streaming</text>
+
+  <rect x="410" y="420" width="140" height="80" fill="#f8fafc" stroke="#64748b" stroke-width="1" rx="3"/>
+  <text x="480" y="440" font-family="Arial,sans-serif" font-size="10" fill="#475569">• Permission check</text>
+  <text x="480" y="455" font-family="Arial,sans-serif" font-size="10" fill="#475569">• Pre/Post hooks</text>
+  <text x="480" y="470" font-family="Arial,sans-serif" font-size="10" fill="#475569">• Tool.execute()</text>
+  <text x="480" y="485" font-family="Arial,sans-serif" font-size="10" fill="#475569">• Result building</text>
+
+  <rect x="570" y="420" width="180" height="80" fill="#f8fafc" stroke="#64748b" stroke-width="1" rx="3"/>
+  <text x="660" y="440" font-family="Arial,sans-serif" font-size="10" fill="#475569">• 5-layer recovery</text>
+  <text x="660" y="455" font-family="Arial,sans-serif" font-size="10" fill="#475569">• Stop hooks</text>
+  <text x="660" y="470" font-family="Arial,sans-serif" font-size="10" fill="#475569">• Token budget</text>
+  <text x="660" y="485" font-family="Arial,sans-serif" font-size="10" fill="#475569">• Continue/terminate</text>
+
+  <rect x="300" y="530" width="200" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="400" y="555" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">AppState.messages update</text>
+
+  <rect x="300" y="590" width="200" height="40" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="5"/>
+  <text x="400" y="615" font-family="Arial,sans-serif" font-size="12" fill="#14532d" text-anchor="middle">React component re-render</text>
+
+  <rect x="250" y="650" width="300" height="40" fill="#f8fafc" stroke="#64748b" stroke-width="1" rx="3"/>
+  <text x="400" y="675" font-family="Arial,sans-serif" font-size="10" fill="#475569" text-anchor="middle">REPL • Spinner • Status bar • Tool results</text>
+
+  <line x1="400" y1="60" x2="400" y2="80" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="400" y1="120" x2="400" y2="140" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="400" y1="180" x2="400" y2="200" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="400" y1="240" x2="400" y2="260" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="400" y1="320" x2="400" y2="530" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="400" y1="570" x2="400" y2="590" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="400" y1="630" x2="400" y2="650" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <path d="M 700,375 L 750,375 L 750,290 L 400,290" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+  <text x="720" y="330" font-family="Arial,sans-serif" font-size="10" fill="#f59e0b">loop</text>
+</svg>

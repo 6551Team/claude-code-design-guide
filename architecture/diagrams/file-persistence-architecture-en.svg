@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- runFilePersistence -->
+  <rect x="200" y="20" width="300" height="80" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="50" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">runFilePersistence()</text>
+  <text x="350" y="70" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">filePersistence.ts</text>
+  <text x="350" y="90" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">(270 lines)</text>
+
+  <!-- Arrow -->
+  <line x1="350" y1="100" x2="350" y2="130" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- isFilePersistenceEnabled -->
+  <rect x="150" y="130" width="400" height="110" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="160" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">isFilePersistenceEnabled()</text>
+  <text x="350" y="185" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">- feature flag</text>
+  <text x="350" y="205" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">- BYOC env</text>
+  <text x="350" y="225" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">- session token</text>
+
+  <!-- Decision arrows -->
+  <line x1="350" y1="240" x2="350" y2="280" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="280" y="265" font-family="Arial,sans-serif" font-size="11" fill="#666">yes</text>
+
+  <line x1="550" y1="185" x2="650" y2="185" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="580" y="175" font-family="Arial,sans-serif" font-size="11" fill="#666">no</text>
+  <text x="680" y="190" font-family="Arial,sans-serif" font-size="12" fill="#666">return null</text>
+
+  <!-- getEnvironmentKind -->
+  <rect x="200" y="280" width="300" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="310" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">getEnvironmentKind()</text>
+
+  <!-- Branch arrows -->
+  <line x1="250" y1="330" x2="150" y2="380" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="180" y="360" font-family="Arial,sans-serif" font-size="11" fill="#666">'byoc'</text>
+
+  <line x1="450" y1="330" x2="550" y2="380" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="480" y="360" font-family="Arial,sans-serif" font-size="11" fill="#666">'anthropic_cloud'</text>
+
+  <!-- executeBYOCPersistence -->
+  <rect x="20" y="380" width="260" height="80" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="150" y="410" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">executeBYOC</text>
+  <text x="150" y="430" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">Persistence()</text>
+
+  <!-- executeCloudPersistence -->
+  <rect x="420" y="380" width="260" height="80" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="550" y="410" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">executeCloud</text>
+  <text x="550" y="430" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">Persistence()</text>
+  <text x="550" y="450" font-family="Arial,sans-serif" font-size="11" fill="#666">(not implemented)</text>
+
+  <!-- findModifiedFiles -->
+  <rect x="40" y="490" width="220" height="50" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="150" y="520" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">findModifiedFiles()</text>
+
+  <line x1="150" y1="460" x2="150" y2="490" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- TODO xattr -->
+  <rect x="440" y="490" width="220" height="50" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="550" y="515" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">TODO: xattr-based</text>
+  <text x="550" y="530" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">file IDs</text>
+
+  <line x1="550" y1="460" x2="550" y2="490" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Upload to Files API -->
+  <rect x="200" y="570" width="300" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="600" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">Upload to Files API</text>
+
+  <line x1="150" y1="540" x2="300" y2="570" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="550" y1="540" x2="400" y2="570" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- FilesPersistedEventData -->
+  <rect x="150" y="640" width="400" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="670" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">FilesPersistedEventData</text>
+
+  <line x1="350" y1="620" x2="350" y2="640" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

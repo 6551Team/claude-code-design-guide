@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 480" font-family="Arial,sans-serif">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0,10 3,0 6" fill="#666"/>
+    </marker>
+  </defs>
+  <rect width="700" height="480" fill="white"/>
+
+  <!-- Title -->
+  <text x="350" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e40af">launchRepl → renderAndRun Flow</text>
+
+  <!-- run() box -->
+  <rect x="270" y="45" width="160" height="36" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="68" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">run()</text>
+
+  <line x1="350" y1="81" x2="350" y2="105" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Commander -->
+  <rect x="230" y="105" width="240" height="36" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="128" text-anchor="middle" font-size="13" fill="#1e40af">Commander CLI Argument Parsing</text>
+
+  <line x1="350" y1="141" x2="350" y2="165" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Migrations -->
+  <rect x="230" y="165" width="240" height="36" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="188" text-anchor="middle" font-size="13" fill="#1e40af">Run Migrations (12 migration functions)</text>
+
+  <line x1="350" y1="201" x2="350" y2="225" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- init() -->
+  <rect x="230" y="225" width="240" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="246" text-anchor="middle" font-size="13" fill="#1e40af">init()  (memoized, 15 steps)</text>
+  <text x="350" y="263" text-anchor="middle" font-size="11" fill="#6b7280">+ showSetupScreens()</text>
+
+  <line x1="350" y1="275" x2="350" y2="299" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Skills + Plugins -->
+  <rect x="200" y="299" width="300" height="36" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="322" text-anchor="middle" font-size="13" fill="#1e40af">initBundledSkills() + initBuiltinPlugins()</text>
+
+  <line x1="350" y1="335" x2="350" y2="359" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- setup() -->
+  <rect x="230" y="359" width="240" height="36" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="382" text-anchor="middle" font-size="13" fill="#1e40af">setup()  (12-step runtime preparation)</text>
+
+  <line x1="350" y1="395" x2="350" y2="419" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- renderAndRun() -->
+  <rect x="210" y="419" width="280" height="50" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="5"/>
+  <text x="350" y="439" text-anchor="middle" font-size="13" fill="#166534">renderAndRun()</text>
+  <text x="350" y="458" text-anchor="middle" font-size="11" fill="#4b5563">createStatsStore() → Ink root.render()</text>
+
+  <!-- Side note for renderAndRun -->
+  <rect x="510" y="419" width="175" height="50" fill="#fef9c3" stroke="#ca8a04" stroke-width="1" rx="5"/>
+  <text x="597" y="435" text-anchor="middle" font-size="11" fill="#78350f">initializeTelemetry</text>
+  <text x="597" y="449" text-anchor="middle" font-size="11" fill="#78350f">AfterTrust()</text>
+  <text x="597" y="463" text-anchor="middle" font-size="11" fill="#78350f">AppStateProvider → REPL</text>
+  <line x1="490" y1="444" x2="511" y2="444" stroke="#ca8a04" stroke-width="1" stroke-dasharray="4,3"/>
+</svg>

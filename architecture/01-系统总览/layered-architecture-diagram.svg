@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="720" viewBox="0 0 900 720">
+  <defs>
+    <marker id="arr-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#3b82f6"/>
+    </marker>
+  </defs>
+  <rect width="900" height="720" fill="white"/>
+
+  <!-- Title -->
+  <text x="450" y="34" font-family="'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="bold" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">Claude Code 分层架构</text>
+
+  <!-- Layer 1: UI Layer -->
+  <rect x="60" y="68" width="780" height="88" rx="8" fill="#dbe4ff" stroke="#3730a3" stroke-width="2"/>
+  <text x="450" y="92" font-family="'Segoe UI',system-ui,sans-serif" font-size="16" font-weight="600" fill="#3730a3" text-anchor="middle" dominant-baseline="middle">UI Layer</text>
+  <text x="450" y="114" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">main.tsx → Ink Engine → components/ → screens/</text>
+  <text x="450" y="136" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">dialogLaunchers.tsx, interactiveHelpers.tsx, outputStyles/, keybindings/, vim/</text>
+
+  <!-- Layer 2: Hooks Layer -->
+  <rect x="60" y="164" width="780" height="76" rx="8" fill="#c3fae8" stroke="#059669" stroke-width="2"/>
+  <text x="450" y="186" font-family="'Segoe UI',system-ui,sans-serif" font-size="16" font-weight="600" fill="#065f46" text-anchor="middle" dominant-baseline="middle">Hooks Layer</text>
+  <text x="450" y="208" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">70+ React Hooks (hooks/)</text>
+  <text x="450" y="228" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">useCanUseTool, useTextInput, useVimInput, useVoice, useCommandQueue, useMergedTools</text>
+
+  <!-- Layer 3: State Layer -->
+  <rect x="60" y="248" width="780" height="76" rx="8" fill="#fff3bf" stroke="#d97706" stroke-width="2"/>
+  <text x="450" y="270" font-family="'Segoe UI',system-ui,sans-serif" font-size="16" font-weight="600" fill="#92400e" text-anchor="middle" dominant-baseline="middle">State Layer</text>
+  <text x="450" y="292" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">bootstrap/state.ts (全局单例) · state/AppState.ts (Zustand store)</text>
+  <text x="450" y="312" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">context/ (React Context providers) · cost-tracker.ts · history.ts</text>
+
+  <!-- Layer 4: Query Engine -->
+  <rect x="60" y="332" width="780" height="76" rx="8" fill="#a5d8ff" stroke="#1e40af" stroke-width="2"/>
+  <text x="450" y="354" font-family="'Segoe UI',system-ui,sans-serif" font-size="16" font-weight="600" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">Query Engine</text>
+  <text x="450" y="376" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">query.ts (1729 行, async generator while(true) loop)</text>
+  <text x="450" y="396" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">QueryEngine.ts (SDK/print 入口) · query/config.ts · query/deps.ts · query/tokenBudget.ts</text>
+
+  <!-- Layer 5: Services Layer -->
+  <rect x="60" y="416" width="780" height="88" rx="8" fill="#d0bfff" stroke="#9333ea" stroke-width="2"/>
+  <text x="450" y="440" font-family="'Segoe UI',system-ui,sans-serif" font-size="16" font-weight="600" fill="#6b21a8" text-anchor="middle" dominant-baseline="middle">Services Layer</text>
+  <text x="450" y="462" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">services/api/ → API 客户端 (claude.ts, client.ts, withRetry.ts)</text>
+  <text x="450" y="482" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">services/compact/ → 上下文压缩 · services/tools/ → 工具编排</text>
+  <text x="450" y="496" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">services/mcp/ → MCP 协议 · services/analytics/ → 遥测 · + 13 其他服务</text>
+
+  <!-- Layer 6: Tools Layer -->
+  <rect x="60" y="512" width="780" height="76" rx="8" fill="#ffc9c9" stroke="#c92a2a" stroke-width="2"/>
+  <text x="450" y="534" font-family="'Segoe UI',system-ui,sans-serif" font-size="16" font-weight="600" fill="#c92a2a" text-anchor="middle" dominant-baseline="middle">Tools Layer</text>
+  <text x="450" y="556" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">40+ 工具实现 (tools/) · Tool.ts (类型定义) · tools.ts (注册总表)</text>
+  <text x="450" y="576" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">skills/ (17 内置技能) · commands/ (87+ Slash 命令)</text>
+
+  <!-- Layer 7: Infrastructure Layer -->
+  <rect x="60" y="596" width="780" height="88" rx="8" fill="#e9ecef" stroke="#495057" stroke-width="2"/>
+  <text x="450" y="620" font-family="'Segoe UI',system-ui,sans-serif" font-size="16" font-weight="600" fill="#495057" text-anchor="middle" dominant-baseline="middle">Infrastructure Layer</text>
+  <text x="450" y="642" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">utils/ (100+ 文件) · utils/permissions/ (24 文件, 权限引擎)</text>
+  <text x="450" y="662" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">utils/sandbox/ (沙箱执行) · native-ts/ (原生 FFI 桥接) · types/ · constants/ · schemas/</text>
+</svg>

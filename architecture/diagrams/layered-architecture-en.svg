@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+    <style>
+      .layer { fill: #f0f4f8; stroke: #2563eb; stroke-width: 2; }
+      .layer-text { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #1e40af; }
+      .desc-text { font-family: Arial, sans-serif; font-size: 12px; fill: #475569; }
+      .arrow { stroke: #666; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .title { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #1e293b; }
+    </style>
+  </defs>
+
+  <text x="400" y="30" class="title" text-anchor="middle">Claude Code 6-Layer Architecture</text>
+
+  <!-- Layer 1: UI -->
+  <rect x="100" y="60" width="600" height="70" class="layer" rx="5"/>
+  <text x="400" y="85" class="layer-text" text-anchor="middle">UI Layer</text>
+  <text x="400" y="105" class="desc-text" text-anchor="middle">React/Ink Components - Pure Rendering</text>
+  <text x="400" y="120" class="desc-text" text-anchor="middle">components/, screens/</text>
+
+  <!-- Arrow 1->2 -->
+  <line x1="400" y1="130" x2="400" y2="150" class="arrow"/>
+
+  <!-- Layer 2: Hooks -->
+  <rect x="100" y="150" width="600" height="70" class="layer" rx="5"/>
+  <text x="400" y="175" class="layer-text" text-anchor="middle">Hooks Layer</text>
+  <text x="400" y="195" class="desc-text" text-anchor="middle">Side Effects and State Logic Encapsulation</text>
+  <text x="400" y="210" class="desc-text" text-anchor="middle">hooks/ (70+ hooks)</text>
+
+  <!-- Arrow 2->3 -->
+  <line x1="400" y1="220" x2="400" y2="240" class="arrow"/>
+
+  <!-- Layer 3: State -->
+  <rect x="100" y="240" width="600" height="70" class="layer" rx="5"/>
+  <text x="400" y="265" class="layer-text" text-anchor="middle">State Layer</text>
+  <text x="400" y="285" class="desc-text" text-anchor="middle">Process-Level Lifecycle State</text>
+  <text x="400" y="300" class="desc-text" text-anchor="middle">bootstrap/state.ts, Zustand store</text>
+
+  <!-- Arrow 3->4 -->
+  <line x1="400" y1="310" x2="400" y2="330" class="arrow"/>
+
+  <!-- Layer 4: Query -->
+  <rect x="100" y="330" width="600" height="70" class="layer" rx="5"/>
+  <text x="400" y="355" class="layer-text" text-anchor="middle">Query Layer</text>
+  <text x="400" y="375" class="desc-text" text-anchor="middle">Single Conversation Turn Transient Management</text>
+  <text x="400" y="390" class="desc-text" text-anchor="middle">query.ts (async generator)</text>
+
+  <!-- Arrow 4->5 -->
+  <line x1="400" y1="400" x2="400" y2="420" class="arrow"/>
+
+  <!-- Layer 5: Services -->
+  <rect x="100" y="420" width="600" height="70" class="layer" rx="5"/>
+  <text x="400" y="445" class="layer-text" text-anchor="middle">Services Layer</text>
+  <text x="400" y="465" class="desc-text" text-anchor="middle">Stateless Capability Providers</text>
+  <text x="400" y="480" class="desc-text" text-anchor="middle">services/ (API, Compaction, MCP)</text>
+
+  <!-- Arrow 5->6 -->
+  <line x1="400" y1="490" x2="400" y2="510" class="arrow"/>
+
+  <!-- Layer 6: Tools -->
+  <rect x="100" y="510" width="600" height="70" class="layer" rx="5"/>
+  <text x="400" y="535" class="layer-text" text-anchor="middle">Tools Layer</text>
+  <text x="400" y="555" class="desc-text" text-anchor="middle">Execution Units with Identity</text>
+  <text x="400" y="570" class="desc-text" text-anchor="middle">tools/ (Bash, Read, Write, etc.)</text>
+
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+  </defs>
+
+  <text x="350" y="30" font-family="Arial,sans-serif" font-size="16" fill="#1e40af" text-anchor="middle" font-weight="bold">Dot-Repeat (.) Mechanism</text>
+
+  <!-- Step 1 -->
+  <rect x="200" y="60" width="300" height="60" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="85" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">Execute command: ciw type "foo"</text>
+  <text x="350" y="105" font-family="Arial,sans-serif" font-size="12" fill="#666" text-anchor="middle">(change inner word and insert text)</text>
+
+  <path d="M 350 120 L 350 160" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 2 -->
+  <rect x="150" y="160" width="400" height="70" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="350" y="185" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">Record to PersistentState.lastChange:</text>
+  <text x="350" y="205" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">{ type: 'change', operator: 'c',</text>
+  <text x="350" y="220" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">motion: 'iw', inserted: 'foo' }</text>
+
+  <path d="M 350 230 L 350 270" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 3 -->
+  <rect x="200" y="270" width="300" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="295" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">Move cursor to another word</text>
+  <text x="350" y="310" font-family="Arial,sans-serif" font-size="12" fill="#666" text-anchor="middle">(e.g., "bar")</text>
+
+  <path d="M 350 320 L 350 360" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 4 -->
+  <rect x="200" y="360" width="300" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="385" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">Press '.' key</text>
+
+  <path d="M 350 400 L 350 440" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 5 -->
+  <rect x="100" y="440" width="500" height="60" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="350" y="465" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">Replay complete operation sequence:</text>
+  <text x="350" y="485" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">ciw + insert "foo" → "bar" becomes "foo"</text>
+</svg>

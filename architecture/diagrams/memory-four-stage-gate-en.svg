@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" width="720" height="420">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="360" y="28" font-family="Arial,sans-serif" font-size="15" fill="#1e40af" text-anchor="middle" font-weight="bold">autoDream Four-Stage Gate (Lowest Cost First)</text>
+
+  <!-- Gate 1 -->
+  <rect x="60" y="50" width="600" height="55" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="360" y="74" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">Gate 1: Time Gate</text>
+  <text x="360" y="94" font-family="Arial,sans-serif" font-size="12" fill="#374151" text-anchor="middle">hours_since_lastConsolidatedAt &gt;= minHours  (one stat call — cheapest)</text>
+
+  <!-- Arrow down -->
+  <line x1="360" y1="105" x2="360" y2="130" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Gate 2 -->
+  <rect x="60" y="130" width="600" height="55" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="360" y="154" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">Gate 2: Session Gate</text>
+  <text x="360" y="174" font-family="Arial,sans-serif" font-size="12" fill="#374151" text-anchor="middle">transcript_count(mtime &gt; lastConsolidatedAt) &gt;= minSessions</text>
+
+  <!-- Arrow down -->
+  <line x1="360" y1="185" x2="360" y2="210" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Gate 3 -->
+  <rect x="60" y="210" width="600" height="55" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="360" y="234" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">Gate 3: Lock Gate</text>
+  <text x="360" y="254" font-family="Arial,sans-serif" font-size="12" fill="#374151" text-anchor="middle">tryAcquireConsolidationLock() — no other process consolidating</text>
+
+  <!-- Arrow down -->
+  <line x1="360" y1="265" x2="360" y2="290" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Execution -->
+  <rect x="60" y="290" width="600" height="80" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="360" y="314" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">Gate 4: Execute Consolidation (4 phases)</text>
+  <text x="360" y="334" font-family="Arial,sans-serif" font-size="12" fill="#374151" text-anchor="middle">1. Review — scan existing memory files</text>
+  <text x="360" y="350" font-family="Arial,sans-serif" font-size="12" fill="#374151" text-anchor="middle">2. Analyze — extract from recent transcripts</text>
+  <text x="360" y="366" font-family="Arial,sans-serif" font-size="12" fill="#374151" text-anchor="middle">3. Merge — deduplicate and update   4. Cleanup — remove stale entries</text>
+
+  <!-- Throttle note -->
+  <rect x="60" y="385" width="600" height="28" rx="5" fill="#e0e7ff" stroke="#6366f1" stroke-width="1"/>
+  <text x="360" y="403" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">SESSION_SCAN_INTERVAL_MS = 10 min — throttles re-scan when time gate passes but session gate fails</text>
+</svg>

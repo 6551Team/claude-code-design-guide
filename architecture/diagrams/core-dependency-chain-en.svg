@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+    <style>
+      .module { fill: #f0f4f8; stroke: #2563eb; stroke-width: 2; }
+      .module-text { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: #1e40af; }
+      .desc-text { font-family: Arial, sans-serif; font-size: 11px; fill: #475569; }
+      .arrow { stroke: #666; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .title { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #1e293b; }
+    </style>
+  </defs>
+
+  <text x="450" y="30" class="title" text-anchor="middle">Core Dependency Chain</text>
+
+  <!-- index.ts -->
+  <rect x="350" y="60" width="200" height="50" class="module" rx="5"/>
+  <text x="450" y="90" class="module-text" text-anchor="middle">index.ts</text>
+
+  <line x1="450" y1="110" x2="450" y2="140" class="arrow"/>
+
+  <!-- bootstrap.ts -->
+  <rect x="350" y="140" width="200" height="50" class="module" rx="5"/>
+  <text x="450" y="170" class="module-text" text-anchor="middle">bootstrap.ts</text>
+
+  <line x1="450" y1="190" x2="450" y2="220" class="arrow"/>
+
+  <!-- App.tsx -->
+  <rect x="350" y="220" width="200" height="50" class="module" rx="5"/>
+  <text x="450" y="250" class="module-text" text-anchor="middle">App.tsx</text>
+
+  <line x1="450" y1="270" x2="450" y2="300" class="arrow"/>
+
+  <!-- QueryEngine.tsx -->
+  <rect x="350" y="300" width="200" height="50" class="module" rx="5"/>
+  <text x="450" y="330" class="module-text" text-anchor="middle">QueryEngine.tsx</text>
+
+  <line x1="450" y1="350" x2="450" y2="380" class="arrow"/>
+
+  <!-- query.ts -->
+  <rect x="350" y="380" width="200" height="50" class="module" rx="5"/>
+  <text x="450" y="410" class="module-text" text-anchor="middle">query.ts</text>
+
+  <!-- Branches from query.ts -->
+  <line x1="350" y1="430" x2="200" y2="480" class="arrow"/>
+  <line x1="450" y1="430" x2="450" y2="480" class="arrow"/>
+  <line x1="550" y1="430" x2="700" y2="480" class="arrow"/>
+
+  <!-- services/api/claude.ts -->
+  <rect x="100" y="480" width="200" height="50" class="module" rx="5"/>
+  <text x="200" y="510" class="module-text" text-anchor="middle">services/api/claude.ts</text>
+
+  <!-- tools.ts -->
+  <rect x="350" y="480" width="200" height="50" class="module" rx="5"/>
+  <text x="450" y="510" class="module-text" text-anchor="middle">tools.ts</text>
+
+  <!-- utils/permissions/ -->
+  <rect x="600" y="480" width="200" height="50" class="module" rx="5"/>
+  <text x="700" y="510" class="module-text" text-anchor="middle">utils/permissions/</text>
+
+  <!-- tools.ts branches -->
+  <line x1="350" y1="530" x2="200" y2="580" class="arrow"/>
+  <line x1="450" y1="530" x2="450" y2="580" class="arrow"/>
+  <line x1="550" y1="530" x2="700" y2="580" class="arrow"/>
+
+  <!-- Individual tools -->
+  <rect x="100" y="580" width="200" height="50" class="module" rx="5"/>
+  <text x="200" y="605" class="module-text" text-anchor="middle">tools/BashTool/</text>
+  <text x="200" y="620" class="desc-text" text-anchor="middle">FileReadTool, etc.</text>
+
+  <!-- services/ -->
+  <rect x="350" y="580" width="200" height="50" class="module" rx="5"/>
+  <text x="450" y="605" class="module-text" text-anchor="middle">services/</text>
+  <text x="450" y="620" class="desc-text" text-anchor="middle">compact, mcp, etc.</text>
+
+  <!-- utils/ -->
+  <rect x="600" y="580" width="200" height="50" class="module" rx="5"/>
+  <text x="700" y="605" class="module-text" text-anchor="middle">utils/</text>
+  <text x="700" y="620" class="desc-text" text-anchor="middle">sandbox, settings, etc.</text>
+
+</svg>

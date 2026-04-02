@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+  </defs>
+
+  <text x="400" y="30" font-family="Arial,sans-serif" font-size="16" fill="#1e40af" text-anchor="middle" font-weight="bold">SessionState Lifecycle</text>
+
+  <!-- starting -->
+  <rect x="50" y="90" width="130" height="60" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="115" y="125" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">starting</text>
+
+  <!-- Arrow to running -->
+  <path d="M 180 120 L 260 120" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="220" y="110" font-family="Arial,sans-serif" font-size="11" fill="#666" text-anchor="middle">create</text>
+
+  <!-- running -->
+  <rect x="260" y="90" width="130" height="60" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="325" y="125" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">running</text>
+
+  <!-- Bidirectional arrow to detached -->
+  <path d="M 390 108 L 470 108" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 470 132 L 390 132" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="430" y="100" font-family="Arial,sans-serif" font-size="11" fill="#666" text-anchor="middle">ready</text>
+
+  <!-- detached -->
+  <rect x="470" y="90" width="130" height="60" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="535" y="125" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">detached</text>
+
+  <!-- Arrows to stopping from running and detached -->
+  <path d="M 325 150 L 325 220" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="295" y="190" font-family="Arial,sans-serif" font-size="11" fill="#666" text-anchor="middle">stop</text>
+
+  <path d="M 535 150 L 535 220" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="560" y="190" font-family="Arial,sans-serif" font-size="11" fill="#666" text-anchor="middle">stop</text>
+
+  <!-- stopping -->
+  <rect x="260" y="220" width="130" height="60" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="325" y="255" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">stopping</text>
+
+  <!-- stopped -->
+  <rect x="460" y="220" width="130" height="60" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="525" y="255" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">stopped</text>
+
+  <!-- Arrow from stopping to stopped -->
+  <path d="M 390 250 L 460 250" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Also arrow from detached to stopping via stop -->
+  <path d="M 535 220 L 525 220" stroke="#666" stroke-width="0" fill="none"/>
+
+  <!-- State descriptions -->
+  <text x="115" y="175" font-family="Arial,sans-serif" font-size="11" fill="#666" text-anchor="middle">Process starting up</text>
+  <text x="325" y="175" font-family="Arial,sans-serif" font-size="11" fill="#666" text-anchor="middle">Active + has clients</text>
+  <text x="535" y="175" font-family="Arial,sans-serif" font-size="11" fill="#666" text-anchor="middle">Running, no connection</text>
+  <text x="325" y="295" font-family="Arial,sans-serif" font-size="11" fill="#666" text-anchor="middle">Graceful shutdown</text>
+  <text x="525" y="295" font-family="Arial,sans-serif" font-size="11" fill="#666" text-anchor="middle">Terminated</text>
+</svg>

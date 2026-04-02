@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 900">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+    <style>
+      .step { fill: #f0f4f8; stroke: #2563eb; stroke-width: 2; }
+      .step-text { font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; fill: #1e40af; }
+      .desc-text { font-family: Arial, sans-serif; font-size: 10px; fill: #475569; }
+      .arrow { stroke: #666; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .title { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #1e293b; }
+      .decision { fill: #fef3c7; stroke: #f59e0b; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <text x="550" y="30" class="title" text-anchor="middle">工具执行数据流</text>
+
+  <!-- Start -->
+  <rect x="400" y="60" width="300" height="50" class="step" rx="5"/>
+  <text x="550" y="90" class="step-text" text-anchor="middle">query.ts 检测到 tool_use block</text>
+
+  <line x1="550" y1="110" x2="550" y2="140" class="arrow"/>
+
+  <!-- Step 1 -->
+  <rect x="400" y="140" width="300" height="60" class="step" rx="5"/>
+  <text x="550" y="165" class="step-text" text-anchor="middle">Step 1: 工具查找</text>
+  <text x="550" y="180" class="desc-text" text-anchor="middle">从 tools.ts 注册表查找工具定义</text>
+  <text x="550" y="192" class="desc-text" text-anchor="middle">检查 isEnabled()</text>
+
+  <line x1="550" y1="200" x2="550" y2="230" class="arrow"/>
+
+  <!-- Step 2 -->
+  <rect x="400" y="230" width="300" height="60" class="step" rx="5"/>
+  <text x="550" y="255" class="step-text" text-anchor="middle">Step 2: 输入校验</text>
+  <text x="550" y="270" class="desc-text" text-anchor="middle">使用 inputSchema (Zod) 校验输入</text>
+  <text x="550" y="282" class="desc-text" text-anchor="middle">失败 → 返回错误消息</text>
+
+  <line x1="550" y1="290" x2="550" y2="320" class="arrow"/>
+
+  <!-- Step 3: Permission Check (Decision) -->
+  <polygon points="550,320 750,370 550,420 350,370" class="decision"/>
+  <text x="550" y="365" class="step-text" text-anchor="middle">Step 3: 权限检查</text>
+  <text x="550" y="380" class="desc-text" text-anchor="middle">canUseTool() 管线</text>
+
+  <!-- Denied path -->
+  <line x1="350" y1="370" x2="200" y2="370" class="arrow"/>
+  <rect x="50" y="345" width="150" height="50" class="step" rx="5" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="125" y="365" class="step-text" text-anchor="middle" fill="#dc2626">拒绝</text>
+  <text x="125" y="380" class="desc-text" text-anchor="middle">返回权限错误</text>
+
+  <!-- Approved path -->
+  <line x1="550" y1="420" x2="550" y2="460" class="arrow"/>
+  <text x="600" y="445" class="desc-text">批准</text>
+
+  <!-- Step 4 -->
+  <rect x="400" y="460" width="300" height="60" class="step" rx="5"/>
+  <text x="550" y="485" class="step-text" text-anchor="middle">Step 4: 执行工具</text>
+  <text x="550" y="500" class="desc-text" text-anchor="middle">调用 tool.execute(input, context)</text>
+  <text x="550" y="512" class="desc-text" text-anchor="middle">yield 进度事件 → UI 更新</text>
+
+  <line x1="550" y1="520" x2="550" y2="550" class="arrow"/>
+
+  <!-- Step 5 -->
+  <rect x="400" y="550" width="300" height="60" class="step" rx="5"/>
+  <text x="550" y="575" class="step-text" text-anchor="middle">Step 5: 结果处理</text>
+  <text x="550" y="590" class="desc-text" text-anchor="middle">格式化为 tool_result 消息</text>
+  <text x="550" y="602" class="desc-text" text-anchor="middle">应用 toolResultBudget (>20KB → 磁盘)</text>
+
+  <line x1="550" y1="610" x2="550" y2="640" class="arrow"/>
+
+  <!-- Hooks -->
+  <rect x="400" y="640" width="300" height="60" class="step" rx="5"/>
+  <text x="550" y="665" class="step-text" text-anchor="middle">执行 postSamplingHooks</text>
+  <text x="550" y="680" class="desc-text" text-anchor="middle">记录遥测、更新状态</text>
+  <text x="550" y="692" class="desc-text" text-anchor="middle">触发用户自定义钩子</text>
+
+  <line x1="550" y1="700" x2="550" y2="730" class="arrow"/>
+
+  <!-- Return -->
+  <rect x="400" y="730" width="300" height="50" class="step" rx="5"/>
+  <text x="550" y="760" class="step-text" text-anchor="middle">返回 tool_result → query.ts</text>
+
+  <line x1="550" y1="780" x2="550" y2="810" class="arrow"/>
+
+  <!-- Next turn -->
+  <rect x="400" y="810" width="300" height="50" class="step" rx="5" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="550" y="840" class="step-text" text-anchor="middle" fill="#16a34a">附加到消息列表 → 下一轮</text>
+
+</svg>

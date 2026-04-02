@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 420" font-family="Arial,sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="310" y="28" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Multi-Agent Remote Launch (CCR) Flow</text>
+
+  <!-- AgentTool.call -->
+  <rect x="160" y="45" width="300" height="38" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="310" y="64" text-anchor="middle" font-size="13" fill="#1e40af">AgentTool.call(</text>
+  <text x="310" y="78" text-anchor="middle" font-size="12" fill="#374151">{ isolation: 'remote', prompt, ... })</text>
+
+  <line x1="310" y1="83" x2="310" y2="108" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- checkRemoteAgentEligibility -->
+  <rect x="140" y="108" width="340" height="38" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="310" y="127" text-anchor="middle" font-size="13" fill="#1e40af">checkRemoteAgentEligibility()</text>
+  <text x="310" y="141" text-anchor="middle" font-size="11" fill="#374151">ant users only · verify CCR access</text>
+
+  <!-- Eligibility diamond -->
+  <line x1="310" y1="146" x2="310" y2="171" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <polygon points="310,171 420,201 310,231 200,201" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="310" y="197" text-anchor="middle" font-size="12" fill="#92400e">Eligible?</text>
+  <text x="310" y="212" text-anchor="middle" font-size="11" fill="#92400e">(ant user check)</text>
+
+  <!-- No branch -->
+  <line x1="200" y1="201" x2="120" y2="201" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="165" y="195" text-anchor="middle" font-size="11" fill="#666">No</text>
+  <rect x="20" y="183" width="100" height="36" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="70" y="202" text-anchor="middle" font-size="12" fill="#1e40af">Return</text>
+  <text x="70" y="216" text-anchor="middle" font-size="12" fill="#1e40af">error</text>
+
+  <!-- Yes branch -->
+  <line x1="310" y1="231" x2="310" y2="256" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="322" y="248" font-size="11" fill="#666">Yes</text>
+
+  <!-- teleportToRemote -->
+  <rect x="140" y="256" width="340" height="38" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="310" y="275" text-anchor="middle" font-size="13" fill="#1e40af">teleportToRemote()</text>
+  <text x="310" y="289" text-anchor="middle" font-size="11" fill="#374151">spin up remote Claude Code Remote session</text>
+
+  <line x1="310" y1="294" x2="310" y2="319" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- registerRemoteAgentTask -->
+  <rect x="140" y="319" width="340" height="38" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="310" y="338" text-anchor="middle" font-size="13" fill="#1e40af">registerRemoteAgentTask()</text>
+  <text x="310" y="352" text-anchor="middle" font-size="11" fill="#374151">register in task system as RemoteAgentTask</text>
+
+  <line x1="310" y1="357" x2="310" y2="382" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Return -->
+  <rect x="110" y="382" width="400" height="30" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="310" y="401" text-anchor="middle" font-size="12" fill="#1e40af">{ status: 'remote_launched', taskId, sessionUrl }</text>
+</svg>

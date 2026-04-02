@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 480" font-family="Arial,sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="340" y="28" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Multi-Agent Worktree Isolation Flow</text>
+
+  <!-- AgentTool.call -->
+  <rect x="185" y="45" width="310" height="38" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="340" y="64" text-anchor="middle" font-size="13" fill="#1e40af">AgentTool.call(</text>
+  <text x="340" y="78" text-anchor="middle" font-size="12" fill="#374151">{ isolation: 'worktree', prompt, ... })</text>
+
+  <line x1="340" y1="83" x2="340" y2="108" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- createAgentWorktree -->
+  <rect x="185" y="108" width="310" height="38" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="340" y="127" text-anchor="middle" font-size="13" fill="#1e40af">createAgentWorktree(agentId)</text>
+  <text x="340" y="141" text-anchor="middle" font-size="11" fill="#374151">git worktree add — isolated repo copy</text>
+
+  <line x1="340" y1="146" x2="340" y2="171" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- runWithCwdOverride -->
+  <rect x="185" y="171" width="310" height="38" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="340" y="190" text-anchor="middle" font-size="13" fill="#1e40af">runWithCwdOverride(worktreePath)</text>
+  <text x="340" y="204" text-anchor="middle" font-size="11" fill="#374151">set working directory to worktree</text>
+
+  <line x1="340" y1="209" x2="340" y2="234" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- runAgent -->
+  <rect x="165" y="234" width="350" height="68" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="340" y="254" text-anchor="middle" font-size="13" fill="#1e40af">runAgent({ cwd: worktreePath })</text>
+  <text x="340" y="270" text-anchor="middle" font-size="11" fill="#374151">agent works in isolated repo copy</text>
+  <text x="340" y="284" text-anchor="middle" font-size="11" fill="#374151">file changes do NOT affect main repo</text>
+  <text x="340" y="298" text-anchor="middle" font-size="11" fill="#374151">independent message history + token budget</text>
+
+  <line x1="340" y1="302" x2="340" y2="327" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- hasWorktreeChanges diamond -->
+  <polygon points="340,327 455,357 340,387 225,357" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="340" y="353" text-anchor="middle" font-size="12" fill="#92400e">hasWorktreeChanges()?</text>
+  <text x="340" y="368" text-anchor="middle" font-size="11" fill="#92400e">uncommitted changes?</text>
+
+  <!-- Yes -->
+  <line x1="455" y1="357" x2="530" y2="357" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="494" y="350" text-anchor="middle" font-size="11" fill="#666">Yes</text>
+  <rect x="530" y="339" width="120" height="38" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="590" y="358" text-anchor="middle" font-size="12" fill="#1e40af">Coordinator</text>
+  <text x="590" y="372" text-anchor="middle" font-size="12" fill="#1e40af">merges changes</text>
+
+  <!-- No -->
+  <line x1="340" y1="387" x2="340" y2="412" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="352" y="403" font-size="11" fill="#666">No</text>
+
+  <!-- removeAgentWorktree -->
+  <rect x="185" y="412" width="310" height="38" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="340" y="431" text-anchor="middle" font-size="13" fill="#1e40af">removeAgentWorktree()</text>
+  <text x="340" y="445" text-anchor="middle" font-size="11" fill="#374151">clean up temporary worktree</text>
+
+  <!-- Arrow from "Yes" path down to removeAgentWorktree -->
+  <line x1="590" y1="377" x2="590" y2="431" stroke="#666" stroke-width="2"/>
+  <line x1="590" y1="431" x2="495" y2="431" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+</svg>
