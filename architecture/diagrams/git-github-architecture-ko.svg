@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="220" viewBox="0 0 720 220">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Outer container -->
+  <rect x="20" y="10" width="680" height="200" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+
+  <!-- Title row: Context Layer -->
+  <rect x="20" y="10" width="680" height="50" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="360" y="32" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="13" font-weight="bold">컨텍스트 계층 (context.ts)</text>
+  <text x="360" y="51" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="12">getGitStatus() / getSystemContext() [메모이제이션]</text>
+
+  <!-- Four sub-modules row -->
+  <!-- gitFilesystem.ts -->
+  <rect x="30" y="75" width="160" height="70" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="110" y="103" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold">gitFilesystem.ts</text>
+  <text x="110" y="120" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="11">(700줄, 핵심)</text>
+  <text x="110" y="137" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="11">.git 직접 파싱</text>
+
+  <!-- gitConfigParser.ts -->
+  <rect x="210" y="75" width="165" height="70" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="293" y="103" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold">gitConfigParser.ts</text>
+  <text x="293" y="120" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="11">(278줄, 설정)</text>
+  <text x="293" y="137" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="11">설정 파일 파싱</text>
+
+  <!-- gitignore.ts -->
+  <rect x="395" y="75" width="145" height="70" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="468" y="103" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold">gitignore.ts</text>
+  <text x="468" y="120" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="11">(무시 규칙)</text>
+  <text x="468" y="137" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="11">경로 제외</text>
+
+  <!-- github/ -->
+  <rect x="560" y="75" width="130" height="70" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="625" y="103" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold">github/</text>
+  <text x="625" y="120" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="11">(CLI 연동)</text>
+  <text x="625" y="137" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="11">gh auth status</text>
+
+  <!-- Bottom row: storage layer -->
+  <rect x="30" y="160" width="660" height="40" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="360" y="177" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold">.git/ 파일시스템 + gh CLI</text>
+  <text x="360" y="193" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="11">직접 파일 읽기 (HEAD, config, refs, packed-refs) + 로컬 자격증명 저장소</text>
+
+  <!-- Arrows from sub-modules down to storage -->
+  <line x1="110" y1="145" x2="110" y2="158" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="293" y1="145" x2="293" y2="158" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="468" y1="145" x2="468" y2="158" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="625" y1="145" x2="625" y2="158" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Arrows from context layer down to sub-modules -->
+  <line x1="110" y1="60" x2="110" y2="73" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="293" y1="60" x2="293" y2="73" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="468" y1="60" x2="468" y2="73" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="625" y1="60" x2="625" y2="73" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+</svg>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="770" viewBox="0 0 740 770">
+  <defs>
+    <marker id="arr-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#3b82f6"/>
+    </marker>
+  </defs>
+  <rect width="740" height="770" fill="white"/>
+
+  <!-- Title -->
+  <text x="370" y="34" font-family="'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="bold" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">쿼리 엔진 실행 흐름</text>
+
+  <!-- Step 0 -->
+  <rect x="110" y="58" width="520" height="60" rx="10" fill="#a5d8ff" stroke="#1e40af" stroke-width="2.5"/>
+  <text x="370" y="88" font-family="'Segoe UI',system-ui,sans-serif" font-size="17" font-weight="600" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">submitMessage( userInput )</text>
+
+  <!-- Arrow -->
+  <line x1="370" y1="120" x2="370" y2="148" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Step 1 -->
+  <rect x="110" y="150" width="520" height="75" rx="10" fill="#fff3bf" stroke="#92400e" stroke-width="2.5"/>
+  <text x="370" y="176" font-family="'Segoe UI',system-ui,sans-serif" font-size="17" font-weight="600" fill="#92400e" text-anchor="middle" dominant-baseline="middle">① 사용자 입력 전처리</text>
+  <text x="370" y="202" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">슬래시 커맨드 파싱 · 첨부 처리 · 메모리 주입</text>
+
+  <!-- Arrow -->
+  <line x1="370" y1="227" x2="370" y2="255" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Step 2 -->
+  <rect x="110" y="257" width="520" height="75" rx="10" fill="#c3fae8" stroke="#065f46" stroke-width="2.5"/>
+  <text x="370" y="283" font-family="'Segoe UI',system-ui,sans-serif" font-size="17" font-weight="600" fill="#065f46" text-anchor="middle" dominant-baseline="middle">② 메시지 목록 구성</text>
+  <text x="370" y="309" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">히스토리 메시지 · 새 사용자 메시지 · 시스템 컨텍스트</text>
+
+  <!-- Arrow -->
+  <line x1="370" y1="334" x2="370" y2="362" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Step 3 (dashed) -->
+  <rect x="110" y="364" width="520" height="120" rx="10" fill="#dbe4ff" stroke="#3730a3" stroke-width="2.5" stroke-dasharray="7,4"/>
+  <text x="370" y="400" font-family="'Segoe UI',system-ui,sans-serif" font-size="17" font-weight="600" fill="#3730a3" text-anchor="middle" dominant-baseline="middle">③ query() 핵심 루프 호출</text>
+  <text x="370" y="432" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">시스템 프롬프트 구성 → Claude API 호출 (스트리밍)</text>
+  <text x="370" y="452" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">응답 파싱 → 도구 호출 실행 → 완료까지 반복</text>
+
+  <!-- Arrow -->
+  <line x1="370" y1="486" x2="370" y2="514" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Step 4 -->
+  <rect x="110" y="516" width="520" height="75" rx="10" fill="#d0bfff" stroke="#6b21a8" stroke-width="2.5"/>
+  <text x="370" y="542" font-family="'Segoe UI',system-ui,sans-serif" font-size="17" font-weight="600" fill="#6b21a8" text-anchor="middle" dominant-baseline="middle">④ 후처리</text>
+  <text x="370" y="568" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">토큰 로깅 · 세션 저장 · 훅 실행 · 컴팩트 확인</text>
+
+  <!-- Arrow -->
+  <line x1="370" y1="593" x2="370" y2="621" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Step 5 -->
+  <rect x="110" y="623" width="520" height="60" rx="10" fill="#b2f2bb" stroke="#14532d" stroke-width="2.5"/>
+  <text x="370" y="653" font-family="'Segoe UI',system-ui,sans-serif" font-size="17" font-weight="600" fill="#14532d" text-anchor="middle" dominant-baseline="middle">⑤ 호출자에게 결과 반환 (스트리밍)</text>
+</svg>

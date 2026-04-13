@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 280">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Native module available? diamond -->
+  <polygon points="300,30 490,110 300,190 110,110" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="300" y="103" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">네이티브 모듈</text>
+  <text x="300" y="120" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">사용 가능?</text>
+
+  <!-- Yes path to native -->
+  <line x1="490" y1="110" x2="555" y2="110" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="510" y="102" font-family="Arial,sans-serif" font-size="12" fill="#666">예</text>
+
+  <!-- Native implementation box (off-right) -->
+  <rect x="560" y="80" width="200" height="60" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="660" y="107" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">네이티브 구현</text>
+  <text x="660" y="127" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">(고성능)</text>
+
+  <!-- No path arrow down -->
+  <line x1="300" y1="190" x2="300" y2="230" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="310" y="215" font-family="Arial,sans-serif" font-size="12" fill="#666">아니오</text>
+
+  <!-- Pure JS fallback box -->
+  <rect x="100" y="230" width="400" height="60" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="300" y="257" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">순수 JS 폴백</text>
+  <text x="300" y="277" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">기능적으로 동일하나 성능이 다소 낮을 수 있음</text>
+</svg>

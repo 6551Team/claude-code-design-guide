@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="490" viewBox="0 0 1000 490">
+  <defs>
+    <marker id="arr-3b82f6" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#3b82f6"/>
+        </marker>
+    <marker id="arr-059669" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#059669"/>
+        </marker>
+    <marker id="arr-f59e0b" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#f59e0b"/>
+        </marker>
+    <marker id="arr-dc2626" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#dc2626"/>
+        </marker>
+    <marker id="arr-9333ea" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#9333ea"/>
+        </marker>
+    <marker id="arr-1e40af" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#1e40af"/>
+        </marker>
+    <marker id="arr-374151" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#374151"/>
+        </marker>
+    <marker id="arr-94a3b8" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#94a3b8"/>
+        </marker>
+  </defs>
+  <rect width="1000" height="490" fill="white"/>
+  <text x="500" y="34"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="22" font-weight="bold"
+         fill="#1e40af" text-anchor="middle"
+         dominant-baseline="middle">MCP 아키텍처: AI 도구의 인터넷</text>
+  <rect x="230" y="62" width="540" height="145" rx="12"
+       fill="#dbe4ff" stroke="#1e40af" stroke-width="2" />
+  <text x="500" y="82"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="17" font-weight="600"
+         fill="#1e40af" text-anchor="middle"
+         dominant-baseline="middle">Claude Code (MCP 클라이언트)</text>
+  <rect x="268" y="97" width="464" height="80" rx="8"
+       fill="#a5d8ff" stroke="#3b82f6" stroke-width="2" />
+  <text x="500" y="126.5"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="14" font-weight="normal"
+         fill="#1e40af" text-anchor="middle"
+         dominant-baseline="middle">MCP 클라이언트 레이어  src/services/mcp/</text>
+  <text x="500" y="147.5"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="14" font-weight="normal"
+         fill="#1e40af" text-anchor="middle"
+         dominant-baseline="middle">연결 관리 · 도구 등록 · 리소스 접근 · 인증 처리</text>
+  <text x="500" y="228"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="normal"
+         fill="#6b7280" text-anchor="middle"
+         dominant-baseline="middle">MCP 프로토콜 (JSON-RPC over stdio / HTTP)</text>
+  <line x1="500" y1="210" x2="127.5" y2="275"
+       stroke="#3b82f6" stroke-width="2" stroke-dasharray="6,4"
+       marker-end="url(#arr-3b82f6)" />
+  <rect x="40" y="280" width="175" height="130" rx="10"
+       fill="#c3fae8" stroke="#059669" stroke-width="2" />
+  <text x="127.5" y="322"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="14" font-weight="600"
+         fill="#065f46" text-anchor="middle"
+         dominant-baseline="middle">Database MCP 서버</text>
+  <text x="127.5" y="358.25"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="normal"
+         fill="#374151" text-anchor="middle"
+         dominant-baseline="middle">도구 · 리소스</text>
+  <text x="127.5" y="377.75"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="normal"
+         fill="#374151" text-anchor="middle"
+         dominant-baseline="middle">프롬프트</text>
+  <line x1="500" y1="210" x2="362.5" y2="275"
+       stroke="#3b82f6" stroke-width="2" stroke-dasharray="6,4"
+       marker-end="url(#arr-3b82f6)" />
+  <rect x="275" y="280" width="175" height="130" rx="10"
+       fill="#c3fae8" stroke="#059669" stroke-width="2" />
+  <text x="362.5" y="322"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="14" font-weight="600"
+         fill="#065f46" text-anchor="middle"
+         dominant-baseline="middle">GitHub MCP 서버</text>
+  <text x="362.5" y="358.25"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="normal"
+         fill="#374151" text-anchor="middle"
+         dominant-baseline="middle">도구 · 리소스</text>
+  <text x="362.5" y="377.75"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="normal"
+         fill="#374151" text-anchor="middle"
+         dominant-baseline="middle">프롬프트</text>
+  <line x1="500" y1="210" x2="597.5" y2="275"
+       stroke="#3b82f6" stroke-width="2" stroke-dasharray="6,4"
+       marker-end="url(#arr-3b82f6)" />
+  <rect x="510" y="280" width="175" height="130" rx="10"
+       fill="#c3fae8" stroke="#059669" stroke-width="2" />
+  <text x="597.5" y="322"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="14" font-weight="600"
+         fill="#065f46" text-anchor="middle"
+         dominant-baseline="middle">Slack MCP 서버</text>
+  <text x="597.5" y="358.25"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="normal"
+         fill="#374151" text-anchor="middle"
+         dominant-baseline="middle">도구 · 리소스</text>
+  <text x="597.5" y="377.75"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="normal"
+         fill="#374151" text-anchor="middle"
+         dominant-baseline="middle">프롬프트</text>
+  <line x1="500" y1="210" x2="832.5" y2="275"
+       stroke="#3b82f6" stroke-width="2" stroke-dasharray="6,4"
+       marker-end="url(#arr-3b82f6)" />
+  <rect x="745" y="280" width="175" height="130" rx="10"
+       fill="#c3fae8" stroke="#059669" stroke-width="2" />
+  <text x="832.5" y="322"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="14" font-weight="600"
+         fill="#065f46" text-anchor="middle"
+         dominant-baseline="middle">Custom MCP 서버</text>
+  <text x="832.5" y="358.25"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="normal"
+         fill="#374151" text-anchor="middle"
+         dominant-baseline="middle">도구 · 리소스</text>
+  <text x="832.5" y="377.75"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="normal"
+         fill="#374151" text-anchor="middle"
+         dominant-baseline="middle">프롬프트</text>
+  <text x="500" y="446"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="14" font-weight="normal"
+         fill="#6b7280" text-anchor="middle"
+         dominant-baseline="middle">MCP는 AI 도구에 HTTP가 웹 페이지에 하는 것과 같은 역할 — 도구 상호운용을 위한 오픈 프로토콜</text>
+</svg>

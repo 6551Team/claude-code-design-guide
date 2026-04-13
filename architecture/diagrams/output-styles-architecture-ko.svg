@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Project and User directories -->
+  <rect x="50" y="20" width="250" height="60" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="175" y="55" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">.claude/output-styles/</text>
+
+  <rect x="500" y="20" width="250" height="60" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="625" y="55" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">~/.claude/output-styles/</text>
+
+  <!-- Arrows to loader -->
+  <line x1="175" y1="80" x2="400" y2="130" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="625" y1="80" x2="400" y2="130" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Loader -->
+  <rect x="200" y="130" width="400" height="80" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="400" y="160" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">getOutputStyleDirStyles(cwd)</text>
+  <text x="400" y="185" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">(메모이즈된 로더)</text>
+
+  <!-- Arrow down -->
+  <line x1="400" y1="210" x2="400" y2="240" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Parser boxes -->
+  <rect x="80" y="240" width="200" height="70" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="180" y="265" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">마크다운 파일 파싱</text>
+  <text x="180" y="290" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">(*.md)</text>
+
+  <rect x="520" y="240" width="200" height="70" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="620" y="265" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">프론트매터 추출</text>
+  <text x="620" y="290" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">OutputStyleConfig 생성</text>
+
+  <!-- Arrow between parsers -->
+  <line x1="280" y1="275" x2="520" y2="275" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Arrow down from config -->
+  <line x1="620" y1="310" x2="620" y2="340" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="620" y1="340" x2="400" y2="360" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Command and injection boxes -->
+  <rect x="80" y="360" width="200" height="70" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="180" y="385" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">/output-style 명령어</text>
+  <text x="180" y="410" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">(런타임 전환)</text>
+
+  <rect x="520" y="360" width="200" height="70" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="620" y="385" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">시스템 프롬프트 주입</text>
+  <text x="620" y="410" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">(프롬프트 인젝션)</text>
+
+  <!-- Arrow between command and injection -->
+  <line x1="280" y1="395" x2="520" y2="395" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

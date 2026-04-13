@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="620" viewBox="0 0 740 620">
+  <defs>
+    <marker id="arr-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#3b82f6"/>
+    </marker>
+    <marker id="arr-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#dc2626"/>
+    </marker>
+  </defs>
+  <rect width="740" height="620" fill="white"/>
+
+  <!-- Title -->
+  <text x="370" y="34" font-family="'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="bold" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">시스템 프롬프트 구축 흐름</text>
+
+  <!-- Step 1 -->
+  <rect x="90" y="58" width="560" height="72" rx="10" fill="#a5d8ff" stroke="#1e40af" stroke-width="2.5"/>
+  <text x="370" y="83" font-family="'Segoe UI',system-ui,sans-serif" font-size="16" font-weight="600" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">1. 핵심 지침 (고정)</text>
+  <text x="370" y="108" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">역할 정의 · 행동 규칙 · 안전 가이드라인</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="370" y1="132" x2="370" y2="152" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Step 2 -->
+  <rect x="90" y="154" width="560" height="72" rx="10" fill="#b2f2bb" stroke="#059669" stroke-width="2.5"/>
+  <text x="370" y="179" font-family="'Segoe UI',system-ui,sans-serif" font-size="16" font-weight="600" fill="#059669" text-anchor="middle" dominant-baseline="middle">2. 도구 정의 (동적)</text>
+  <text x="370" y="204" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">사용 가능한 도구 기반: 이름 / 설명 / 스키마</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="370" y1="228" x2="370" y2="248" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Step 3 -->
+  <rect x="90" y="250" width="560" height="72" rx="10" fill="#fff3bf" stroke="#92400e" stroke-width="2.5"/>
+  <text x="370" y="275" font-family="'Segoe UI',system-ui,sans-serif" font-size="16" font-weight="600" fill="#92400e" text-anchor="middle" dominant-baseline="middle">3. 사용자 컨텍스트 (CLAUDE.md)</text>
+  <text x="370" y="300" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">프로젝트 설명 · 코드 표준 · 워크플로우</text>
+
+  <!-- Arrow 3→4 -->
+  <line x1="370" y1="324" x2="370" y2="344" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Step 4 -->
+  <rect x="90" y="346" width="560" height="72" rx="10" fill="#c3fae8" stroke="#065f46" stroke-width="2.5"/>
+  <text x="370" y="371" font-family="'Segoe UI',system-ui,sans-serif" font-size="16" font-weight="600" fill="#065f46" text-anchor="middle" dominant-baseline="middle">4. 시스템 컨텍스트 (동적)</text>
+  <text x="370" y="396" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">Git 상태 · 현재 디렉토리 · 환경 정보</text>
+
+  <!-- Arrow 4→5 -->
+  <line x1="370" y1="420" x2="370" y2="440" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Step 5 -->
+  <rect x="90" y="442" width="560" height="72" rx="10" fill="#d0bfff" stroke="#6b21a8" stroke-width="2.5"/>
+  <text x="370" y="467" font-family="'Segoe UI',system-ui,sans-serif" font-size="16" font-weight="600" fill="#6b21a8" text-anchor="middle" dominant-baseline="middle">5. 커스텀 시스템 프롬프트 (선택사항)</text>
+  <text x="370" y="492" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">--system-prompt 플래그로 사용자 제공</text>
+
+  <!-- Arrow 5→result -->
+  <line x1="370" y1="516" x2="370" y2="552" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arr-red)"/>
+
+  <!-- Result -->
+  <rect x="150" y="554" width="440" height="52" rx="10" fill="#ffc9c9" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="370" y="580" font-family="'Segoe UI',system-ui,sans-serif" font-size="16" font-weight="600" fill="#dc2626" text-anchor="middle" dominant-baseline="middle">완성된 시스템 프롬프트 → Claude API로 전송</text>
+</svg>

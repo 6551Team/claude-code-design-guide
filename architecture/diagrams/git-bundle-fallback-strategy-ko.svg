@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 280">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+  </defs>
+
+  <text x="250" y="30" font-family="Arial,sans-serif" fill="#1e40af" font-size="14" font-weight="bold" text-anchor="middle">_bundleWithFallback() 실행 흐름</text>
+
+  <!-- Try 1 -->
+  <rect x="125" y="60" width="250" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="250" y="85" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold" text-anchor="middle">시도 1: git bundle create --all</text>
+
+  <!-- Arrow down -->
+  <line x1="250" y1="110" x2="250" y2="140" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="270" y="130" font-family="Arial,sans-serif" fill="#666" font-size="11">실패?</text>
+
+  <!-- Try 2 -->
+  <rect x="125" y="140" width="250" height="50" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="250" y="165" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold" text-anchor="middle">시도 2: git bundle create HEAD</text>
+
+  <!-- Arrow down -->
+  <line x1="250" y1="190" x2="250" y2="220" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="270" y="210" font-family="Arial,sans-serif" fill="#666" font-size="11">실패?</text>
+
+  <!-- Try 3 -->
+  <rect x="100" y="220" width="300" height="50" fill="#fee2e2" stroke="#dc2626" stroke-width="2" rx="5"/>
+  <text x="250" y="245" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold" text-anchor="middle">시도 3: 압축 루트 번들</text>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 650">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+  </defs>
+
+  <!-- Step 1 -->
+  <rect x="150" y="20" width="300" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="300" y="45" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" text-anchor="middle">1. 사용자가 복잡한 작업 제출</text>
+  <line x1="300" y1="60" x2="300" y2="85" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 2 -->
+  <rect x="100" y="85" width="400" height="80" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="300" y="108" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold" text-anchor="middle">2. 코디네이터가 작업 분석</text>
+  <text x="120" y="128" font-family="Arial,sans-serif" fill="#666" font-size="11">• 병렬화 가능한 하위 작업 파악</text>
+  <text x="120" y="145" font-family="Arial,sans-serif" fill="#666" font-size="11">• 의존성 결정</text>
+  <text x="120" y="162" font-family="Arial,sans-serif" fill="#666" font-size="11">• 실행 계획 수립</text>
+  <line x1="300" y1="165" x2="300" y2="190" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 3 -->
+  <rect x="80" y="190" width="440" height="80" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="300" y="213" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold" text-anchor="middle">3. 코디네이터가 작업 설명 작성</text>
+  <text x="100" y="233" font-family="Arial,sans-serif" fill="#666" font-size="10">워커 #1: "인증 서비스 리팩토링, 인터페이스 유지"</text>
+  <text x="100" y="250" font-family="Arial,sans-serif" fill="#666" font-size="10">워커 #2: "모든 임포트 경로를 새 위치로 업데이트"</text>
+  <text x="100" y="267" font-family="Arial,sans-serif" fill="#666" font-size="10">워커 #3: "새 인증 서비스 단위 테스트 작성"</text>
+  <line x1="300" y1="270" x2="300" y2="295" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 4 -->
+  <rect x="80" y="295" width="440" height="80" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="300" y="318" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold" text-anchor="middle">4. 구현 워커 생성</text>
+  <text x="100" y="338" font-family="Arial,sans-serif" fill="#666" font-size="10">Agent({ task: "리팩토링...", tools: [Read, Write, Edit, Bash] })</text>
+  <text x="100" y="355" font-family="Arial,sans-serif" fill="#666" font-size="10">Agent({ task: "업데이트...", tools: [Read, Edit, Grep, Glob] })</text>
+  <text x="100" y="372" font-family="Arial,sans-serif" fill="#666" font-size="10">Agent({ task: "작성...", tools: [Read, Write, Bash] })</text>
+  <line x1="300" y1="375" x2="300" y2="400" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 5 -->
+  <rect x="100" y="400" width="400" height="70" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="300" y="423" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold" text-anchor="middle">5. 워커가 병렬 실행</text>
+  <text x="120" y="443" font-family="Arial,sans-serif" fill="#666" font-size="10">워커 #1: auth.ts, authService.ts 수정</text>
+  <text x="120" y="460" font-family="Arial,sans-serif" fill="#666" font-size="10">워커 #2: 임포트 구문 일괄 업데이트</text>
+  <line x1="300" y1="470" x2="300" y2="495" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 6 -->
+  <rect x="100" y="495" width="400" height="60" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="300" y="518" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold" text-anchor="middle">6. 워커가 XML로 보고</text>
+  <text x="120" y="538" font-family="Arial,sans-serif" fill="#666" font-size="10">&lt;task-notification&gt; 진행 상황 업데이트</text>
+  <line x1="300" y1="555" x2="300" y2="580" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 7 -->
+  <rect x="100" y="580" width="400" height="60" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="300" y="603" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold" text-anchor="middle">7. 코디네이터 집계</text>
+  <text x="120" y="623" font-family="Arial,sans-serif" fill="#666" font-size="10">결과 확인 → 충돌 처리 → 최종 보고서 생성</text>
+</svg>

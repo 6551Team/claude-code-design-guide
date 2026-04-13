@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="580" viewBox="0 0 800 580">
+  <defs>
+    <marker id="arr-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#3b82f6"/>
+    </marker>
+    <marker id="arr-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#d97706"/>
+    </marker>
+    <marker id="arr-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#059669"/>
+    </marker>
+    <marker id="arr-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#dc2626"/>
+    </marker>
+  </defs>
+  <rect width="800" height="580" fill="white"/>
+
+  <!-- Title -->
+  <text x="400" y="34" font-family="'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="bold" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">query() 실행 루프</text>
+
+  <!-- Box 1: turnCount -->
+  <rect x="170" y="58" width="460" height="52" rx="8" fill="#fff3bf" stroke="#d97706" stroke-width="2"/>
+  <text x="400" y="84" font-family="'Segoe UI',system-ui,sans-serif" font-size="15" font-weight="600" fill="#92400e" text-anchor="middle" dominant-baseline="middle">turnCount++  ·  턴 제한 확인</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="400" y1="112" x2="400" y2="140" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Box 2: Claude API -->
+  <rect x="170" y="142" width="460" height="80" rx="8" fill="#a5d8ff" stroke="#1e40af" stroke-width="2"/>
+  <text x="400" y="172" font-family="'Segoe UI',system-ui,sans-serif" font-size="15" font-weight="600" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">Claude API 호출 (스트리밍)</text>
+  <text x="400" y="198" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">messages  ·  systemPrompt  ·  tools</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="400" y1="224" x2="400" y2="252" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Box 3: Parse streaming response -->
+  <rect x="170" y="254" width="460" height="80" rx="8" fill="#c3fae8" stroke="#059669" stroke-width="2"/>
+  <text x="400" y="284" font-family="'Segoe UI',system-ui,sans-serif" font-size="15" font-weight="600" fill="#065f46" text-anchor="middle" dominant-baseline="middle">스트리밍 응답 파싱</text>
+  <text x="400" y="310" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#374151" text-anchor="middle" dominant-baseline="middle">text → 사용자에게 출력  ·  thinking → 내부처리  ·  tool_use → 수집</text>
+
+  <!-- Arrow 3→4 -->
+  <line x1="400" y1="336" x2="400" y2="364" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Box 4: Has tool calls? -->
+  <rect x="170" y="366" width="460" height="48" rx="8" fill="#dbe4ff" stroke="#3730a3" stroke-width="2"/>
+  <text x="400" y="390" font-family="'Segoe UI',system-ui,sans-serif" font-size="15" font-weight="600" fill="#3730a3" text-anchor="middle" dominant-baseline="middle">도구 호출이 있음?</text>
+
+  <!-- No → end -->
+  <line x1="632" y1="390" x2="710" y2="390" stroke="#dc2626" stroke-width="2" marker-end="url(#arr-red)"/>
+  <text x="680" y="380" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle" dominant-baseline="middle">없음→종료</text>
+
+  <!-- Arrow 4→5 (Yes) -->
+  <line x1="400" y1="416" x2="400" y2="444" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+  <text x="412" y="432" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#059669" text-anchor="middle" dominant-baseline="middle">있음</text>
+
+  <!-- Box 5: Execute tools -->
+  <rect x="170" y="446" width="460" height="52" rx="8" fill="#d0bfff" stroke="#9333ea" stroke-width="2"/>
+  <text x="400" y="472" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" font-weight="600" fill="#6b21a8" text-anchor="middle" dominant-baseline="middle">도구 호출 병렬 실행  ·  결과를 메시지에 추가</text>
+
+  <!-- Loop back: left → up → right (orange) -->
+  <line x1="170" y1="472" x2="110" y2="472" stroke="#d97706" stroke-width="2"/>
+  <line x1="110" y1="472" x2="110" y2="84" stroke="#d97706" stroke-width="2"/>
+  <line x1="110" y1="84" x2="168" y2="84" stroke="#d97706" stroke-width="2" marker-end="url(#arr-orange)"/>
+  <text x="80" y="300" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#d97706" text-anchor="middle" dominant-baseline="middle">루프</text>
+
+  <!-- Footer note -->
+  <rect x="170" y="516" width="460" height="22" rx="5" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+  <text x="400" y="527" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">토큰 예산 초과 → 루프 종료</text>
+</svg>

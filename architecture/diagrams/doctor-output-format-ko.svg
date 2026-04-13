@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350">
+  <rect x="50" y="20" width="500" height="310" fill="#1e293b" stroke="#2563eb" stroke-width="2" rx="5"/>
+
+  <text x="300" y="50" font-family="Monaco,monospace" font-size="14" fill="#f1f5f9" text-anchor="middle" font-weight="bold">Claude Code 진단</text>
+  <text x="300" y="70" font-family="Monaco,monospace" font-size="14" fill="#f1f5f9" text-anchor="middle">==================</text>
+
+  <text x="70" y="110" font-family="Monaco,monospace" font-size="12" fill="#cbd5e1">Node.js 버전 .................</text>
+  <text x="350" y="110" font-family="Monaco,monospace" font-size="12" fill="#f1f5f9">v20.11.0</text>
+  <text x="470" y="110" font-family="Monaco,monospace" font-size="12" fill="#22c55e" font-weight="bold">[통과]</text>
+
+  <text x="70" y="140" font-family="Monaco,monospace" font-size="12" fill="#cbd5e1">API 연결 ......................</text>
+  <text x="350" y="140" font-family="Monaco,monospace" font-size="12" fill="#f1f5f9">연결됨</text>
+  <text x="470" y="140" font-family="Monaco,monospace" font-size="12" fill="#22c55e" font-weight="bold">[통과]</text>
+
+  <text x="70" y="170" font-family="Monaco,monospace" font-size="12" fill="#cbd5e1">샌드박스 .....................</text>
+  <text x="350" y="170" font-family="Monaco,monospace" font-size="12" fill="#f1f5f9">활성</text>
+  <text x="470" y="170" font-family="Monaco,monospace" font-size="12" fill="#22c55e" font-weight="bold">[통과]</text>
+
+  <text x="70" y="200" font-family="Monaco,monospace" font-size="12" fill="#cbd5e1">MCP: cortex .................</text>
+  <text x="350" y="200" font-family="Monaco,monospace" font-size="12" fill="#f1f5f9">연결됨</text>
+  <text x="470" y="200" font-family="Monaco,monospace" font-size="12" fill="#22c55e" font-weight="bold">[통과]</text>
+
+  <text x="70" y="230" font-family="Monaco,monospace" font-size="12" fill="#cbd5e1">MCP: chrome-cdp .............</text>
+  <text x="350" y="230" font-family="Monaco,monospace" font-size="12" fill="#f1f5f9">타임아웃</text>
+  <text x="470" y="230" font-family="Monaco,monospace" font-size="12" fill="#ef4444" font-weight="bold">[실패]</text>
+
+  <text x="70" y="260" font-family="Monaco,monospace" font-size="12" fill="#cbd5e1">플러그인 .....................</text>
+  <text x="350" y="260" font-family="Monaco,monospace" font-size="12" fill="#f1f5f9">2/2 정상</text>
+  <text x="470" y="260" font-family="Monaco,monospace" font-size="12" fill="#22c55e" font-weight="bold">[통과]</text>
+
+  <text x="70" y="295" font-family="Monaco,monospace" font-size="12" fill="#fbbf24" font-weight="bold">결과: 6개 중 5개 통과</text>
+  <text x="70" y="315" font-family="Monaco,monospace" font-size="11" fill="#f87171">조치 필요: MCP 서버 'chrome-cdp'가 응답하지 않음</text>
+</svg>

@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1000">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+    <style>
+      .step { fill: #f0f4f8; stroke: #2563eb; stroke-width: 2; }
+      .step-text { font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; fill: #1e40af; }
+      .desc-text { font-family: Arial, sans-serif; font-size: 10px; fill: #475569; }
+      .arrow { stroke: #666; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .title { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #1e293b; }
+      .decision { fill: #fef3c7; stroke: #f59e0b; stroke-width: 2; }
+      .result { fill: #dcfce7; stroke: #16a34a; stroke-width: 2; }
+      .deny { fill: #fee2e2; stroke: #dc2626; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <text x="600" y="30" class="title" text-anchor="middle">권한 결정 파이프라인</text>
+
+  <!-- Entry -->
+  <rect x="450" y="60" width="300" height="50" class="step" rx="5"/>
+  <text x="600" y="90" class="step-text" text-anchor="middle">canUseTool(tool, input, context)</text>
+
+  <line x1="600" y1="110" x2="600" y2="140" class="arrow"/>
+
+  <!-- Step 1: Blanket Deny -->
+  <polygon points="600,140 800,190 600,240 400,190" class="decision"/>
+  <text x="600" y="185" class="step-text" text-anchor="middle">1단계: 전면 거부?</text>
+  <text x="600" y="200" class="desc-text" text-anchor="middle">ruleContent 없는 거부 규칙</text>
+
+  <line x1="400" y1="190" x2="250" y2="190" class="arrow"/>
+  <text x="320" y="185" class="desc-text">예</text>
+  <rect x="100" y="165" width="150" height="50" class="deny" rx="5"/>
+  <text x="175" y="195" class="step-text" text-anchor="middle">거부</text>
+
+  <line x1="600" y1="240" x2="600" y2="280" class="arrow"/>
+  <text x="620" y="265" class="desc-text">아니오</text>
+
+  <!-- Step 2: Specific Deny -->
+  <polygon points="600,280 800,330 600,380 400,330" class="decision"/>
+  <text x="600" y="325" class="step-text" text-anchor="middle">2단계: 특정 거부?</text>
+  <text x="600" y="340" class="desc-text" text-anchor="middle">거부 규칙이 ruleContent와 일치</text>
+
+  <line x1="400" y1="330" x2="250" y2="330" class="arrow"/>
+  <text x="320" y="325" class="desc-text">일치</text>
+  <rect x="100" y="305" width="150" height="50" class="deny" rx="5"/>
+  <text x="175" y="335" class="step-text" text-anchor="middle">거부</text>
+
+  <line x1="600" y1="380" x2="600" y2="420" class="arrow"/>
+  <text x="620" y="405" class="desc-text">불일치</text>
+
+  <!-- Step 3: Specific Allow -->
+  <polygon points="600,420 800,470 600,520 400,470" class="decision"/>
+  <text x="600" y="465" class="step-text" text-anchor="middle">3단계: 특정 허용?</text>
+  <text x="600" y="480" class="desc-text" text-anchor="middle">허용 규칙이 ruleContent와 일치</text>
+
+  <line x1="800" y1="470" x2="950" y2="470" class="arrow"/>
+  <text x="870" y="465" class="desc-text">일치</text>
+  <rect x="950" y="445" width="150" height="50" class="result" rx="5"/>
+  <text x="1025" y="475" class="step-text" text-anchor="middle">승인</text>
+
+  <line x1="600" y1="520" x2="600" y2="560" class="arrow"/>
+  <text x="620" y="545" class="desc-text">불일치</text>
+
+  <!-- Step 4: Mode Check -->
+  <polygon points="600,560 800,610 600,660 400,610" class="decision"/>
+  <text x="600" y="600" class="step-text" text-anchor="middle">4단계: 권한 모드</text>
+  <text x="600" y="615" class="desc-text" text-anchor="middle">yolo / auto / ask</text>
+
+  <!-- yolo path -->
+  <line x1="800" y1="610" x2="950" y2="610" class="arrow"/>
+  <text x="870" y="605" class="desc-text">yolo</text>
+  <rect x="950" y="585" width="150" height="50" class="result" rx="5"/>
+  <text x="1025" y="615" class="step-text" text-anchor="middle">승인</text>
+
+  <!-- ask path -->
+  <line x1="400" y1="610" x2="250" y2="610" class="arrow"/>
+  <text x="320" y="605" class="desc-text">ask</text>
+  <rect x="100" y="585" width="150" height="50" class="step" rx="5"/>
+  <text x="175" y="615" class="step-text" text-anchor="middle">사용자에게 묻기</text>
+
+  <!-- auto path -->
+  <line x1="600" y1="660" x2="600" y2="700" class="arrow"/>
+  <text x="620" y="685" class="desc-text">auto</text>
+
+  <!-- Step 5: Classifier -->
+  <polygon points="600,700 800,750 600,800 400,750" class="decision"/>
+  <text x="600" y="745" class="step-text" text-anchor="middle">5단계: AI 분류기</text>
+  <text x="600" y="760" class="desc-text" text-anchor="middle">yoloClassifier / bashClassifier</text>
+
+  <line x1="800" y1="750" x2="950" y2="750" class="arrow"/>
+  <text x="870" y="745" class="desc-text">안전</text>
+  <rect x="950" y="725" width="150" height="50" class="result" rx="5"/>
+  <text x="1025" y="755" class="step-text" text-anchor="middle">승인</text>
+
+  <line x1="400" y1="750" x2="250" y2="750" class="arrow"/>
+  <text x="320" y="745" class="desc-text">위험</text>
+  <rect x="100" y="725" width="150" height="50" class="step" rx="5"/>
+  <text x="175" y="755" class="step-text" text-anchor="middle">사용자에게 묻기</text>
+
+  <!-- Final decision from user prompt -->
+  <line x1="175" y1="635" x2="175" y2="880" class="arrow"/>
+  <line x1="175" y1="775" x2="175" y2="880" class="arrow"/>
+
+  <polygon points="175,880 275,920 175,960 75,920" class="decision"/>
+  <text x="175" y="920" class="step-text" text-anchor="middle">사용자 결정</text>
+
+  <line x1="275" y1="920" x2="400" y2="920" class="arrow"/>
+  <text x="330" y="915" class="desc-text">승인</text>
+  <rect x="400" y="895" width="150" height="50" class="result" rx="5"/>
+  <text x="475" y="925" class="step-text" text-anchor="middle">실행</text>
+
+  <line x1="75" y1="920" x2="-50" y2="920" class="arrow"/>
+  <text x="10" y="915" class="desc-text">거부</text>
+  <rect x="-150" y="895" width="100" height="50" class="deny" rx="5"/>
+  <text x="-100" y="925" class="step-text" text-anchor="middle">거부</text>
+
+</svg>

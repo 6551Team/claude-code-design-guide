@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 550">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="25" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">설정 병합 우선순위 (낮음 → 높음)</text>
+
+  <rect x="200" y="50" width="300" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="70" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">[1] /etc/claude/managed-settings.json</text>
+  <text x="350" y="85" font-family="Arial,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">(정책 설정 - 관리자)</text>
+
+  <rect x="200" y="110" width="300" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="130" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">[2] ~/.claude/settings.json</text>
+  <text x="350" y="145" font-family="Arial,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">(사용자 설정 - 전역)</text>
+
+  <rect x="200" y="170" width="300" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="190" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">[3] ./.claude/settings.json</text>
+  <text x="350" y="205" font-family="Arial,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">(프로젝트 설정)</text>
+
+  <rect x="200" y="230" width="300" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="250" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">[4] ./.claude/settings.local.json</text>
+  <text x="350" y="265" font-family="Arial,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">(로컬 설정 - gitignore 적용)</text>
+
+  <rect x="200" y="290" width="300" height="40" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="350" y="310" font-family="Arial,sans-serif" font-size="11" fill="#78350f" text-anchor="middle">[5] --settings 플래그</text>
+  <text x="350" y="325" font-family="Arial,sans-serif" font-size="10" fill="#78350f" text-anchor="middle">(커맨드라인 설정)</text>
+
+  <rect x="200" y="350" width="300" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="375" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">settingsChangeDetector</text>
+
+  <rect x="200" y="410" width="300" height="40" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="5"/>
+  <text x="350" y="435" font-family="Arial,sans-serif" font-size="12" fill="#14532d" text-anchor="middle">AppState 업데이트</text>
+
+  <line x1="350" y1="90" x2="350" y2="110" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="370" y="105" font-family="Arial,sans-serif" font-size="10" fill="#666">mergeWith()</text>
+
+  <line x1="350" y1="150" x2="350" y2="170" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="370" y="165" font-family="Arial,sans-serif" font-size="10" fill="#666">mergeWith()</text>
+
+  <line x1="350" y1="210" x2="350" y2="230" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="370" y="225" font-family="Arial,sans-serif" font-size="10" fill="#666">mergeWith()</text>
+
+  <line x1="350" y1="270" x2="350" y2="290" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="370" y="285" font-family="Arial,sans-serif" font-size="10" fill="#666">mergeWith()</text>
+
+  <line x1="350" y1="330" x2="350" y2="350" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="350" y1="390" x2="350" y2="410" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="370" y="405" font-family="Arial,sans-serif" font-size="10" fill="#666">applySettingsChange()</text>
+
+  <rect x="50" y="480" width="600" height="60" fill="#f8fafc" stroke="#64748b" stroke-width="1" rx="3"/>
+  <text x="60" y="500" font-family="Arial,sans-serif" font-size="11" fill="#475569" font-weight="bold">원격 설정 오버레이:</text>
+  <text x="60" y="515" font-family="Arial,sans-serif" font-size="10" fill="#475569">• remoteManagedSettings → 1시간 폴링 → 병합</text>
+  <text x="60" y="530" font-family="Arial,sans-serif" font-size="10" fill="#475569">• policyLimits → 1시간 폴링 → ETag 캐시 → 적용</text>
+</svg>

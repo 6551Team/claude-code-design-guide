@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="230" viewBox="0 0 540 230">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- saveCurrentSessionCosts() -->
+  <rect x="20" y="10" width="220" height="50" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="130" y="30" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold">saveCurrentSessionCosts()</text>
+  <text x="130" y="48" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="11">세션 종료 시 호출</text>
+
+  <!-- restoreCostStateForSession() -->
+  <rect x="300" y="10" width="220" height="50" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="410" y="30" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold">restoreCostStateForSession()</text>
+  <text x="410" y="48" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="11">재개 시 호출</text>
+
+  <!-- Arrows down to storage -->
+  <line x1="130" y1="60" x2="130" y2="100" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="410" y1="60" x2="410" y2="100" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Storage structure -->
+  <rect x="20" y="103" width="500" height="90" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="270" y="122" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold">~/.claude/projects/&lt;project-hash&gt;/sessions/</text>
+  <text x="50" y="143" font-family="Arial,sans-serif" fill="#1e40af" font-size="12">├── &lt;session-id-1&gt;.json</text>
+  <text x="280" y="143" font-family="Arial,sans-serif" fill="#666" font-size="11">← { costs: { input: N, output: N, total: N } }</text>
+  <text x="50" y="163" font-family="Arial,sans-serif" fill="#1e40af" font-size="12">├── &lt;session-id-2&gt;.json</text>
+  <text x="50" y="183" font-family="Arial,sans-serif" fill="#1e40af" font-size="12">└── ...</text>
+
+  <!-- CostState fields note -->
+  <text x="270" y="220" text-anchor="middle" font-family="Arial,sans-serif" fill="#666" font-size="11">CostState: inputTokens / outputTokens / cacheCreationTokens / cacheReadTokens / totalCostUSD</text>
+</svg>

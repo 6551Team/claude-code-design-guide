@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 460">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- App starts -->
+  <rect x="180" y="20" width="200" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="280" y="50" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">앱 시작</text>
+
+  <!-- Arrow -->
+  <line x1="280" y1="70" x2="280" y2="100" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Iterate migrations -->
+  <rect x="100" y="100" width="360" height="80" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="280" y="135" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">migrationsList[] 순회</text>
+  <text x="280" y="165" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">(순서대로 실행)</text>
+
+  <!-- Arrow -->
+  <line x1="280" y1="180" x2="280" y2="210" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- For each migration -->
+  <rect x="60" y="210" width="440" height="140" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="280" y="245" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">각 마이그레이션에 대해:</text>
+  <text x="280" y="275" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">1. 현재 설정 상태 확인</text>
+  <text x="280" y="305" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">2. 필요 시 마이그레이션 실행</text>
+  <text x="280" y="335" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">3. 새 설정 쓰기</text>
+
+  <!-- Arrow -->
+  <line x1="280" y1="350" x2="280" y2="390" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- App starts normally -->
+  <rect x="130" y="390" width="300" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="280" y="420" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">앱 정상 시작</text>
+</svg>

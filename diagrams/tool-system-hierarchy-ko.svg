@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="570" viewBox="0 0 900 570">
+  <defs>
+    <marker id="arr-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#f59e0b"/>
+    </marker>
+  </defs>
+  <rect width="900" height="570" fill="white"/>
+
+  <!-- Title -->
+  <text x="450" y="34" font-family="'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="bold" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">도구 시스템 3계층 아키텍처</text>
+
+  <!-- Layer 3: High-level -->
+  <rect x="50" y="62" width="800" height="115" rx="12" fill="#dbe4ff" stroke="#3730a3" stroke-width="2" stroke-dasharray="7,4"/>
+  <text x="135" y="79" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" fill="#3730a3" text-anchor="start" dominant-baseline="middle">계층 3: 고수준 작업 (도구가 도구를 호출)</text>
+  <rect x="90" y="92" width="270" height="70" rx="8" fill="#a5d8ff" stroke="#1e40af" stroke-width="2"/>
+  <text x="225" y="116" font-family="'Segoe UI',system-ui,sans-serif" font-size="15" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">AgentTool</text>
+  <text x="225" y="138" font-family="'Segoe UI',system-ui,sans-serif" font-size="15" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">서브 에이전트 실행 (격리된 도구셋)</text>
+  <rect x="540" y="92" width="260" height="70" rx="8" fill="#a5d8ff" stroke="#1e40af" stroke-width="2"/>
+  <text x="670" y="116" font-family="'Segoe UI',system-ui,sans-serif" font-size="15" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">SkillTool</text>
+  <text x="670" y="138" font-family="'Segoe UI',system-ui,sans-serif" font-size="15" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">사전 정의된 도구 체인 실행</text>
+
+  <!-- Arrow layer3 → layer2 -->
+  <line x1="450" y1="179" x2="450" y2="207" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#arr-orange)"/>
+  <text x="510" y="194" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#f59e0b" text-anchor="middle" dominant-baseline="middle">Claude가 오케스트레이션</text>
+
+  <!-- Layer 2: Composite -->
+  <rect x="50" y="210" width="800" height="115" rx="12" fill="#d3f9d8" stroke="#065f46" stroke-width="2" stroke-dasharray="7,4"/>
+  <text x="130" y="227" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" fill="#065f46" text-anchor="start" dominant-baseline="middle">계층 2: 복합 작업 (Claude가 원자 작업을 오케스트레이션)</text>
+  <rect x="70" y="243" width="350" height="68" rx="8" fill="#b2f2bb" stroke="#059669" stroke-width="2"/>
+  <text x="245" y="267" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">모든 TODO 찾아서 정리</text>
+  <text x="245" y="287" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">= GlobTool + FileReadTool + GrepTool</text>
+  <rect x="480" y="243" width="350" height="68" rx="8" fill="#b2f2bb" stroke="#059669" stroke-width="2"/>
+  <text x="655" y="267" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">함수명 리팩토링</text>
+  <text x="655" y="287" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">= GrepTool + FileEditTool×N + BashTool</text>
+
+  <!-- Arrow layer2 → layer1 -->
+  <line x1="450" y1="327" x2="450" y2="355" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#arr-orange)"/>
+  <text x="510" y="342" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#f59e0b" text-anchor="middle" dominant-baseline="middle">원자 작업 조합</text>
+
+  <!-- Layer 1: Atomic -->
+  <rect x="50" y="358" width="800" height="128" rx="12" fill="#e5dbff" stroke="#6b21a8" stroke-width="2" stroke-dasharray="7,4"/>
+  <text x="115" y="375" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" fill="#6b21a8" text-anchor="start" dominant-baseline="middle">계층 1: 원자 작업 (분리 불가)</text>
+  <rect x="68" y="394" width="170" height="70" rx="8" fill="#d0bfff" stroke="#9333ea" stroke-width="2"/>
+  <text x="153" y="418" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" fill="#374151" text-anchor="middle" dominant-baseline="middle">FileReadTool</text>
+  <text x="153" y="440" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" fill="#374151" text-anchor="middle" dominant-baseline="middle">파일 하나 읽기</text>
+  <rect x="258" y="394" width="170" height="70" rx="8" fill="#d0bfff" stroke="#9333ea" stroke-width="2"/>
+  <text x="343" y="418" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" fill="#374151" text-anchor="middle" dominant-baseline="middle">FileEditTool</text>
+  <text x="343" y="440" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" fill="#374151" text-anchor="middle" dominant-baseline="middle">한 위치 수정</text>
+  <rect x="448" y="394" width="170" height="70" rx="8" fill="#d0bfff" stroke="#9333ea" stroke-width="2"/>
+  <text x="533" y="418" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" fill="#374151" text-anchor="middle" dominant-baseline="middle">GrepTool</text>
+  <text x="533" y="440" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" fill="#374151" text-anchor="middle" dominant-baseline="middle">패턴 검색</text>
+  <rect x="638" y="394" width="170" height="70" rx="8" fill="#d0bfff" stroke="#9333ea" stroke-width="2"/>
+  <text x="723" y="418" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" fill="#374151" text-anchor="middle" dominant-baseline="middle">BashTool</text>
+  <text x="723" y="440" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" fill="#374151" text-anchor="middle" dominant-baseline="middle">명령어 실행</text>
+</svg>

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" width="760" height="520">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+    <marker id="arrowB" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f59e0b"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="380" y="28" font-family="Arial,sans-serif" font-size="15" fill="#1e40af" text-anchor="middle" font-weight="bold">메모리 시스템 개요</text>
+
+  <!-- MEMORY.md top -->
+  <rect x="255" y="45" width="250" height="60" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="380" y="70" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">MEMORY.md</text>
+  <text x="380" y="88" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">진입 인덱스 파일  |  200줄 / 25KB 제한</text>
+
+  <!-- Arrow MEMORY.md → auto-memory -->
+  <line x1="380" y1="105" x2="380" y2="135" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- auto-memory dir -->
+  <rect x="230" y="135" width="300" height="65" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="380" y="158" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">auto-memory/ 디렉터리</text>
+  <text x="380" y="176" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">extractMemories — 자동 추출</text>
+  <text x="380" y="192" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">autoDream — 주기적 통합</text>
+
+  <!-- Three branch arrows from auto-memory -->
+  <!-- left branch to findRelevantMemories -->
+  <line x1="280" y1="200" x2="130" y2="268" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- center branch to Session Memory -->
+  <line x1="380" y1="200" x2="380" y2="268" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- right branch to Team Memory -->
+  <line x1="480" y1="200" x2="630" y2="268" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- findRelevantMemories box -->
+  <rect x="20" y="268" width="220" height="80" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="130" y="292" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">findRelevantMemories</text>
+  <text x="130" y="310" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">의미론적 검색</text>
+  <text x="130" y="326" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">Sonnet 모델이 상위 5개 선택</text>
+  <text x="130" y="342" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">사용자 입력 시 사전 가져오기</text>
+
+  <!-- Session Memory box -->
+  <rect x="270" y="268" width="220" height="80" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="380" y="292" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">세션 메모리</text>
+  <text x="380" y="310" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">.session-memory.md</text>
+  <text x="380" y="326" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">세션당 자동 업데이트</text>
+  <text x="380" y="342" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">토큰 임계값 게이트</text>
+
+  <!-- Team Memory box -->
+  <rect x="520" y="268" width="220" height="80" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="630" y="292" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">팀 메모리</text>
+  <text x="630" y="310" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">공유 디렉터리</text>
+  <text x="630" y="326" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">시크릿 스캔 가드</text>
+  <text x="630" y="342" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">feature(TEAMMEM) 게이트</text>
+
+  <!-- Arrow findRelevantMemories → Magic Docs -->
+  <line x1="130" y1="348" x2="130" y2="408" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Magic Docs box -->
+  <rect x="20" y="408" width="220" height="80" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="130" y="432" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">매직 문서</text>
+  <text x="130" y="450" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle"># MAGIC DOC: 태그</text>
+  <text x="130" y="466" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">FileReadTool에서 추적</text>
+  <text x="130" y="482" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">runAgent()로 자동 업데이트</text>
+</svg>
