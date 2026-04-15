@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="500" viewBox="0 0 840 500">
+  <defs>
+    <marker id="arr-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#3b82f6"/>
+    </marker>
+    <marker id="arr-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#059669"/>
+    </marker>
+    <marker id="arr-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#dc2626"/>
+    </marker>
+  </defs>
+  <rect width="840" height="500" fill="white"/>
+
+  <!-- Title -->
+  <text x="420" y="34" font-family="'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="bold" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">권한 확인 결정 트리</text>
+
+  <!-- Box 1: canUseTool -->
+  <rect x="295" y="58" width="250" height="52" rx="8" fill="#a5d8ff" stroke="#1e40af" stroke-width="2.5"/>
+  <text x="420" y="84" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" font-weight="600" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">canUseTool( toolName, input )</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="420" y1="112" x2="420" y2="140" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Box 2: bypassPermissions -->
+  <rect x="245" y="142" width="350" height="48" rx="8" fill="#fff3bf" stroke="#d97706" stroke-width="2"/>
+  <text x="420" y="166" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" fill="#92400e" text-anchor="middle" dominant-baseline="middle">bypassPermissions 모드?</text>
+  <line x1="595" y1="166" x2="688" y2="166" stroke="#059669" stroke-width="2" marker-end="url(#arr-green)"/>
+  <rect x="693" y="142" width="80" height="48" rx="8" fill="#b2f2bb" stroke="#059669" stroke-width="2"/>
+  <text x="733" y="166" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" font-weight="600" fill="#059669" text-anchor="middle" dominant-baseline="middle">허용</text>
+  <text x="640" y="154" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#059669" text-anchor="middle" dominant-baseline="middle">예</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="420" y1="192" x2="420" y2="220" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+  <text x="438" y="208" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">아니오</text>
+
+  <!-- Box 3: whitelist -->
+  <rect x="245" y="222" width="350" height="48" rx="8" fill="#dbe4ff" stroke="#3730a3" stroke-width="2"/>
+  <text x="420" y="246" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" fill="#3730a3" text-anchor="middle" dominant-baseline="middle">도구가 화이트리스트에 있음?</text>
+  <line x1="595" y1="246" x2="688" y2="246" stroke="#059669" stroke-width="2" marker-end="url(#arr-green)"/>
+  <rect x="693" y="222" width="80" height="48" rx="8" fill="#b2f2bb" stroke="#059669" stroke-width="2"/>
+  <text x="733" y="246" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" font-weight="600" fill="#059669" text-anchor="middle" dominant-baseline="middle">허용</text>
+  <text x="640" y="234" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#059669" text-anchor="middle" dominant-baseline="middle">예</text>
+
+  <!-- Arrow 3→4 -->
+  <line x1="420" y1="272" x2="420" y2="300" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+  <text x="438" y="288" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">아니오</text>
+
+  <!-- Box 4: blacklist -->
+  <rect x="245" y="302" width="350" height="48" rx="8" fill="#ffc9c9" stroke="#dc2626" stroke-width="2"/>
+  <text x="420" y="326" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" fill="#dc2626" text-anchor="middle" dominant-baseline="middle">도구가 블랙리스트에 있음?</text>
+  <line x1="595" y1="326" x2="688" y2="326" stroke="#dc2626" stroke-width="2" marker-end="url(#arr-red)"/>
+  <rect x="693" y="302" width="80" height="48" rx="8" fill="#ffc9c9" stroke="#dc2626" stroke-width="2"/>
+  <text x="733" y="326" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" font-weight="600" fill="#dc2626" text-anchor="middle" dominant-baseline="middle">거부</text>
+  <text x="640" y="314" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#dc2626" text-anchor="middle" dominant-baseline="middle">예</text>
+
+  <!-- Arrow 4→5 -->
+  <line x1="420" y1="352" x2="420" y2="380" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+  <text x="438" y="368" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">아니오</text>
+
+  <!-- Box 5: ask -->
+  <rect x="245" y="382" width="350" height="48" rx="8" fill="#e5dbff" stroke="#9333ea" stroke-width="2"/>
+  <text x="420" y="406" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" font-weight="600" fill="#6b21a8" text-anchor="middle" dominant-baseline="middle">기본값: 사용자에게 확인</text>
+
+  <!-- Footer note -->
+  <text x="420" y="460" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">BashTool: 명령어 안전성 분석  ·  FileEditTool: 경로 권한 확인</text>
+</svg>

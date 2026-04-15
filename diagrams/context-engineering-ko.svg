@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="460" viewBox="0 0 860 460">
+  <defs>
+    <marker id="arr-3b82f6" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#3b82f6"/>
+        </marker>
+    <marker id="arr-059669" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#059669"/>
+        </marker>
+    <marker id="arr-f59e0b" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#f59e0b"/>
+        </marker>
+    <marker id="arr-dc2626" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#dc2626"/>
+        </marker>
+    <marker id="arr-9333ea" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#9333ea"/>
+        </marker>
+    <marker id="arr-1e40af" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#1e40af"/>
+        </marker>
+    <marker id="arr-374151" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#374151"/>
+        </marker>
+    <marker id="arr-94a3b8" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#94a3b8"/>
+        </marker>
+  </defs>
+  <rect width="860" height="460" fill="white"/>
+  <text x="430" y="34"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="22" font-weight="bold"
+         fill="#1e40af" text-anchor="middle"
+         dominant-baseline="middle">컨텍스트 엔지니어링: 컨텍스트 구성</text>
+  <rect x="40" y="62" width="370" height="200" rx="12"
+       fill="#dbe4ff" stroke="#1e40af" stroke-width="2" />
+  <text x="225" y="84"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="15" font-weight="600"
+         fill="#1e40af" text-anchor="middle"
+         dominant-baseline="middle">시스템 프롬프트</text>
+  <rect x="58" y="112" width="334" height="28" rx="6"
+       fill="#a5d8ff" stroke="#1e40af" stroke-width="1.5" />
+  <text x="225" y="126"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="normal"
+         fill="#1e40af" text-anchor="middle"
+         dominant-baseline="middle">핵심 지침</text>
+  <rect x="58" y="148" width="334" height="28" rx="6"
+       fill="#a5d8ff" stroke="#1e40af" stroke-width="1.5" />
+  <text x="225" y="162"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="normal"
+         fill="#1e40af" text-anchor="middle"
+         dominant-baseline="middle">도구 정의 (43개 도구)</text>
+  <rect x="58" y="184" width="334" height="28" rx="6"
+       fill="#c3fae8" stroke="#059669" stroke-width="1.5" />
+  <text x="225" y="198"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="normal"
+         fill="#059669" text-anchor="middle"
+         dominant-baseline="middle">사용자 컨텍스트 (CLAUDE.md)</text>
+  <rect x="58" y="220" width="334" height="28" rx="6"
+       fill="#c3fae8" stroke="#059669" stroke-width="1.5" />
+  <text x="225" y="234"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="normal"
+         fill="#059669" text-anchor="middle"
+         dominant-baseline="middle">시스템 컨텍스트 (git status)</text>
+  <rect x="450" y="62" width="370" height="200" rx="12"
+       fill="#d3f9d8" stroke="#059669" stroke-width="2" />
+  <text x="635" y="84"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="15" font-weight="600"
+         fill="#065f46" text-anchor="middle"
+         dominant-baseline="middle">대화 히스토리 (메시지)</text>
+  <rect x="468" y="112" width="334" height="28" rx="6"
+       fill="#b2f2bb" stroke="#059669" stroke-width="1.5" />
+  <text x="635" y="126"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="normal"
+         fill="#059669" text-anchor="middle"
+         dominant-baseline="middle">사용자 메시지</text>
+  <rect x="468" y="148" width="334" height="28" rx="6"
+       fill="#b2f2bb" stroke="#059669" stroke-width="1.5" />
+  <text x="635" y="162"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="normal"
+         fill="#059669" text-anchor="middle"
+         dominant-baseline="middle">어시스턴트 응답 (도구 호출 포함)</text>
+  <rect x="468" y="184" width="334" height="28" rx="6"
+       fill="#b2f2bb" stroke="#059669" stroke-width="1.5" />
+  <text x="635" y="198"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="normal"
+         fill="#059669" text-anchor="middle"
+         dominant-baseline="middle">도구 실행 결과</text>
+  <rect x="468" y="220" width="334" height="28" rx="6"
+       fill="#c3fae8" stroke="#065f46" stroke-width="1.5" />
+  <text x="635" y="234"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="normal"
+         fill="#065f46" text-anchor="middle"
+         dominant-baseline="middle">메모리 첨부</text>
+  <rect x="40" y="285" width="780" height="60" rx="10"
+       fill="#f8fafc" stroke="#94a3b8" stroke-width="2" />
+  <text x="430" y="305"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="14" font-weight="600"
+         fill="#374151" text-anchor="middle"
+         dominant-baseline="middle">토큰 예산 할당 (200K 컨텍스트 윈도우)</text>
+  <rect x="55" y="316" width="90" height="20" rx="3"
+       fill="#a5d8ff" stroke="#94a3b8" stroke-width="1" />
+  <text x="100" y="327"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="10" font-weight="normal"
+         fill="#374151" text-anchor="middle"
+         dominant-baseline="middle">시스템</text>
+  <rect x="148" y="316" width="200" height="20" rx="3"
+       fill="#b2f2bb" stroke="#94a3b8" stroke-width="1" />
+  <text x="248" y="327"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="10" font-weight="normal"
+         fill="#374151" text-anchor="middle"
+         dominant-baseline="middle">대화</text>
+  <rect x="352" y="316" width="120" height="20" rx="3"
+       fill="#ffd8a8" stroke="#94a3b8" stroke-width="1" />
+  <text x="412" y="327"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="10" font-weight="normal"
+         fill="#374151" text-anchor="middle"
+         dominant-baseline="middle">도구 결과</text>
+  <rect x="476" y="316" width="80" height="20" rx="3"
+       fill="#d0bfff" stroke="#94a3b8" stroke-width="1" />
+  <text x="516" y="327"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="10" font-weight="normal"
+         fill="#374151" text-anchor="middle"
+         dominant-baseline="middle">출력</text>
+  <rect x="560" y="316" width="270" height="20" rx="3"
+       fill="#f1f5f9" stroke="#94a3b8" stroke-width="1" />
+  <text x="695" y="327"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="10" font-weight="normal"
+         fill="#374151" text-anchor="middle"
+         dominant-baseline="middle">남은 공간</text>
+  <text x="430" y="380"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="14" font-weight="normal"
+         fill="#374151" text-anchor="middle"
+         dominant-baseline="middle">컨텍스트 엔지니어링의 핵심: 제한된 윈도우에 가장 관련성 높은 정보를 담기</text>
+  <rect x="40" y="400" width="780" height="46" rx="8"
+       fill="#fff3bf" stroke="#d97706" stroke-width="1.5" />
+  <text x="430" y="423"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="normal"
+         fill="#92400e" text-anchor="middle"
+         dominant-baseline="middle">85% 초과 → Auto-Compact 트리거: 초기 메시지를 요약으로 교체, 핵심 컨텍스트 보존</text>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 650">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+  </defs>
+
+  <text x="350" y="30" font-family="Arial,sans-serif" font-size="16" fill="#1e40af" text-anchor="middle" font-weight="bold">권한 요청 흐름</text>
+
+  <!-- Step 1 -->
+  <rect x="250" y="60" width="200" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="90" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">원격 세션이 도구 실행</text>
+
+  <path d="M 350 110 L 350 150" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 2 -->
+  <rect x="220" y="150" width="260" height="50" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="350" y="180" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">권한 필요 (예: 파일 쓰기)</text>
+
+  <path d="M 350 200 L 350 240" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="390" y="225" font-family="Arial,sans-serif" font-size="11" fill="#666" text-anchor="middle">WebSocket</text>
+
+  <!-- Step 3 -->
+  <rect x="200" y="240" width="300" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="270" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">로컬 매니저가 요청 수신</text>
+
+  <path d="M 350 290 L 350 330" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 4 -->
+  <rect x="200" y="330" width="300" height="50" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="350" y="360" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">pendingPermissions에 추가</text>
+
+  <path d="M 350 380 L 350 420" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 5 -->
+  <rect x="180" y="420" width="340" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="450" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">사용자에게 표시 → 사용자 결정</text>
+
+  <path d="M 350 470 L 350 510" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 6 -->
+  <rect x="160" y="510" width="380" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="350" y="540" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">respondToPermissionRequest()</text>
+
+  <path d="M 350 560 L 350 600" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="400" y="585" font-family="Arial,sans-serif" font-size="11" fill="#666" text-anchor="middle">HTTP POST</text>
+
+  <!-- Step 7 -->
+  <rect x="200" y="600" width="300" height="50" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="350" y="630" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">원격 세션 계속 / 중단</text>
+</svg>

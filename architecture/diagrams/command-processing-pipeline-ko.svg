@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560" width="560" height="560">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="280" y="28" font-family="Arial,sans-serif" font-size="15" font-weight="bold" fill="#1e40af" text-anchor="middle">명령어 처리 파이프라인</text>
+
+  <!-- Entry: processSlashCommand -->
+  <rect x="130" y="48" width="300" height="44" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="280" y="65" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold">processSlashCommand(input, context)</text>
+  <text x="280" y="82" font-family="Arial,sans-serif" font-size="11" fill="#92400e" text-anchor="middle">모든 슬래시 명령어의 진입점</text>
+
+  <!-- Arrow down -->
+  <line x1="280" y1="92" x2="280" y2="118" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- findCommand -->
+  <rect x="155" y="120" width="250" height="40" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="280" y="137" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">findCommand(input)</text>
+  <text x="280" y="152" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">접두사 매칭, 정확한 이름 우선</text>
+
+  <!-- Arrow down to diamond -->
+  <line x1="280" y1="160" x2="280" y2="192" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Diamond: dispatch by type -->
+  <polygon points="280,195 390,228 280,261 170,228" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="280" y="223" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle" font-weight="bold">명령어 유형별</text>
+  <text x="280" y="240" font-family="Arial,sans-serif" font-size="12" fill="#92400e" text-anchor="middle" font-weight="bold">분기</text>
+
+  <!-- Branch lines from diamond -->
+  <!-- Left: prompt -->
+  <line x1="170" y1="228" x2="80" y2="228" stroke="#666" stroke-width="1.5"/>
+  <line x1="80" y1="228" x2="80" y2="296" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="122" y="220" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">prompt</text>
+
+  <!-- Middle: local -->
+  <line x1="280" y1="261" x2="280" y2="296" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="296" y="284" font-family="Arial,sans-serif" font-size="11" fill="#374151">local</text>
+
+  <!-- Right: local-jsx -->
+  <line x1="390" y1="228" x2="480" y2="228" stroke="#666" stroke-width="1.5"/>
+  <line x1="480" y1="228" x2="480" y2="296" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="437" y="220" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">local-jsx</text>
+
+  <!-- Prompt type box -->
+  <rect x="20" y="298" width="120" height="90" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="80" y="316" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle" font-weight="bold">prompt 유형</text>
+  <line x1="30" y1="322" x2="130" y2="322" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="80" y="338" font-family="Arial,sans-serif" font-size="10" fill="#1e40af" text-anchor="middle">빌드</text>
+  <text x="80" y="352" font-family="Arial,sans-serif" font-size="10" fill="#1e40af" text-anchor="middle">ContentBlock</text>
+  <text x="80" y="366" font-family="Arial,sans-serif" font-size="10" fill="#1e40af" text-anchor="middle">Param[] 배열</text>
+  <text x="80" y="382" font-family="Arial,sans-serif" font-size="10" fill="#1e40af" text-anchor="middle">shouldQuery: true</text>
+
+  <!-- Local type box -->
+  <rect x="210" y="298" width="140" height="90" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="280" y="316" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle" font-weight="bold">local 유형</text>
+  <line x1="220" y1="322" x2="340" y2="322" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="280" y="338" font-family="Arial,sans-serif" font-size="10" fill="#1e40af" text-anchor="middle">command.load()</text>
+  <text x="280" y="352" font-family="Arial,sans-serif" font-size="10" fill="#1e40af" text-anchor="middle">.call(args, context)</text>
+  <text x="280" y="370" font-family="Arial,sans-serif" font-size="10" fill="#1e40af" text-anchor="middle">직접 JS 실행</text>
+  <text x="280" y="384" font-family="Arial,sans-serif" font-size="10" fill="#1e40af" text-anchor="middle">모델 미사용</text>
+
+  <!-- local-jsx type box -->
+  <rect x="420" y="298" width="120" height="90" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="480" y="316" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle" font-weight="bold">local-jsx 유형</text>
+  <line x1="430" y1="322" x2="530" y2="322" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="480" y="338" font-family="Arial,sans-serif" font-size="10" fill="#1e40af" text-anchor="middle">React 컴포넌트</text>
+  <text x="480" y="352" font-family="Arial,sans-serif" font-size="10" fill="#1e40af" text-anchor="middle">Ink로 터미널에</text>
+  <text x="480" y="366" font-family="Arial,sans-serif" font-size="10" fill="#1e40af" text-anchor="middle">렌더링</text>
+  <text x="480" y="382" font-family="Arial,sans-serif" font-size="10" fill="#1e40af" text-anchor="middle">JSX UI 출력</text>
+
+  <!-- Arrows from type boxes down to outcomes -->
+  <line x1="80" y1="388" x2="80" y2="418" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="280" y1="388" x2="280" y2="418" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="480" y1="388" x2="480" y2="418" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Outcome 1: inject into conversation -->
+  <rect x="18" y="420" width="124" height="50" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="80" y="440" font-family="Arial,sans-serif" font-size="10" fill="#1e40af" text-anchor="middle" font-weight="bold">대화 흐름에</text>
+  <text x="80" y="454" font-family="Arial,sans-serif" font-size="10" fill="#1e40af" text-anchor="middle">주입</text>
+  <text x="80" y="466" font-family="Arial,sans-serif" font-size="10" fill="#1e40af" text-anchor="middle">→ 모델 응답</text>
+
+  <!-- Outcome 2: function result -->
+  <rect x="213" y="420" width="134" height="50" rx="5" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="280" y="440" font-family="Arial,sans-serif" font-size="10" fill="#166534" text-anchor="middle" font-weight="bold">JS 함수 실행</text>
+  <text x="280" y="454" font-family="Arial,sans-serif" font-size="10" fill="#166534" text-anchor="middle">결과 직접 반환</text>
+  <text x="280" y="466" font-family="Arial,sans-serif" font-size="10" fill="#166534" text-anchor="middle">→ 모델 호출 없음</text>
+
+  <!-- Outcome 3: render JSX -->
+  <rect x="418" y="420" width="124" height="50" rx="5" fill="#fae8ff" stroke="#9333ea" stroke-width="1.5"/>
+  <text x="480" y="440" font-family="Arial,sans-serif" font-size="10" fill="#6b21a8" text-anchor="middle" font-weight="bold">React 컴포넌트</text>
+  <text x="480" y="454" font-family="Arial,sans-serif" font-size="10" fill="#6b21a8" text-anchor="middle">터미널 UI에</text>
+  <text x="480" y="466" font-family="Arial,sans-serif" font-size="10" fill="#6b21a8" text-anchor="middle">렌더링</text>
+
+  <!-- Bottom note -->
+  <text x="280" y="498" font-family="Arial,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">참고: getCommands()는 메모이즈됨 — 동적 변경 후 clearCommandsCache() 호출 필요</text>
+  <text x="280" y="514" font-family="Arial,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">기능 게이트 명령어: ANT 전용 / KAIROS / PROACTIVE / WORKFLOW_SCRIPTS</text>
+</svg>

@@ -2,7 +2,7 @@
 
 <div align="center">
 
-**English | [中文](./README.md)**
+**English | [中文](./README.md) | [한국어](./README_KO.md)**
 
 </div>
 

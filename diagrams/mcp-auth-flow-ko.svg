@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="480" viewBox="0 0 780 480">
+  <defs>
+    <marker id="arr-3b82f6" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#3b82f6"/>
+        </marker>
+    <marker id="arr-059669" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#059669"/>
+        </marker>
+    <marker id="arr-f59e0b" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#f59e0b"/>
+        </marker>
+    <marker id="arr-dc2626" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#dc2626"/>
+        </marker>
+    <marker id="arr-9333ea" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#9333ea"/>
+        </marker>
+    <marker id="arr-1e40af" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#1e40af"/>
+        </marker>
+    <marker id="arr-374151" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#374151"/>
+        </marker>
+    <marker id="arr-94a3b8" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#94a3b8"/>
+        </marker>
+  </defs>
+  <rect width="780" height="480" fill="white"/>
+  <text x="390" y="34"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="22" font-weight="bold"
+         fill="#1e40af" text-anchor="middle"
+         dominant-baseline="middle">MCP 인증 흐름</text>
+  <text x="200" y="68"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="16" font-weight="600"
+         fill="#1e40af" text-anchor="middle"
+         dominant-baseline="middle">Claude Code</text>
+  <text x="580" y="68"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="16" font-weight="600"
+         fill="#059669" text-anchor="middle"
+         dominant-baseline="middle">MCP 서버</text>
+  <line x1="200" y1="82" x2="200" y2="450" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <line x1="580" y1="82" x2="580" y2="450" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <rect x="60" y="95" width="270" height="42" rx="8"
+       fill="#a5d8ff" stroke="#1e40af" stroke-width="2" />
+  <text x="195" y="116"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="14" font-weight="600"
+         fill="#1e40af" text-anchor="middle"
+         dominant-baseline="middle">① 도구 호출</text>
+  <line x1="332" y1="116" x2="540" y2="116"
+       stroke="#1e40af" stroke-width="2"
+       marker-end="url(#arr-1e40af)" />
+  <rect x="450" y="155" width="270" height="50" rx="8"
+       fill="#ffc9c9" stroke="#dc2626" stroke-width="2" />
+  <text x="585" y="175"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="600"
+         fill="#dc2626" text-anchor="middle"
+         dominant-baseline="middle">② -32042 오류 반환 (인증 필요)</text>
+  <line x1="448" y1="180" x2="270" y2="180"
+       stroke="#dc2626" stroke-width="2"
+       marker-end="url(#arr-dc2626)" />
+  <rect x="60" y="220" width="270" height="42" rx="8"
+       fill="#fff3bf" stroke="#d97706" stroke-width="2" />
+  <text x="195" y="241"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="600"
+         fill="#92400e" text-anchor="middle"
+         dominant-baseline="middle">③ 사용자에게 auth_url 표시</text>
+  <rect x="60" y="280" width="270" height="50" rx="8"
+       fill="#d0bfff" stroke="#9333ea" stroke-width="2" />
+  <text x="195" y="300"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="600"
+         fill="#6b21a8" text-anchor="middle"
+         dominant-baseline="middle">④ 사용자가 브라우저에서 OAuth 완료</text>
+  <text x="195" y="318"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="12" font-weight="normal"
+         fill="#6b21a8" text-anchor="middle"
+         dominant-baseline="middle">토큰 로컬 저장</text>
+  <rect x="60" y="348" width="270" height="42" rx="8"
+       fill="#b2f2bb" stroke="#059669" stroke-width="2" />
+  <text x="195" y="369"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="600"
+         fill="#065f46" text-anchor="middle"
+         dominant-baseline="middle">⑤ 도구 재호출 (토큰 포함)</text>
+  <line x1="332" y1="369" x2="540" y2="369"
+       stroke="#059669" stroke-width="2"
+       marker-end="url(#arr-059669)" />
+  <rect x="450" y="408" width="270" height="40" rx="8"
+       fill="#b2f2bb" stroke="#059669" stroke-width="2" />
+  <text x="585" y="428"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="14" font-weight="600"
+         fill="#065f46" text-anchor="middle"
+         dominant-baseline="middle">⑥ 결과 반환 ✓</text>
+  <line x1="448" y1="428" x2="332" y2="428"
+       stroke="#059669" stroke-width="2"
+       marker-end="url(#arr-059669)" />
+</svg>

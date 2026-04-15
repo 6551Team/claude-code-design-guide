@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560">
+  <defs>
+    <marker id="arr-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#3730a3"/>
+    </marker>
+    <marker id="arr-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#065f46"/>
+    </marker>
+    <marker id="arr-brown" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#92400e"/>
+    </marker>
+  </defs>
+  <rect width="900" height="560" fill="white"/>
+
+  <!-- Title -->
+  <text x="450" y="34" font-family="'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="bold" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">멀티 에이전트 아키텍처: 세 가지 모드</text>
+
+  <!-- Mode 1 -->
+  <rect x="30" y="62" width="255" height="215" rx="12" fill="#dbe4ff" stroke="#3730a3" stroke-width="2" stroke-dasharray="7,4"/>
+  <text x="157" y="82" font-family="'Segoe UI',system-ui,sans-serif" font-size="15" font-weight="600" fill="#3730a3" text-anchor="middle" dominant-baseline="middle">모드 1: 서브 에이전트</text>
+  <rect x="48" y="98" width="220" height="52" rx="8" fill="#a5d8ff" stroke="#1e40af" stroke-width="2"/>
+  <text x="158" y="124" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">부모 에이전트</text>
+  <line x1="158" y1="152" x2="158" y2="181" stroke="#3730a3" stroke-width="2.5" marker-end="url(#arr-purple)"/>
+  <rect x="48" y="183" width="220" height="52" rx="8" fill="#d0bfff" stroke="#9333ea" stroke-width="2"/>
+  <text x="158" y="209" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#3730a3" text-anchor="middle" dominant-baseline="middle">서브 에이전트 (격리된 컨텍스트)</text>
+  <text x="158" y="252" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">결과를 기다림 (블로킹)</text>
+
+  <!-- Mode 2 -->
+  <rect x="320" y="62" width="255" height="215" rx="12" fill="#d3f9d8" stroke="#065f46" stroke-width="2" stroke-dasharray="7,4"/>
+  <text x="447" y="82" font-family="'Segoe UI',system-ui,sans-serif" font-size="15" font-weight="600" fill="#065f46" text-anchor="middle" dominant-baseline="middle">모드 2: 백그라운드 에이전트</text>
+  <rect x="338" y="98" width="220" height="52" rx="8" fill="#a5d8ff" stroke="#1e40af" stroke-width="2"/>
+  <text x="448" y="124" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">부모 에이전트 (계속 실행)</text>
+  <line x1="448" y1="152" x2="448" y2="181" stroke="#065f46" stroke-width="2.5" marker-end="url(#arr-green)"/>
+  <rect x="338" y="183" width="220" height="52" rx="8" fill="#b2f2bb" stroke="#059669" stroke-width="2"/>
+  <text x="448" y="209" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#065f46" text-anchor="middle" dominant-baseline="middle">서브 에이전트 (백그라운드 실행)</text>
+  <text x="448" y="252" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">완료 시 부모에게 알림</text>
+
+  <!-- Mode 3 -->
+  <rect x="610" y="62" width="255" height="215" rx="12" fill="#fff3bf" stroke="#92400e" stroke-width="2" stroke-dasharray="7,4"/>
+  <text x="737" y="82" font-family="'Segoe UI',system-ui,sans-serif" font-size="15" font-weight="600" fill="#92400e" text-anchor="middle" dominant-baseline="middle">모드 3: 워크트리 격리</text>
+  <rect x="628" y="98" width="220" height="52" rx="8" fill="#a5d8ff" stroke="#1e40af" stroke-width="2"/>
+  <text x="738" y="124" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">부모 에이전트 (메인 브랜치)</text>
+  <line x1="738" y1="152" x2="738" y2="181" stroke="#92400e" stroke-width="2.5" marker-end="url(#arr-brown)"/>
+  <rect x="628" y="183" width="220" height="52" rx="8" fill="#ffd8a8" stroke="#d97706" stroke-width="2"/>
+  <text x="738" y="209" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#92400e" text-anchor="middle" dominant-baseline="middle">서브 에이전트 (격리된 워크트리)</text>
+  <text x="738" y="252" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">격리된 브랜치, 선택적 병합</text>
+
+  <!-- Context isolation -->
+  <rect x="40" y="305" width="820" height="215" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="450" y="330" font-family="'Segoe UI',system-ui,sans-serif" font-size="17" font-weight="600" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">서브 에이전트 컨텍스트 격리</text>
+
+  <rect x="58" y="350" width="360" height="150" rx="8" fill="#a5d8ff" stroke="#3b82f6" stroke-width="2"/>
+  <text x="238" y="373" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" font-weight="600" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">부모 에이전트 messages[]</text>
+  <text x="238" y="396" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">user: 로그인 + 테스트 빌드</text>
+  <text x="238" y="416" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">assistant: 접근 방법 계획 중...</text>
+  <text x="238" y="436" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">tool_result: 프로젝트 구조</text>
+  <text x="238" y="456" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">summary: 테스트 3개 작성 ✓</text>
+
+  <rect x="482" y="350" width="360" height="150" rx="8" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/>
+  <text x="662" y="373" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" font-weight="600" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">서브 에이전트 messages[] (새로 시작)</text>
+  <text x="662" y="396" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle" dominant-baseline="middle">task: auth 단위 테스트 작성</text>
+  <text x="662" y="416" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle" dominant-baseline="middle">tool_use: auth.ts 읽기</text>
+  <text x="662" y="436" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle" dominant-baseline="middle">tool_use: test.ts 작성</text>
+  <text x="662" y="456" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle" dominant-baseline="middle">→ 완료 후 컨텍스트 폐기</text>
+
+  <!-- Footer -->
+  <text x="450" y="530" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" fill="#059669" text-anchor="middle" dominant-baseline="middle">부모 에이전트는 요약만 수신하며, 서브 에이전트의 컨텍스트 누적을 상속하지 않음</text>
+</svg>

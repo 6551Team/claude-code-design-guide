@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="480" viewBox="0 0 860 480">
+  <defs>
+    <marker id="arr-3b82f6" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#3b82f6"/>
+        </marker>
+    <marker id="arr-059669" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#059669"/>
+        </marker>
+    <marker id="arr-f59e0b" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#f59e0b"/>
+        </marker>
+    <marker id="arr-dc2626" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#dc2626"/>
+        </marker>
+    <marker id="arr-9333ea" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#9333ea"/>
+        </marker>
+    <marker id="arr-1e40af" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#1e40af"/>
+        </marker>
+    <marker id="arr-374151" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#374151"/>
+        </marker>
+    <marker id="arr-94a3b8" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0,10 3.5,0 7" fill="#94a3b8"/>
+        </marker>
+  </defs>
+  <rect width="860" height="480" fill="white"/>
+  <text x="430" y="34"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="22" font-weight="bold"
+         fill="#1e40af" text-anchor="middle"
+         dominant-baseline="middle">코디네이터 패턴</text>
+  <rect x="280" y="62" width="300" height="70" rx="10"
+       fill="#a5d8ff" stroke="#1e40af" stroke-width="2.5" />
+  <text x="430" y="85.75"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="15" font-weight="normal"
+         fill="#1e40af" text-anchor="middle"
+         dominant-baseline="middle">코디네이터 에이전트</text>
+  <text x="430" y="108.25"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="15" font-weight="normal"
+         fill="#1e40af" text-anchor="middle"
+         dominant-baseline="middle">분석 · 분해 · 위임 · 집계</text>
+  <line x1="430" y1="133" x2="120" y2="198"
+       stroke="#3b82f6" stroke-width="2"
+       marker-end="url(#arr-3b82f6)" />
+  <rect x="40" y="202" width="160" height="80" rx="8"
+       fill="#c3fae8" stroke="#059669" stroke-width="2" />
+  <text x="120" y="232.25"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="normal"
+         fill="#059669" text-anchor="middle"
+         dominant-baseline="middle">탐색 에이전트</text>
+  <text x="120" y="251.75"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="normal"
+         fill="#059669" text-anchor="middle"
+         dominant-baseline="middle">읽기 전용, 코드 탐색</text>
+  <line x1="430" y1="133" x2="315" y2="198"
+       stroke="#3b82f6" stroke-width="2"
+       marker-end="url(#arr-3b82f6)" />
+  <rect x="235" y="202" width="160" height="80" rx="8"
+       fill="#fff3bf" stroke="#92400e" stroke-width="2" />
+  <text x="315" y="232.25"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="normal"
+         fill="#92400e" text-anchor="middle"
+         dominant-baseline="middle">계획 에이전트</text>
+  <text x="315" y="251.75"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="normal"
+         fill="#92400e" text-anchor="middle"
+         dominant-baseline="middle">계획 생성만</text>
+  <line x1="430" y1="133" x2="510" y2="198"
+       stroke="#3b82f6" stroke-width="2"
+       marker-end="url(#arr-3b82f6)" />
+  <rect x="430" y="202" width="160" height="80" rx="8"
+       fill="#d0bfff" stroke="#9333ea" stroke-width="2" />
+  <text x="510" y="232.25"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="normal"
+         fill="#9333ea" text-anchor="middle"
+         dominant-baseline="middle">범용 에이전트</text>
+  <text x="510" y="251.75"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="normal"
+         fill="#9333ea" text-anchor="middle"
+         dominant-baseline="middle">쓰기 권한</text>
+  <line x1="430" y1="133" x2="705" y2="198"
+       stroke="#3b82f6" stroke-width="2"
+       marker-end="url(#arr-3b82f6)" />
+  <rect x="625" y="202" width="160" height="80" rx="8"
+       fill="#d0bfff" stroke="#9333ea" stroke-width="2" />
+  <text x="705" y="232.25"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="normal"
+         fill="#9333ea" text-anchor="middle"
+         dominant-baseline="middle">범용 에이전트</text>
+  <text x="705" y="251.75"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="normal"
+         fill="#9333ea" text-anchor="middle"
+         dominant-baseline="middle">병렬 / 순차 실행</text>
+  <line x1="120" y1="284" x2="430" y2="348"
+       stroke="#059669" stroke-width="2"
+       marker-end="url(#arr-059669)" />
+  <line x1="315" y1="284" x2="430" y2="348"
+       stroke="#059669" stroke-width="2"
+       marker-end="url(#arr-059669)" />
+  <line x1="510" y1="284" x2="430" y2="348"
+       stroke="#059669" stroke-width="2"
+       marker-end="url(#arr-059669)" />
+  <line x1="705" y1="284" x2="430" y2="348"
+       stroke="#059669" stroke-width="2"
+       marker-end="url(#arr-059669)" />
+  <rect x="280" y="352" width="300" height="60" rx="10"
+       fill="#b2f2bb" stroke="#059669" stroke-width="2" />
+  <text x="430" y="382"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="15" font-weight="600"
+         fill="#065f46" text-anchor="middle"
+         dominant-baseline="middle">결과 집계 → 메인 에이전트에 반환</text>
+  <rect x="40" y="432" width="780" height="38" rx="8"
+       fill="#f8fafc" stroke="#94a3b8" stroke-width="2" />
+  <text x="430" y="451"
+         font-family="'Segoe UI',system-ui,sans-serif"
+         font-size="13" font-weight="normal"
+         fill="#374151" text-anchor="middle"
+         dominant-baseline="middle">장점: 작업 병렬화 · 컨텍스트 격리 · 전문화 분업 · 단일 에이전트 컨텍스트 한계 극복</text>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="340" viewBox="0 0 440 340">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Git Context box at top -->
+  <rect x="80" y="10" width="280" height="110" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="220" y="30" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="13" font-weight="bold">Git 컨텍스트</text>
+  <line x1="80" y1="35" x2="360" y2="35" stroke="#2563eb" stroke-width="1"/>
+  <text x="95" y="55" font-family="Arial,sans-serif" fill="#1e40af" font-size="12">branch:        feature/new-parser</text>
+  <text x="95" y="72" font-family="Arial,sans-serif" fill="#1e40af" font-size="12">defaultBranch: main</text>
+  <text x="95" y="89" font-family="Arial,sans-serif" fill="#1e40af" font-size="12">status:        수정 3개, 미추적 1개</text>
+  <text x="95" y="106" font-family="Arial,sans-serif" fill="#1e40af" font-size="12">recentCommits: 최근 커밋 요약 5개</text>
+
+  <!-- Arrow down -->
+  <line x1="220" y1="120" x2="220" y2="152" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Memoized functions box -->
+  <rect x="80" y="155" width="280" height="55" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="220" y="177" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="13" font-weight="bold">context.ts</text>
+  <text x="220" y="198" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="11">getGitStatus() / getSystemContext() [메모이제이션]</text>
+
+  <!-- Arrow down -->
+  <line x1="220" y1="210" x2="220" y2="242" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Truncation note -->
+  <rect x="80" y="245" width="280" height="50" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="220" y="265" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold">잘라내기: 최대 2000자 제한</text>
+  <text x="220" y="285" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="11">초과 시 status + recentCommits 잘라냄</text>
+
+  <!-- Arrow down -->
+  <line x1="220" y1="295" x2="220" y2="315" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- System Prompt box -->
+  <rect x="80" y="318" width="280" height="14" rx="3" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text x="220" y="329" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="11" font-weight="bold">시스템 프롬프트 주입 (LLM)</text>
+</svg>

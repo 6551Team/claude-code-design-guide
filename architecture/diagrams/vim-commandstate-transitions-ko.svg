@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+  </defs>
+
+  <text x="450" y="30" font-family="Arial,sans-serif" font-size="16" fill="#1e40af" text-anchor="middle" font-weight="bold">CommandState 전환 표</text>
+
+  <!-- Header -->
+  <rect x="50" y="50" width="250" height="40" fill="#2563eb" stroke="#2563eb" stroke-width="2" rx="3"/>
+  <text x="175" y="75" font-family="Arial,sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">현재 상태</text>
+
+  <rect x="310" y="50" width="200" height="40" fill="#2563eb" stroke="#2563eb" stroke-width="2" rx="3"/>
+  <text x="410" y="75" font-family="Arial,sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">키 입력</text>
+
+  <rect x="520" y="50" width="330" height="40" fill="#2563eb" stroke="#2563eb" stroke-width="2" rx="3"/>
+  <text x="685" y="75" font-family="Arial,sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">다음 상태</text>
+
+  <!-- Row 1 -->
+  <rect x="50" y="90" width="250" height="35" fill="#f0f4f8" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="175" y="112" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">idle</text>
+  <rect x="310" y="90" width="200" height="35" fill="#f0f4f8" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="410" y="112" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">1-9</text>
+  <rect x="520" y="90" width="330" height="35" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="3"/>
+  <text x="685" y="112" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">count { digits }</text>
+
+  <!-- Row 2 -->
+  <rect x="50" y="125" width="250" height="35" fill="#f0f4f8" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="175" y="147" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">idle</text>
+  <rect x="310" y="125" width="200" height="35" fill="#f0f4f8" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="410" y="147" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">d/c/y</text>
+  <rect x="520" y="125" width="330" height="35" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="3"/>
+  <text x="685" y="147" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">operator { op }</text>
+
+  <!-- Row 3 -->
+  <rect x="50" y="160" width="250" height="35" fill="#f0f4f8" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="175" y="182" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">idle</text>
+  <rect x="310" y="160" width="200" height="35" fill="#f0f4f8" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="410" y="182" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">f/F/t/T</text>
+  <rect x="520" y="160" width="330" height="35" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="3"/>
+  <text x="685" y="182" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">find { direction }</text>
+
+  <!-- Row 4 -->
+  <rect x="50" y="195" width="250" height="35" fill="#f0f4f8" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="175" y="217" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">idle</text>
+  <rect x="310" y="195" width="200" height="35" fill="#f0f4f8" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="410" y="217" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">r</text>
+  <rect x="520" y="195" width="330" height="35" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="3"/>
+  <text x="685" y="217" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">replaceChar</text>
+
+  <!-- Row 5 -->
+  <rect x="50" y="230" width="250" height="35" fill="#f0f4f8" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="175" y="252" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">count</text>
+  <rect x="310" y="230" width="200" height="35" fill="#f0f4f8" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="410" y="252" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">0-9</text>
+  <rect x="520" y="230" width="330" height="35" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="3"/>
+  <text x="685" y="252" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">count (숫자 추가)</text>
+
+  <!-- Row 6 -->
+  <rect x="50" y="265" width="250" height="35" fill="#f0f4f8" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="175" y="287" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">count</text>
+  <rect x="310" y="265" width="200" height="35" fill="#f0f4f8" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="410" y="287" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">d/c/y</text>
+  <rect x="520" y="265" width="330" height="35" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="3"/>
+  <text x="685" y="287" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">operator { op, count }</text>
+
+  <!-- Row 7 -->
+  <rect x="50" y="300" width="250" height="35" fill="#f0f4f8" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="175" y="322" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">count</text>
+  <rect x="310" y="300" width="200" height="35" fill="#f0f4f8" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="410" y="322" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">모션 키</text>
+  <rect x="520" y="300" width="330" height="35" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="3"/>
+  <text x="685" y="322" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">모션 * count 실행 → idle</text>
+
+  <!-- Row 8 -->
+  <rect x="50" y="335" width="250" height="35" fill="#f0f4f8" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="175" y="357" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">operator</text>
+  <rect x="310" y="335" width="200" height="35" fill="#f0f4f8" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="410" y="357" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">모션 키</text>
+  <rect x="520" y="335" width="330" height="35" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="3"/>
+  <text x="685" y="357" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">연산자 + 모션 실행 → idle</text>
+
+  <!-- Row 9 -->
+  <rect x="50" y="370" width="250" height="35" fill="#f0f4f8" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="175" y="392" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">operator</text>
+  <rect x="310" y="370" width="200" height="35" fill="#f0f4f8" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="410" y="392" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">텍스트 오브젝트 접두사</text>
+  <rect x="520" y="370" width="330" height="35" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="3"/>
+  <text x="685" y="392" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">텍스트 오브젝트 대기 → 실행 → idle</text>
+
+  <!-- Row 10 -->
+  <rect x="50" y="405" width="250" height="35" fill="#f0f4f8" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="175" y="427" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">operator</text>
+  <rect x="310" y="405" width="200" height="35" fill="#f0f4f8" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="410" y="427" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">동일 연산자</text>
+  <rect x="520" y="405" width="330" height="35" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="3"/>
+  <text x="685" y="427" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">줄 연산 (dd/cc/yy) → idle</text>
+
+  <!-- Row 11 -->
+  <rect x="50" y="440" width="250" height="35" fill="#f0f4f8" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="175" y="462" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">find</text>
+  <rect x="310" y="440" width="200" height="35" fill="#f0f4f8" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="410" y="462" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">임의 문자</text>
+  <rect x="520" y="440" width="330" height="35" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="3"/>
+  <text x="685" y="462" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">find 모션 실행 → idle</text>
+
+  <!-- Row 12 -->
+  <rect x="50" y="475" width="250" height="35" fill="#f0f4f8" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="175" y="497" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">replaceChar</text>
+  <rect x="310" y="475" width="200" height="35" fill="#f0f4f8" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="410" y="497" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">임의 문자</text>
+  <rect x="520" y="475" width="330" height="35" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="3"/>
+  <text x="685" y="497" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">커서 위치 문자 교체 → idle</text>
+
+  <!-- Row 13 -->
+  <rect x="50" y="510" width="250" height="35" fill="#f0f4f8" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="175" y="532" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">gPrefix</text>
+  <rect x="310" y="510" width="200" height="35" fill="#f0f4f8" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="410" y="532" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">g</text>
+  <rect x="520" y="510" width="330" height="35" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="3"/>
+  <text x="685" y="532" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">gg 실행 (문서 시작으로) → idle</text>
+
+  <!-- Row 14 -->
+  <rect x="50" y="545" width="250" height="35" fill="#f0f4f8" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="175" y="567" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">*</text>
+  <rect x="310" y="545" width="200" height="35" fill="#f0f4f8" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="410" y="567" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">&lt;Esc&gt;</text>
+  <rect x="520" y="545" width="330" height="35" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="3"/>
+  <text x="685" y="567" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">→ idle (현재 명령 취소)</text>
+</svg>

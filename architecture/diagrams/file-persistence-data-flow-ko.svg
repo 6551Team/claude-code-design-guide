@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 820">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Turn starts -->
+  <rect x="150" y="20" width="300" height="55" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="300" y="45" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">턴 시작</text>
+  <text x="300" y="65" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">(turnStartTime 기록)</text>
+
+  <line x1="300" y1="75" x2="300" y2="105" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Model executes tool operations -->
+  <rect x="80" y="105" width="440" height="55" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="300" y="130" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">모델이 도구 작업 실행</text>
+  <text x="300" y="150" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">(파일 생성/수정)</text>
+
+  <line x1="300" y1="160" x2="300" y2="190" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Turn ends -->
+  <rect x="80" y="190" width="440" height="55" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="300" y="215" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">턴 종료</text>
+  <text x="300" y="235" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">runFilePersistence() 트리거</text>
+
+  <line x1="300" y1="245" x2="300" y2="275" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- isFilePersistenceEnabled -->
+  <rect x="80" y="275" width="440" height="55" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="300" y="300" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">isFilePersistenceEnabled()</text>
+  <text x="300" y="320" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">-- 4가지 확인</text>
+
+  <line x1="300" y1="330" x2="300" y2="360" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- findModifiedFiles -->
+  <rect x="80" y="360" width="440" height="55" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="300" y="385" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">findModifiedFiles(turnStartTime, outputsDir)</text>
+
+  <!-- Branch arrows from findModifiedFiles -->
+  <line x1="160" y1="415" x2="90" y2="465" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="90" y="445" font-family="Arial,sans-serif" font-size="12" fill="#666">readdir</text>
+
+  <line x1="300" y1="415" x2="300" y2="465" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="300" y="450" font-family="Arial,sans-serif" font-size="12" fill="#666" text-anchor="middle">stat</text>
+
+  <line x1="440" y1="415" x2="510" y2="465" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="480" y="445" font-family="Arial,sans-serif" font-size="12" fill="#666">mtime</text>
+
+  <!-- Operations -->
+  <rect x="20" y="465" width="150" height="55" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="95" y="490" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">readdir</text>
+  <text x="95" y="510" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">(재귀)</text>
+
+  <rect x="215" y="465" width="170" height="55" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="300" y="490" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">stat</text>
+  <text x="300" y="510" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">(병렬)</text>
+
+  <rect x="430" y="465" width="150" height="55" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="505" y="490" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">mtime &gt; turnStart</text>
+  <text x="505" y="510" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">(필터)</text>
+
+  <!-- Converge arrows -->
+  <line x1="95" y1="520" x2="250" y2="560" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="300" y1="520" x2="300" y2="560" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="505" y1="520" x2="350" y2="560" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Modified files list -->
+  <rect x="80" y="560" width="440" height="55" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="300" y="585" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">수정된 파일 목록</text>
+  <text x="300" y="605" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">[file1, file2, ...]</text>
+
+  <line x1="300" y1="615" x2="300" y2="645" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Upload to Files API -->
+  <rect x="100" y="645" width="400" height="55" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="300" y="675" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">각 파일을 Files API에 업로드</text>
+
+  <line x1="300" y1="700" x2="300" y2="730" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Return FilesPersistedEventData -->
+  <rect x="100" y="730" width="400" height="55" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="300" y="760" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">FilesPersistedEventData 반환</text>
+</svg>

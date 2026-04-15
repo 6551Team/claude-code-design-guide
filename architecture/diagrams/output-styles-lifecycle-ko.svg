@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Startup -->
+  <rect x="200" y="20" width="200" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="300" y="50" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">시작</text>
+
+  <!-- Arrow -->
+  <line x1="300" y1="70" x2="300" y2="100" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Load style files -->
+  <rect x="150" y="100" width="300" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="300" y="130" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">스타일 파일 로드 (메모이즈)</text>
+
+  <!-- Arrow -->
+  <line x1="300" y1="150" x2="300" y2="180" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Project level -->
+  <rect x="100" y="180" width="400" height="50" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="300" y="210" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">프로젝트 수준: .claude/output-styles/*.md</text>
+
+  <!-- Arrow -->
+  <line x1="300" y1="230" x2="300" y2="260" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- User level -->
+  <rect x="100" y="260" width="400" height="50" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="300" y="290" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">사용자 수준: ~/.claude/output-styles/*.md</text>
+
+  <!-- Arrow -->
+  <line x1="300" y1="310" x2="300" y2="340" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Parse frontmatter -->
+  <rect x="100" y="340" width="400" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="300" y="370" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">프론트매터 파싱 → OutputStyleConfig[]</text>
+
+  <!-- Arrow -->
+  <line x1="300" y1="390" x2="300" y2="420" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- User selects style -->
+  <rect x="100" y="420" width="400" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="300" y="450" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">사용자가 스타일 선택 (또는 기본값 사용)</text>
+
+  <!-- Arrow -->
+  <line x1="300" y1="470" x2="300" y2="500" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Inject into system prompt -->
+  <rect x="50" y="500" width="500" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="300" y="530" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">시스템 프롬프트에 주입 → 이후 모든 응답에 적용</text>
+
+  <!-- Arrow -->
+  <line x1="300" y1="550" x2="300" y2="580" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Runtime switching -->
+  <rect x="50" y="580" width="500" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="300" y="610" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">/output-style 명령어 → 동적 런타임 전환</text>
+</svg>

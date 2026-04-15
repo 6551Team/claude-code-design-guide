@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="560" viewBox="0 0 740 560">
+  <defs>
+    <marker id="arr-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#3b82f6"/>
+    </marker>
+    <marker id="arr-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#dc2626"/>
+    </marker>
+  </defs>
+  <rect width="740" height="560" fill="white"/>
+
+  <!-- Title -->
+  <text x="370" y="34" font-family="'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="bold" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">Claude Code 에이전트 루프</text>
+
+  <!-- Box 1 -->
+  <rect x="120" y="58" width="500" height="58" rx="10" fill="#a5d8ff" stroke="#1e40af" stroke-width="2.5"/>
+  <text x="370" y="87" font-family="'Segoe UI',system-ui,sans-serif" font-size="18" font-weight="600" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">사용자 입력</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="370" y1="118" x2="370" y2="141" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Box 2 -->
+  <rect x="120" y="143" width="500" height="58" rx="10" fill="#fff3bf" stroke="#92400e" stroke-width="2"/>
+  <text x="370" y="172" font-family="'Segoe UI',system-ui,sans-serif" font-size="16" font-weight="600" fill="#92400e" text-anchor="middle" dominant-baseline="middle">메시지 목록 구성 (히스토리 포함)</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="370" y1="203" x2="370" y2="226" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Box 3 -->
+  <rect x="120" y="228" width="500" height="58" rx="10" fill="#c3fae8" stroke="#059669" stroke-width="2"/>
+  <text x="370" y="257" font-family="'Segoe UI',system-ui,sans-serif" font-size="16" font-weight="600" fill="#059669" text-anchor="middle" dominant-baseline="middle">Claude API 호출 (스트리밍)</text>
+
+  <!-- Arrow 3→4 -->
+  <line x1="370" y1="288" x2="370" y2="311" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Box 4 -->
+  <rect x="120" y="313" width="500" height="84" rx="10" fill="#dbe4ff" stroke="#3730a3" stroke-width="2"/>
+  <text x="370" y="346" font-family="'Segoe UI',system-ui,sans-serif" font-size="16" font-weight="600" fill="#3730a3" text-anchor="middle" dominant-baseline="middle">응답 파싱</text>
+  <text x="370" y="372" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#374151" text-anchor="middle" dominant-baseline="middle">텍스트 블록 → 스트림 출력  ·  thinking 블록 → 내부처리  ·  도구 호출 → 실행</text>
+
+  <!-- Arrow 4→5 -->
+  <line x1="370" y1="399" x2="370" y2="428" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Box 5 -->
+  <rect x="120" y="430" width="500" height="55" rx="10" fill="#d0bfff" stroke="#9333ea" stroke-width="2"/>
+  <text x="370" y="457" font-family="'Segoe UI',system-ui,sans-serif" font-size="15" font-weight="600" fill="#6b21a8" text-anchor="middle" dominant-baseline="middle">도구 결과가 메시지 목록에 추가됨</text>
+
+  <!-- Loop back: right side -->
+  <line x1="622" y1="457" x2="680" y2="457" stroke="#dc2626" stroke-width="2"/>
+  <line x1="680" y1="457" x2="680" y2="257" stroke="#dc2626" stroke-width="2"/>
+  <line x1="680" y1="257" x2="622" y2="257" stroke="#dc2626" stroke-width="2" marker-end="url(#arr-red)"/>
+  <text x="700" y="350" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#dc2626" text-anchor="start" dominant-baseline="middle">계속?</text>
+
+  <!-- Footer -->
+  <text x="140" y="510" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#6b7280" text-anchor="start" dominant-baseline="middle">← 도구 호출 없음 / 턴 제한 도달 → 최종 결과 반환</text>
+</svg>

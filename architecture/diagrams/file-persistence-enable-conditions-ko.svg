@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 580">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- feature_flag = ON? -->
+  <polygon points="300,30 500,100 300,170 100,100" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="300" y="95" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">feature_flag</text>
+  <text x="300" y="113" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">= ON?</text>
+
+  <!-- No arrow right -> disabled -->
+  <line x1="500" y1="100" x2="580" y2="100" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="520" y="92" font-family="Arial,sans-serif" font-size="12" fill="#666">아니오</text>
+  <text x="580" y="105" font-family="Arial,sans-serif" font-size="12" fill="#999">비활성화</text>
+
+  <!-- Yes arrow down -->
+  <line x1="300" y1="170" x2="300" y2="200" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="310" y="190" font-family="Arial,sans-serif" font-size="12" fill="#666">예</text>
+
+  <!-- env = BYOC? -->
+  <polygon points="300,200 500,270 300,340 100,270" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="300" y="265" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">env</text>
+  <text x="300" y="283" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">= BYOC?</text>
+
+  <!-- No arrow right -> disabled -->
+  <line x1="500" y1="270" x2="580" y2="270" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="520" y="262" font-family="Arial,sans-serif" font-size="12" fill="#666">아니오</text>
+  <text x="580" y="275" font-family="Arial,sans-serif" font-size="12" fill="#999">비활성화</text>
+
+  <!-- Yes arrow down -->
+  <line x1="300" y1="340" x2="300" y2="370" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="310" y="360" font-family="Arial,sans-serif" font-size="12" fill="#666">예</text>
+
+  <!-- session_token? -->
+  <polygon points="300,370 500,440 300,510 100,440" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="300" y="430" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">session</text>
+  <text x="300" y="448" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">_token?</text>
+
+  <!-- No arrow right -> disabled -->
+  <line x1="500" y1="440" x2="580" y2="440" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="520" y="432" font-family="Arial,sans-serif" font-size="12" fill="#666">아니오</text>
+  <text x="580" y="445" font-family="Arial,sans-serif" font-size="12" fill="#999">비활성화</text>
+
+  <!-- Yes arrow down -->
+  <line x1="300" y1="510" x2="300" y2="540" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="310" y="530" font-family="Arial,sans-serif" font-size="12" fill="#666">예</text>
+
+  <!-- ENABLED -->
+  <rect x="175" y="540" width="250" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="300" y="570" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">활성화됨 (ENABLED)</text>
+</svg>

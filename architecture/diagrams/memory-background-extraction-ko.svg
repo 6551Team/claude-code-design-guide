@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 370" width="720" height="370">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="360" y="28" font-family="Arial,sans-serif" font-size="15" fill="#1e40af" text-anchor="middle" font-weight="bold">메모리 백그라운드 추출 (extractMemories)</text>
+
+  <!-- Trigger box -->
+  <rect x="175" y="45" width="370" height="40" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="360" y="70" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">쿼리 루프 종료 (모델 최종 응답, 도구 호출 없음)</text>
+
+  <!-- Arrow down -->
+  <line x1="360" y1="85" x2="360" y2="115" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- extractMemories hook box -->
+  <rect x="255" y="115" width="210" height="40" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="360" y="140" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">extractMemories 훅</text>
+
+  <!-- Arrow down -->
+  <line x1="360" y1="155" x2="360" y2="185" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Check conditions -->
+  <rect x="220" y="185" width="280" height="40" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="360" y="210" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">추출 조건 충족 여부 확인</text>
+
+  <!-- Arrow down -->
+  <line x1="360" y1="225" x2="360" y2="255" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Build prompt box -->
+  <rect x="180" y="255" width="360" height="40" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="360" y="278" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">추출 프롬프트 빌드 (4가지 유형 분류)</text>
+  <text x="360" y="292" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">user / feedback / project / reference</text>
+
+  <!-- Arrow down -->
+  <line x1="360" y1="295" x2="360" y2="320" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- runForkedAgent + Write -->
+  <rect x="185" y="320" width="350" height="40" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="360" y="343" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">runForkedAgent() → auto-memory/에 쓰기</text>
+</svg>

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+    <style>
+      .phase { fill: #f0f4f8; stroke: #2563eb; stroke-width: 2; }
+      .phase-text { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: #1e40af; }
+      .desc-text { font-family: Arial, sans-serif; font-size: 11px; fill: #475569; }
+      .arrow { stroke: #666; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .title { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #1e293b; }
+      .loop-arrow { stroke: #dc2626; stroke-width: 3; fill: none; marker-end: url(#arrowhead); stroke-dasharray: 5,5; }
+    </style>
+  </defs>
+
+  <text x="500" y="30" class="title" text-anchor="middle">쿼리 엔진 5단계 루프</text>
+
+  <!-- Phase 1 -->
+  <rect x="150" y="80" width="700" height="100" class="phase" rx="5"/>
+  <text x="500" y="110" class="phase-text" text-anchor="middle">1단계: 컨텍스트 준비</text>
+  <text x="500" y="130" class="desc-text" text-anchor="middle">applyToolResultBudget → snipCompact → microcompact</text>
+  <text x="500" y="145" class="desc-text" text-anchor="middle">contextCollapse → autocompact → fullSystemPrompt 조립</text>
+  <text x="500" y="160" class="desc-text" text-anchor="middle">StreamingToolExecutor 생성</text>
+
+  <line x1="500" y1="180" x2="500" y2="210" class="arrow"/>
+
+  <!-- Phase 2 -->
+  <rect x="150" y="210" width="700" height="100" class="phase" rx="5"/>
+  <text x="500" y="240" class="phase-text" text-anchor="middle">2단계: API 호출</text>
+  <text x="500" y="260" class="desc-text" text-anchor="middle">callModel() → 스트림 이벤트 → assistantMessages[] 구성</text>
+  <text x="500" y="275" class="desc-text" text-anchor="middle">tool_use 감지 → needsFollowUp = true</text>
+  <text x="500" y="290" class="desc-text" text-anchor="middle">폴백 / max_output_tokens / prompt_too_long 처리</text>
+
+  <line x1="500" y1="310" x2="500" y2="340" class="arrow"/>
+
+  <!-- Phase 3 -->
+  <rect x="150" y="340" width="700" height="100" class="phase" rx="5"/>
+  <text x="500" y="370" class="phase-text" text-anchor="middle">3단계: 도구 실행</text>
+  <text x="500" y="390" class="desc-text" text-anchor="middle">runTools() → partitionToolCalls() → 동시/직렬 배치</text>
+  <text x="500" y="405" class="desc-text" text-anchor="middle">또는 StreamingToolExecutor → getCompletedResults()</text>
+  <text x="500" y="420" class="desc-text" text-anchor="middle">runToolUse() → 권한 확인 → 실행 → postSamplingHooks</text>
+
+  <line x1="500" y1="440" x2="500" y2="470" class="arrow"/>
+
+  <!-- Phase 4 -->
+  <rect x="150" y="470" width="700" height="100" class="phase" rx="5"/>
+  <text x="500" y="500" class="phase-text" text-anchor="middle">4단계: 중지 훅</text>
+  <text x="500" y="520" class="desc-text" text-anchor="middle">!needsFollowUp이면 → handleStopHooks()</text>
+  <text x="500" y="535" class="desc-text" text-anchor="middle">토큰 예산 확인</text>
+  <text x="500" y="550" class="desc-text" text-anchor="middle">계속 또는 종료 결정</text>
+
+  <line x1="500" y1="570" x2="500" y2="600" class="arrow"/>
+
+  <!-- Phase 5 -->
+  <rect x="150" y="600" width="700" height="100" class="phase" rx="5"/>
+  <text x="500" y="630" class="phase-text" text-anchor="middle">5단계: 계속/종료</text>
+  <text x="500" y="650" class="desc-text" text-anchor="middle">도구 결과를 메시지에 추가 → 첨부 메시지 가져오기</text>
+  <text x="500" y="665" class="desc-text" text-anchor="middle">maxTurns 확인 → 다음 상태 조립</text>
+  <text x="500" y="680" class="desc-text" text-anchor="middle">state = next → 1단계로 돌아가거나 종료</text>
+
+  <!-- Loop arrow -->
+  <path d="M 850 650 Q 950 400 850 150" class="loop-arrow"/>
+  <text x="920" y="400" class="desc-text" text-anchor="middle" fill="#dc2626">루프</text>
+
+</svg>

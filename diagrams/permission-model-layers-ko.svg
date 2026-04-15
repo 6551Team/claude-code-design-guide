@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
+  <defs>
+    <marker id="arr-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#3b82f6"/>
+    </marker>
+  </defs>
+  <rect width="900" height="650" fill="white"/>
+
+  <!-- Title -->
+  <text x="450" y="34" font-family="'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="bold" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">5계층 권한 아키텍처</text>
+
+  <!-- Layer 1 -->
+  <rect x="40" y="62" width="820" height="88" rx="10" fill="#a5d8ff" stroke="#1e40af" stroke-width="2.5"/>
+  <text x="450" y="90" font-family="'Segoe UI',system-ui,sans-serif" font-size="17" font-weight="600" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">계층 1: 세션 모드</text>
+  <text x="450" y="122" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">default / acceptEdits / bypassPermissions / plan  —  전체 권한 기준선 설정</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="450" y1="152" x2="450" y2="168" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Layer 2 -->
+  <rect x="80" y="170" width="740" height="88" rx="10" fill="#b2f2bb" stroke="#059669" stroke-width="2.5"/>
+  <text x="450" y="198" font-family="'Segoe UI',system-ui,sans-serif" font-size="17" font-weight="600" fill="#059669" text-anchor="middle" dominant-baseline="middle">계층 2: 도구 화이트리스트 / 블랙리스트</text>
+  <text x="450" y="230" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">allowedTools: [FileReadTool...]   deniedTools: [BashTool...]  —  사용 가능한 도구 결정</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="450" y1="260" x2="450" y2="276" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Layer 3 -->
+  <rect x="120" y="278" width="660" height="88" rx="10" fill="#d0bfff" stroke="#9333ea" stroke-width="2.5"/>
+  <text x="450" y="306" font-family="'Segoe UI',system-ui,sans-serif" font-size="17" font-weight="600" fill="#9333ea" text-anchor="middle" dominant-baseline="middle">계층 3: 도구 수준 권한</text>
+  <text x="450" y="338" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">FileReadTool → 자동 허용    FileEditTool → 확인 요청    BashTool → 확인 요청</text>
+
+  <!-- Arrow 3→4 -->
+  <line x1="450" y1="368" x2="450" y2="384" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Layer 4 -->
+  <rect x="160" y="386" width="580" height="88" rx="10" fill="#ffd8a8" stroke="#d97706" stroke-width="2.5"/>
+  <text x="450" y="414" font-family="'Segoe UI',system-ui,sans-serif" font-size="17" font-weight="600" fill="#d97706" text-anchor="middle" dominant-baseline="middle">계층 4: 작업 수준 권한</text>
+  <text x="450" y="446" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">"ls" → 저위험    "rm -rf" → 고위험, 확인 필요  —  동일 도구 내 작업별 차등 적용</text>
+
+  <!-- Arrow 4→5 -->
+  <line x1="450" y1="476" x2="450" y2="492" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Layer 5 -->
+  <rect x="200" y="494" width="500" height="88" rx="10" fill="#ffc9c9" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="450" y="522" font-family="'Segoe UI',system-ui,sans-serif" font-size="17" font-weight="600" fill="#dc2626" text-anchor="middle" dominant-baseline="middle">계층 5: 경로 / 명령어 수준 권한</text>
+  <text x="450" y="554" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#374151" text-anchor="middle" dominant-baseline="middle">allowedWritePaths   deniedWritePaths   allowedBashCommands  —  최세립 제어</text>
+
+  <!-- Footer -->
+  <text x="450" y="620" font-family="'Segoe UI',system-ui,sans-serif" font-size="15" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">기본은 보안, 편의는 선택, 제어는 사용자의 손에</text>
+</svg>

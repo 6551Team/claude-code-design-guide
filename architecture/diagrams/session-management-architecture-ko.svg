@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="260" viewBox="0 0 560 260">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- UI Layer top bar -->
+  <rect x="20" y="10" width="520" height="55" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="280" y="33" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="13" font-weight="bold">UI 계층</text>
+  <text x="280" y="54" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="12">ResumeConversation.tsx    /export    /share</text>
+
+  <!-- Four middle boxes -->
+  <!-- Session Identity -->
+  <rect x="20" y="82" width="120" height="65" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="80" y="107" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold">세션</text>
+  <text x="80" y="123" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold">식별</text>
+  <text x="80" y="140" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="10">UUID 관리</text>
+
+  <!-- History Manager -->
+  <rect x="155" y="82" width="120" height="65" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="215" y="107" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold">히스토리</text>
+  <text x="215" y="123" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold">관리자</text>
+  <text x="215" y="140" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="10">JSONL 읽기/쓰기</text>
+
+  <!-- Cost Persist -->
+  <rect x="290" y="82" width="120" height="65" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="350" y="107" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold">비용</text>
+  <text x="350" y="123" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold">영속화</text>
+  <text x="350" y="140" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="10">세션별 비용</text>
+
+  <!-- Background Manager -->
+  <rect x="425" y="82" width="115" height="65" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="483" y="107" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold">백그라운드</text>
+  <text x="483" y="123" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="12" font-weight="bold">관리자</text>
+  <text x="483" y="140" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="10">포그라운드/백그라운드 전환</text>
+
+  <!-- Arrows from UI to modules -->
+  <line x1="80" y1="65" x2="80" y2="80" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="215" y1="65" x2="215" y2="80" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="350" y1="65" x2="350" y2="80" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="483" y1="65" x2="483" y2="80" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Arrows from modules to storage -->
+  <line x1="80" y1="147" x2="80" y2="185" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="215" y1="147" x2="215" y2="185" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="350" y1="147" x2="350" y2="185" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="483" y1="147" x2="483" y2="185" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Storage bottom bar -->
+  <rect x="20" y="188" width="520" height="55" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="280" y="210" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="13" font-weight="bold">프로젝트 설정 저장소</text>
+  <text x="280" y="232" text-anchor="middle" font-family="Arial,sans-serif" fill="#1e40af" font-size="12">~/.claude/projects/&lt;id&gt;/sessions/</text>
+</svg>

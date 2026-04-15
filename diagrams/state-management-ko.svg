@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <marker id="arr-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#3b82f6"/>
+    </marker>
+    <marker id="arr-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#059669"/>
+    </marker>
+  </defs>
+  <rect width="800" height="500" fill="white"/>
+
+  <!-- Title -->
+  <text x="400" y="34" font-family="'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="bold" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">2계층 상태 아키텍처</text>
+
+  <!-- Layer 1: Bootstrap State -->
+  <rect x="60" y="62" width="680" height="155" rx="12" fill="#dbe4ff" stroke="#1e40af" stroke-width="2.5"/>
+  <text x="400" y="84" font-family="'Segoe UI',system-ui,sans-serif" font-size="16" font-weight="600" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">부트스트랩 상태 (글로벌 싱글턴)  src/bootstrap/state.ts</text>
+  <rect x="90" y="102" width="620" height="100" rx="8" fill="#a5d8ff" stroke="#3b82f6" stroke-width="2"/>
+  <text x="400" y="140" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" fill="#374151" text-anchor="middle" dominant-baseline="middle">sessionId · projectRoot · cwd · totalCostUSD · modelUsage</text>
+  <text x="400" y="163" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" fill="#374151" text-anchor="middle" dominant-baseline="middle">OpenTelemetry 프로바이더 · 등록된 훅</text>
+  <text x="650" y="108" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#3730a3" text-anchor="middle" dominant-baseline="middle">프로세스 수준 · 세션 간 공유</text>
+
+  <!-- Arrow -->
+  <line x1="400" y1="219" x2="400" y2="247" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+  <text x="470" y="234" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">AppState에서 읽음</text>
+
+  <!-- Layer 2: AppState -->
+  <rect x="60" y="250" width="680" height="155" rx="12" fill="#d3f9d8" stroke="#059669" stroke-width="2.5"/>
+  <text x="400" y="272" font-family="'Segoe UI',system-ui,sans-serif" font-size="16" font-weight="600" fill="#065f46" text-anchor="middle" dominant-baseline="middle">AppState (React 상태 트리)  src/state/AppStateStore.ts</text>
+  <rect x="90" y="290" width="620" height="100" rx="8" fill="#b2f2bb" stroke="#059669" stroke-width="2"/>
+  <text x="400" y="328" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" fill="#374151" text-anchor="middle" dominant-baseline="middle">messages[] · toolExecutionState · tasks · permissionDialogs</text>
+  <text x="400" y="351" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" fill="#374151" text-anchor="middle" dominant-baseline="middle">fileHistory · UI 상태 (권한 다이얼로그, 진행상황 등)</text>
+  <text x="648" y="296" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#065f46" text-anchor="middle" dominant-baseline="middle">세션 수준 · 리액티브 업데이트</text>
+
+  <!-- Arrow to UI -->
+  <line x1="400" y1="407" x2="400" y2="445" stroke="#059669" stroke-width="2.5" marker-end="url(#arr-green)"/>
+  <text x="400" y="462" font-family="'Segoe UI',system-ui,sans-serif" font-size="14" fill="#6b7280" text-anchor="middle" dominant-baseline="middle">UI 렌더링 (Ink / React)</text>
+</svg>

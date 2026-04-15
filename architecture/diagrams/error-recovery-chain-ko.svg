@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 640" width="780" height="640">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="390" y="28" font-family="Arial,sans-serif" font-size="15" fill="#1e40af" text-anchor="middle" font-weight="bold">5계층 오류 복구 체인 (최저 비용 → 최고 비용)</text>
+
+  <!-- Error occurs -->
+  <rect x="290" y="45" width="200" height="38" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="390" y="69" font-family="Arial,sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold">오류 발생</text>
+
+  <!-- Arrow -->
+  <line x1="390" y1="83" x2="390" y2="103" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Layer 1 -->
+  <rect x="60" y="103" width="660" height="68" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="100" y="125" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" font-weight="bold">계층 1: 컨텍스트 축소 드레인</text>
+  <text x="100" y="143" font-family="Arial,sans-serif" font-size="11" fill="#374151">트리거: prompt-too-long 보류 오류</text>
+  <text x="100" y="159" font-family="Arial,sans-serif" font-size="11" fill="#374151">동작: contextCollapse.recoverFromOverflow()  |  비용: 없음 (API 호출 없음)</text>
+  <text x="630" y="135" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">성공</text>
+  <text x="630" y="152" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">→ 재시도</text>
+
+  <!-- Arrow -->
+  <line x1="390" y1="171" x2="390" y2="191" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Layer 2 -->
+  <rect x="60" y="191" width="660" height="72" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="100" y="213" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" font-weight="bold">계층 2: 반응적 압축</text>
+  <text x="100" y="231" font-family="Arial,sans-serif" font-size="11" fill="#374151">트리거: 축소 드레인 부족, 또는 직접 PTL (Prompt Too Long)</text>
+  <text x="100" y="248" font-family="Arial,sans-serif" font-size="11" fill="#374151">동작: 대형 미디어 제거 → 오래된 메시지 요약 → 경계 메시지 yield</text>
+  <text x="100" y="257" font-family="Arial,sans-serif" font-size="11" fill="#374151">제한: 루프 반복당 1회 시도 (hasAttemptedReactiveCompact 플래그)</text>
+  <text x="630" y="222" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">성공</text>
+  <text x="630" y="238" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">→ 재시도</text>
+
+  <!-- Arrow -->
+  <line x1="390" y1="263" x2="390" y2="283" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Layer 3 -->
+  <rect x="60" y="283" width="660" height="80" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="100" y="305" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" font-weight="bold">계층 3: 최대 출력 토큰 복구</text>
+  <text x="100" y="323" font-family="Arial,sans-serif" font-size="11" fill="#374151">트리거: 출력 잘림 (max_output_tokens 초과)</text>
+  <text x="100" y="340" font-family="Arial,sans-serif" font-size="11" fill="#374151">1차: ESCALATED_MAX_TOKENS(64K) 사용, 주입 없음</text>
+  <text x="100" y="357" font-family="Arial,sans-serif" font-size="11" fill="#374151">2~3차: "출력 토큰 한도 초과. 바로 이어서..." 주입  |  최대 3회, 사용자 턴마다 초기화</text>
+  <text x="630" y="322" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">성공</text>
+  <text x="630" y="338" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">→ 재시도</text>
+
+  <!-- Arrow -->
+  <line x1="390" y1="363" x2="390" y2="383" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Layer 4 -->
+  <rect x="60" y="383" width="660" height="84" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="100" y="405" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" font-weight="bold">계층 4: 모델 폴백</text>
+  <text x="100" y="423" font-family="Arial,sans-serif" font-size="11" fill="#374151">트리거: FallbackTriggeredError (HTTP 529 과부하)</text>
+  <text x="100" y="440" font-family="Arial,sans-serif" font-size="11" fill="#374151">동작: 툼스톤 yield → 도구 상태 초기화 → currentModel → fallbackModel로 전환</text>
+  <text x="100" y="457" font-family="Arial,sans-serif" font-size="11" fill="#374151">  → StreamingToolExecutor 초기화 → stripSignatureBlocks → 재시도</text>
+  <text x="630" y="422" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">성공</text>
+  <text x="630" y="438" font-family="Arial,sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">→ 재시도</text>
+
+  <!-- Arrow -->
+  <line x1="390" y1="467" x2="390" y2="487" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Layer 5 -->
+  <rect x="60" y="487" width="660" height="80" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="100" y="509" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" font-weight="bold">계층 5: 사용자 중단 (AbortSignal / Ctrl+C)</text>
+  <text x="100" y="527" font-family="Arial,sans-serif" font-size="11" fill="#374151">스트리밍 중: executor 드레인 → 합성 tool_result → { reason: 'aborted_streaming' } 반환</text>
+  <text x="100" y="544" font-family="Arial,sans-serif" font-size="11" fill="#374151">도구 실행 중: 현재 도구 완료 대기 → 결과 수집 → { reason: 'aborted_tools' } 반환</text>
+
+  <!-- Arrow -->
+  <line x1="390" y1="567" x2="390" y2="587" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Expose error -->
+  <rect x="270" y="587" width="240" height="38" rx="5" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="390" y="611" font-family="Arial,sans-serif" font-size="13" fill="#991b1b" text-anchor="middle">사용자에게 오류 노출</text>
+</svg>

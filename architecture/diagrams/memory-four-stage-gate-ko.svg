@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" width="720" height="420">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="360" y="28" font-family="Arial,sans-serif" font-size="15" fill="#1e40af" text-anchor="middle" font-weight="bold">autoDream 4단계 게이트 (최저 비용 우선)</text>
+
+  <!-- Gate 1 -->
+  <rect x="60" y="50" width="600" height="55" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="360" y="74" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">게이트 1: 시간 게이트</text>
+  <text x="360" y="94" font-family="Arial,sans-serif" font-size="12" fill="#374151" text-anchor="middle">hours_since_lastConsolidatedAt &gt;= minHours  (stat 한 번 호출 — 가장 저렴)</text>
+
+  <!-- Arrow down -->
+  <line x1="360" y1="105" x2="360" y2="130" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Gate 2 -->
+  <rect x="60" y="130" width="600" height="55" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="360" y="154" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">게이트 2: 세션 게이트</text>
+  <text x="360" y="174" font-family="Arial,sans-serif" font-size="12" fill="#374151" text-anchor="middle">transcript_count(mtime &gt; lastConsolidatedAt) &gt;= minSessions</text>
+
+  <!-- Arrow down -->
+  <line x1="360" y1="185" x2="360" y2="210" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Gate 3 -->
+  <rect x="60" y="210" width="600" height="55" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="360" y="234" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">게이트 3: 잠금 게이트</text>
+  <text x="360" y="254" font-family="Arial,sans-serif" font-size="12" fill="#374151" text-anchor="middle">tryAcquireConsolidationLock() — 다른 프로세스가 통합 중이지 않음</text>
+
+  <!-- Arrow down -->
+  <line x1="360" y1="265" x2="360" y2="290" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Execution -->
+  <rect x="60" y="290" width="600" height="80" rx="5" fill="#f0f4f8" stroke="#2563eb" stroke-width="2"/>
+  <text x="360" y="314" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle" font-weight="bold">게이트 4: 통합 실행 (4단계)</text>
+  <text x="360" y="334" font-family="Arial,sans-serif" font-size="12" fill="#374151" text-anchor="middle">1. 검토 — 기존 메모리 파일 스캔</text>
+  <text x="360" y="350" font-family="Arial,sans-serif" font-size="12" fill="#374151" text-anchor="middle">2. 분석 — 최근 트랜스크립트에서 추출</text>
+  <text x="360" y="366" font-family="Arial,sans-serif" font-size="12" fill="#374151" text-anchor="middle">3. 병합 — 중복 제거 및 업데이트   4. 정리 — 오래된 항목 제거</text>
+
+  <!-- Throttle note -->
+  <rect x="60" y="385" width="600" height="28" rx="5" fill="#e0e7ff" stroke="#6366f1" stroke-width="1"/>
+  <text x="360" y="403" font-family="Arial,sans-serif" font-size="11" fill="#374151" text-anchor="middle">SESSION_SCAN_INTERVAL_MS = 10분 — 시간 게이트 통과 후 세션 게이트 실패 시 재스캔 제한</text>
+</svg>

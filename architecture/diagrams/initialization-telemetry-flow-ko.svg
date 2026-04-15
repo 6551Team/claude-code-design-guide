@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" font-family="Arial,sans-serif">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0,10 3,0 6" fill="#666"/>
+    </marker>
+  </defs>
+  <rect width="800" height="520" fill="white"/>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e40af">initializeTelemetryAfterTrust() 흐름</text>
+
+  <!-- Top entry box -->
+  <rect x="250" y="50" width="300" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="400" y="75" text-anchor="middle" font-size="13" fill="#1e40af">initializeTelemetryAfterTrust()</text>
+
+  <!-- Arrow down -->
+  <line x1="400" y1="90" x2="400" y2="120" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Decision: isEligibleForRemoteManagedSettings? -->
+  <polygon points="400,120 560,155 400,190 240,155" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="400" y="152" text-anchor="middle" font-size="12" fill="#92400e">isEligibleForRemote</text>
+  <text x="400" y="168" text-anchor="middle" font-size="12" fill="#92400e">ManagedSettings()?</text>
+
+  <!-- YES branch - left -->
+  <line x1="240" y1="155" x2="120" y2="155" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="183" y="148" text-anchor="middle" font-size="11" fill="#666">예</text>
+
+  <!-- Remote settings path box -->
+  <rect x="20" y="130" width="100" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="70" y="151" text-anchor="middle" font-size="11" fill="#1e40af">원격 설정</text>
+  <text x="70" y="165" text-anchor="middle" font-size="11" fill="#1e40af">로드 대기</text>
+
+  <!-- Arrow down from remote settings -->
+  <line x1="70" y1="180" x2="70" y2="215" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+
+  <rect x="20" y="215" width="100" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="70" y="232" text-anchor="middle" font-size="11" fill="#1e40af">applyConfig</text>
+  <text x="70" y="246" text-anchor="middle" font-size="11" fill="#1e40af">EnvironmentVars()</text>
+
+  <line x1="70" y1="255" x2="70" y2="285" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+
+  <rect x="20" y="285" width="100" height="40" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="70" y="302" text-anchor="middle" font-size="11" fill="#1e40af">doInitialize</text>
+  <text x="70" y="316" text-anchor="middle" font-size="11" fill="#1e40af">Telemetry()</text>
+
+  <!-- NO branch - right -->
+  <line x1="560" y1="155" x2="670" y2="155" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="617" y="148" text-anchor="middle" font-size="11" fill="#666">아니오</text>
+
+  <rect x="670" y="130" width="110" height="50" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="725" y="151" text-anchor="middle" font-size="11" fill="#1e40af">doInitialize</text>
+  <text x="725" y="165" text-anchor="middle" font-size="11" fill="#1e40af">Telemetry()</text>
+
+  <!-- Both paths merge into doInitializeTelemetry section -->
+  <!-- Separator line -->
+  <line x1="0" y1="340" x2="800" y2="340" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="400" y="360" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">doInitializeTelemetry()</text>
+
+  <!-- telemetryInitialized guard -->
+  <polygon points="400,375 530,397 400,419 270,397" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="400" y="394" text-anchor="middle" font-size="12" fill="#92400e">telemetryInitialized</text>
+  <text x="400" y="410" text-anchor="middle" font-size="12" fill="#92400e">가드?</text>
+
+  <!-- Already initialized - exit -->
+  <line x1="530" y1="397" x2="650" y2="397" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="590" y="390" text-anchor="middle" font-size="11" fill="#666">예</text>
+  <rect x="650" y="375" width="110" height="44" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="5"/>
+  <text x="705" y="395" text-anchor="middle" font-size="11" fill="#166534">반환 (가드가</text>
+  <text x="705" y="409" text-anchor="middle" font-size="11" fill="#166534">재초기화 방지)</text>
+
+  <!-- No - proceed -->
+  <line x1="400" y1="419" x2="400" y2="445" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="412" y="436" font-size="11" fill="#666">아니오</text>
+
+  <!-- setMeterState -->
+  <rect x="270" y="445" width="260" height="55" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="400" y="463" text-anchor="middle" font-size="12" fill="#1e40af">setMeterState()</text>
+  <text x="400" y="479" text-anchor="middle" font-size="11" fill="#6b7280">지연 로드 ~400KB OpenTelemetry</text>
+  <text x="400" y="493" text-anchor="middle" font-size="11" fill="#6b7280">initializeTelemetry() → meter</text>
+
+  <!-- Arrow to final -->
+  <line x1="400" y1="500" x2="400" y2="512" stroke="#666" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="260" y="512" width="280" height="5" fill="#dcfce7" stroke="#16a34a" stroke-width="1" rx="2"/>
+</svg>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+  </defs>
+
+  <!-- Main container -->
+  <rect x="50" y="30" width="700" height="440" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="400" y="60" font-family="Arial,sans-serif" font-size="16" fill="#1e40af" text-anchor="middle" font-weight="bold">VimState (최상위 레벨)</text>
+
+  <!-- NORMAL mode -->
+  <rect x="100" y="100" width="140" height="80" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="170" y="145" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">NORMAL</text>
+
+  <!-- INSERT mode -->
+  <rect x="560" y="100" width="140" height="80" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="630" y="145" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">INSERT</text>
+
+  <!-- Arrow NORMAL to INSERT -->
+  <path d="M 240 130 L 560 130" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="400" y="120" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">i/a/o</text>
+
+  <!-- Arrow INSERT to NORMAL -->
+  <path d="M 560 150 L 240 150" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="400" y="170" font-family="Arial,sans-serif" font-size="12" fill="#1e40af" text-anchor="middle">&lt;Esc&gt;</text>
+
+  <!-- CommandState container -->
+  <rect x="100" y="240" width="600" height="200" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="400" y="270" font-family="Arial,sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">CommandState (10가지 타입)</text>
+
+  <!-- Command flow -->
+  <text x="140" y="310" font-family="Arial,sans-serif" font-size="12" fill="#1e40af">idle</text>
+  <path d="M 180 305 L 230 305" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="240" y="310" font-family="Arial,sans-serif" font-size="12" fill="#1e40af">count</text>
+  <path d="M 290 305 L 340 305" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="350" y="310" font-family="Arial,sans-serif" font-size="12" fill="#1e40af">operator</text>
+
+  <!-- Other states -->
+  <text x="140" y="350" font-family="Arial,sans-serif" font-size="12" fill="#1e40af">├─ find (f/F/t/T)</text>
+  <text x="140" y="370" font-family="Arial,sans-serif" font-size="12" fill="#1e40af">├─ replaceChar (r)</text>
+  <text x="140" y="390" font-family="Arial,sans-serif" font-size="12" fill="#1e40af">├─ mark (m)</text>
+  <text x="140" y="410" font-family="Arial,sans-serif" font-size="12" fill="#1e40af">└─ register (")</text>
+
+  <text x="400" y="350" font-family="Arial,sans-serif" font-size="12" fill="#1e40af">├─ gPrefix (g)</text>
+  <text x="400" y="370" font-family="Arial,sans-serif" font-size="12" fill="#1e40af">├─ zPrefix (z)</text>
+  <text x="400" y="390" font-family="Arial,sans-serif" font-size="12" fill="#1e40af">└─ bracketPrefix ([/])</text>
+
+  <!-- Arrow from NORMAL to CommandState -->
+  <path d="M 170 180 L 170 240" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="190" y="210" font-family="Arial,sans-serif" font-size="11" fill="#1e40af">(명령 키)</text>
+</svg>

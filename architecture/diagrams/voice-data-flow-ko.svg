@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+    <marker id="arrowhead-left" markerWidth="10" markerHeight="10" refX="1" refY="3" orient="auto">
+      <polygon points="10 0, 0 3, 10 6" fill="#666" />
+    </marker>
+  </defs>
+
+  <text x="450" y="30" font-family="Arial,sans-serif" font-size="16" fill="#1e40af" text-anchor="middle" font-weight="bold">음성 데이터 흐름</text>
+
+  <!-- Top row: Microphone -> STT -> Input box -->
+  <rect x="30" y="70" width="130" height="60" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="95" y="100" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">마이크</text>
+
+  <path d="M 160 100 L 260 100" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="210" y="90" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">음성 입력</text>
+
+  <rect x="260" y="70" width="160" height="60" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="340" y="100" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">STT 엔진</text>
+
+  <path d="M 420 100 L 530 100" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="475" y="90" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">전사 텍스트</text>
+
+  <rect x="530" y="70" width="130" height="60" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="595" y="100" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">입력 박스</text>
+
+  <!-- Down from Input box to Claude API -->
+  <path d="M 595 130 L 595 190" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="640" y="165" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">(사용자 메시지로)</text>
+
+  <rect x="530" y="190" width="130" height="60" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"/>
+  <text x="595" y="218" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">Claude</text>
+  <text x="595" y="238" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">API</text>
+
+  <!-- Down from Claude API to UI rendering -->
+  <path d="M 595 250 L 595 310" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="645" y="285" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">(어시스턴트 응답)</text>
+
+  <rect x="530" y="310" width="130" height="60" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="595" y="345" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">UI 렌더링</text>
+
+  <!-- Bottom row: Speaker <- TTS <- UI -->
+  <path d="M 530 340 L 420 340" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="475" y="330" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">응답</text>
+
+  <rect x="260" y="310" width="160" height="60" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="340" y="345" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">TTS 엔진</text>
+
+  <path d="M 260 340 L 160 340" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="210" y="330" font-family="Arial,sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">음성 출력</text>
+
+  <rect x="30" y="310" width="130" height="60" fill="#f0f4f8" stroke="#2563eb" stroke-width="2" rx="5"/>
+  <text x="95" y="345" font-family="Arial,sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">스피커</text>
+</svg>

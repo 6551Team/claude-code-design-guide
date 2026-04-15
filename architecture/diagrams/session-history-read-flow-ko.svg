@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 360" font-family="system-ui, -apple-system, sans-serif">
+
+  <!-- Title -->
+  <text x="250" y="30" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e293b">히스토리 읽기 흐름</text>
+
+  <!-- Box 1: History File (JSONL) -->
+  <rect x="100" y="55" width="300" height="52" rx="6" fill="#f0f4f8" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="250" y="76" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">히스토리 파일 (JSONL)</text>
+  <text x="250" y="96" text-anchor="middle" font-size="11" fill="#475569">~/.claude/history.jsonl</text>
+
+  <!-- Arrow 1 -->
+  <line x1="250" y1="107" x2="250" y2="143" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Box 2: makeHistoryReader() -->
+  <rect x="60" y="143" width="380" height="60" rx="6" fill="#f0f4f8" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="250" y="165" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">makeHistoryReader()</text>
+  <text x="250" y="184" text-anchor="middle" font-size="11" fill="#475569">비동기 제너레이터 — 줄 단위 파싱</text>
+
+  <!-- Arrow 2 -->
+  <line x1="250" y1="203" x2="250" y2="239" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Box 3: getTimestampedHistory() -->
+  <rect x="60" y="239" width="380" height="60" rx="6" fill="#f0f4f8" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="250" y="261" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">getTimestampedHistory()</text>
+  <text x="250" y="280" text-anchor="middle" font-size="11" fill="#475569">중복 제거 (세션 ID 기준) + 정렬</text>
+
+  <!-- Arrow 3 -->
+  <line x1="250" y1="299" x2="250" y2="333" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Box 4: UI Display -->
+  <rect x="100" y="333" width="300" height="16" rx="0" fill="none"/>
+  <!-- Render as a slightly different style to show terminal node -->
+  <rect x="100" y="322" width="300" height="32" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+  <text x="250" y="342" text-anchor="middle" font-size="13" font-weight="600" fill="#0c4a6e">UI 표시 (세션 선택기)</text>
+
+  <!-- Arrowhead marker -->
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#64748b"/>
+    </marker>
+  </defs>
+</svg>
